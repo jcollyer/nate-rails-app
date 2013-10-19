@@ -1,0 +1,31 @@
+<h1>Listing biblebooks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Testament</th>
+      <th>Position</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @biblebooks.each do |biblebook| %>
+      <tr>
+        <td><%= biblebook.name %></td>
+        <td><%= biblebook.testament %></td>
+        <td><%= biblebook.position %></td>
+        <td><%= link_to 'Show', biblebook %></td>
+        <td><%= link_to 'Edit', edit_biblebook_path(biblebook) %></td>
+        <td><%= link_to 'Destroy', biblebook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Biblebook', new_biblebook_path %>
