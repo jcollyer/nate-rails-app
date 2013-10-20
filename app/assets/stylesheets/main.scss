@@ -1,0 +1,18 @@
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+
+

@@ -20,5 +20,12 @@
   <%= image_tag @biblebook.image.url(:medium) %>
 </p>
 
+<p>
+  <strong>Teachings:</strong>
+  <% @biblebook.teachings.each do |teaching| %>
+    <li><%= teaching.name %> - <%= teaching.mp3 %></li>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_biblebook_path(@biblebook) %> |
 <%= link_to 'Back', biblebooks_path %>

@@ -31,4 +31,6 @@
 
 <br>
 
-<%= link_to 'New Biblebook', new_biblebook_path %>
+<% if current_user %>
+  <%= link_to 'New Biblebook', new_biblebook_path %>
+<% end %>
