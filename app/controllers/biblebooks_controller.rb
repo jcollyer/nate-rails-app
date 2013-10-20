@@ -69,6 +69,6 @@ class BiblebooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def biblebook_params
-      params.require(:biblebook).permit(:name, :testament, :position)
+      params.require(:biblebook).permit(:name, :testament, :position, :image)
     end
 end

@@ -15,5 +15,10 @@
   <%= @biblebook.position %>
 </p>
 
+<p>
+  <strong>image:</strong>
+  <%= image_tag @biblebook.image.url(:medium) %>
+</p>
+
 <%= link_to 'Edit', edit_biblebook_path(@biblebook) %> |
 <%= link_to 'Back', biblebooks_path %>
