@@ -35,7 +35,7 @@ end
 
 gem "paperclip", "~> 3.0"
 gem "aws-sdk"
-
+gem "bcrypt-ruby", :require => "bcrypt"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
