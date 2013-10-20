@@ -5,6 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Position</th>
+      <th>Biblebook</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= teaching.name %></td>
         <td><%= teaching.position %></td>
+        <td><%= teaching.biblebook.name %></td>
         <td><%= link_to 'Show', teaching %></td>
         <td><%= link_to 'Edit', edit_teaching_path(teaching) %></td>
         <td><%= link_to 'Destroy', teaching, method: :delete, data: { confirm: 'Are you sure?' } %></td>

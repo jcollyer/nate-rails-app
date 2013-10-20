@@ -10,5 +10,11 @@
   <%= @teaching.position %>
 </p>
 
+<p>
+  <strong>Biblebook:</strong>
+  <%= @teaching.biblebook.name %>
+</p>
+
+
 <%= link_to 'Edit', edit_teaching_path(@teaching) %> |
 <%= link_to 'Back', teachings_path %>

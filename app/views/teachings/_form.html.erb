@@ -19,6 +19,9 @@
     <%= f.label :position %><br>
     <%= f.number_field :position %>
   </div>
+  <div class="field">
+   <%= f.collection_select(:biblebook_id, Biblebook.all, :id, :name) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
