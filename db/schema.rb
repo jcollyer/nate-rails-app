@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020021943) do
+ActiveRecord::Schema.define(version: 20131020165827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,10 @@ ActiveRecord::Schema.define(version: 20131020021943) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "biblebook_id"
+    t.string   "mp3_file_name"
+    t.string   "mp3_content_type"
+    t.integer  "mp3_file_size"
+    t.datetime "mp3_updated_at"
   end
 
   add_index "teachings", ["biblebook_id"], name: "index_teachings_on_biblebook_id", using: :btree

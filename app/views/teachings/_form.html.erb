@@ -20,6 +20,11 @@
     <%= f.number_field :position %>
   </div>
 
+  <div>
+    <%= f.label :mp3 %>
+    <%= f.file_field :mp3 %>
+  </div>
+
   <div class="field">
    <%= f.collection_select(:biblebook_id, Biblebook.all, :id, :name) %>
   </div>
