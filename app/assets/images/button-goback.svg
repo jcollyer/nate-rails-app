@@ -1,0 +1,17 @@
+<svg version="1.1" id="go_back" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" d="
+	M90.814,38.667"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" d="
+	M29.551,58.433"/>
+<text transform="matrix(1.0162 0 0 1 62.4268 91.1348)" fill="#FFFFFF" font-family="'ArialMT'" font-size="86.6166">30</text>
+<text transform="matrix(1.0162 0 0 1 67.5532 125.7539)" fill="#FFFFFF" font-family="'ArialMT'" font-size="55.0017">sec</text>
+<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" points="
+	34.503,46.128 56.73,66.856 34.492,68.257 12.246,69.666 12.103,47.534 12.118,25.401 "/>
+<text transform="matrix(1 0 0 1 69.0386 152.8369)" fill="#FFFFFF" font-family="'Arial-BoldMT'" font-size="30.4363">BACK</text>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" d="
+	M33.97,43.986C51.486,18,82.643,2.579,115.867,6.724c47.065,5.872,80.461,48.787,74.59,95.854
+	c-5.872,47.065-48.787,80.461-95.853,74.59c-30.442-3.798-55.164-23.091-67.242-48.982"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" d="
+	M20.014,81.314"/>
+</svg>
