@@ -9,7 +9,8 @@
       <div class="jp-controls">
         <div class="lesson_mod_image">
           <div class="current_lessen_image">
-            <img src="/assets/placeholder.png" class="mod_img" itemprop="image">
+            <%= image_tag "placeholder.png", {class: "mod_img"} %>
+
           </div>
           <a href="javascript:;" class="jp-play" tabindex="1">
             <div class="player_play">
@@ -18,7 +19,7 @@
 
             </div>
           </a>
-          <img src="/assets/placeholder.png" class="mod_img">
+          <%= image_tag "placeholder.png", {class: "mod_img"} %>
           <a href="javascript:;" class="jp-pause" tabindex="1" style="display:none;">
 
 
@@ -34,7 +35,7 @@
           </div>
           <div class="lesson_progress">
             <div class="lesson_mod_time">
-              <div class="jp-duration lesson_duration">
+              <div class="jp-duration lesson_duration hide">
 
               <!--  button-down-arrow -->
 
