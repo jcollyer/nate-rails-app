@@ -14,5 +14,38 @@
 }
 
 
+nav{
+  ul{
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+    li{
+      float:left;
+      list-style-type: none;
+      padding: 0 20px;
+      width: 20%;
+    }
+  }
+}
 
+.stratum {
+  @extend .clearfix;
+  padding: 4px;
+  margin: 0 auto;
+}
+
+.stratum-pop {
+  @extend .stratum;
+  background: #eee;
+}
+
+.stratum-hip {
+  @extend .stratum;
+  background: #999;
+}
+
+.stratum-hype {
+  @extend .stratum;
+  background: #ddd;
+}
 
