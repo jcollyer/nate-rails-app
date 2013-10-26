@@ -1,18 +1,10 @@
-* {
-    margin:0px;
-    padding:0px;
-    box-sizing: border-box;
+body {
+  background-image: url(image_path('back2.jpg'));
+  // background-image: url('images/back.jpg');
+  background-attachment: fixed;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
 }
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
 
 nav{
   ul{
@@ -23,29 +15,20 @@ nav{
       float:left;
       list-style-type: none;
       padding: 0 20px;
+      text-align: center;
       width: 20%;
     }
   }
 }
 
-.stratum {
-  @extend .clearfix;
-  padding: 4px;
-  margin: 0 auto;
+
+.row {
+  border-bottom: 1px solid #333;
 }
 
-.stratum-pop {
-  @extend .stratum;
-  background: #eee;
-}
+.bg-1 {
 
-.stratum-hip {
-  @extend .stratum;
-  background: #999;
-}
 
-.stratum-hype {
-  @extend .stratum;
-  background: #ddd;
+  background-repeat: no-repeat;
+  background-size:100%;
 }
-

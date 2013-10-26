@@ -1,9 +1,11 @@
 <div class="row">
-  <% if current_user %>
-    Logged in as <%= current_user.email %>.
-    <%= link_to "Log out", log_out_path %>
-  <% else %>
-    <%= link_to "Sign up", sign_up_path %> or
-    <%= link_to "log in", log_in_path %>
-  <% end %>
+  <div class="small-12 columns">
+    <% if current_user %>
+      Logged in as <%= current_user.email %>.
+      <%= link_to "Log out", log_out_path %>
+    <% else %>
+      <%= link_to "Sign up", sign_up_path %> or
+      <%= link_to "log in", log_in_path %>
+    <% end %>
+  </div>
 </div>
