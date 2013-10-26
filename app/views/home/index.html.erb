@@ -3,7 +3,6 @@
 <div class="row">
   <% @biblebooks.each do |biblebook| %>
     <div class="small-2 large-4 columns">
-      <%= biblebook.name %>
       <%= image_tag biblebook.image.url(:large) %>
       <%= link_to 'Show', biblebook %></td>
             <% if current_user %>
@@ -12,9 +11,7 @@
             <% end %>
     </div>
       <% end %>
-
   <br>
-
   <% if current_user %>
     <%= link_to 'New Biblebook', new_biblebook_path %>
   <% end %>

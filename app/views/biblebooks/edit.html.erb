@@ -1,6 +1,13 @@
-<h1>Editing biblebook</h1>
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Editing biblebook</h1>
+  </div>
+  <%= render 'form' %>
+  <div class="small-12 columns">
+    <%= link_to 'Show', @biblebook %>
+  </div>
+  <div class="small-12 columns">
+    <%= link_to 'Back', biblebooks_path %>
+  </div>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @biblebook %> |
-<%= link_to 'Back', biblebooks_path %>

@@ -1,6 +1,6 @@
-<%= form_for @teaching do |f| %>
+<%= form_for @teaching, :html => { :multipart => true } do |f| %>
   <% if @teaching.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation small-12 columns">
       <h2><%= pluralize(@teaching.errors.count, "error") %> prohibited this teaching from being saved:</h2>
 
       <ul>
@@ -11,24 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
+  <div class="large-4 small-12 columns">
+    <%= f.label "Chapter" %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+  <div class="large-4 small-12 columns">
     <%= f.label :position %><br>
     <%= f.number_field :position %>
   </div>
 
-  <div>
+  <div class="large-4 small-12 columns">
     <%= f.label :mp3 %>
     <%= f.file_field :mp3 %>
   </div>
 
-  <div class="field">
+  <div class="large-4 small-12 columns">
    <%= f.collection_select(:biblebook_id, Biblebook.all, :id, :name) %>
   </div>
-  <div class="actions">
+  <div class="large-4 small-12 columns">
     <%= f.submit %>
   </div>
 <% end %>

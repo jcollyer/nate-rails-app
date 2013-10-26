@@ -1,5 +1,7 @@
-<h1>Sign Up</h1>
-
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Sign Up</h1>
+  </div>
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
@@ -11,14 +13,16 @@
       </ul>
     </div>
   <% end %>
-  <p>
+  <div class="large-6 small-12 columns">
     <%= f.label :email %><br />
     <%= f.text_field :email %>
-  </p>
-  <p>
+  </div>
+  <div class="large-6 small-12 columns">
     <%= f.label :password_hash %><br />
     <%= f.password_field :password_hash %>
-  </p>
-
-  <p class="button"><%= f.submit %></p>
+  </div>
+  <div class="small-12 columns">
+    <%= f.submit %>
+  </div>
 <% end %>
+</div>

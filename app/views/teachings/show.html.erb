@@ -1,27 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="small-12 columns">
+    <p id="notice"><%= notice %></p>
+  </div>
+  <div class="small-12 columns">
+    <p>
+      <strong>Chapter:</strong>
+      <%= @teaching.name %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @teaching.name %>
-</p>
+    <p>
+      <strong>Position:</strong>
+      <%= @teaching.position %>
+    </p>
 
-<p>
-  <strong>Position:</strong>
-  <%= @teaching.position %>
-</p>
+    <p>
+      <strong>Biblebook:</strong>
+      <%= @teaching.biblebook.name %>
+    </p>
+  </div>
+  <div class="small-12 columns">
 
-<p>
-  <strong>Biblebook:</strong>
-  <%= @teaching.biblebook.name %>
-</p>
-
-<p>
-  <audio controls>
-    <source src="<%= @teaching.mp3 %>" type="audio/ogg">
-    <source src="<%= @teaching.mp3 %>" type="audio/mpeg">
-  Your browser does not support the audio element.
-  </audio>
-</p>
-
-<%= link_to 'Edit', edit_teaching_path(@teaching) %> |
-<%= link_to 'Back', teachings_path %>
+    <audio controls>
+      <source src="<%= @teaching.mp3 %>" type="audio/ogg">
+      <source src="<%= @teaching.mp3 %>" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+  </div>
+  <div class="small-12 columns">
+    <%= link_to 'Edit', edit_teaching_path(@teaching) %> |
+    <%= link_to 'Back', teachings_path %>
+  </div>
+</div>

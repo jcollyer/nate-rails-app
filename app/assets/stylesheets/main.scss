@@ -6,6 +6,12 @@ body {
   background-repeat: no-repeat;
 }
 
+a {
+  color: #333;
+  padding: 0px 7px;
+  border: 1px solid rgba(0,0,0,0.5);
+  border-radius: 2px;
+}
 nav{
   ul{
     margin: 0 auto;
@@ -32,3 +38,19 @@ nav{
   background-repeat: no-repeat;
   background-size:100%;
 }
+
+
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+

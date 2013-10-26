@@ -1,66 +1,36 @@
-<p id="notice"><%= notice %></p>
-<!--
-<p>
-  <strong>Name:</strong>
-  <%= @biblebook.name %>
-</p>
-
-<p>
-  <strong>Testament:</strong>
-  <%= @biblebook.testament %>
-</p>
-
-<p>
-  <strong>Position:</strong>
-  <%= @biblebook.position %>
-</p>
-
-<p>
-  <strong>image:</strong>
-  <%= image_tag @biblebook.image.url(:medium) %>
-</p>
-
-<p>
-  <strong>Teachings:</strong>
-
-</p>
- -->
-
-
-
 <div class="row">
+  <div class="12 columns" id="notice">
+    <%= notice %>
+  </div>
   <div class="small-12 columns">
     <h1><%= @biblebook.name %></h1>
   </div>
-</div>
-
-<% if current_user %>
-  <span id="edit_button_id"><%= link_to 'Edit', edit_biblebook_path(@biblebook) %> </span>
-<% end %>
-
-
-<div class="row">
+   <div class="small-12 columns">
+    <% if current_user %>
+      <%= link_to 'Edit', edit_biblebook_path(@biblebook) %>
+    <% end %>
+  </div>
   <div class="small-12 large-6 columns">
-    <img class="book_image" src="<%= @biblebook.image.url(:large) %>">
-    <div class="back_to_biblebooks">
-      <span class="button"><%= link_to 'Back', biblebooks_path %></span>
-    </div>
+    <img src="<%= @biblebook.image.url(:medium) %>">
   </div>
   <div class="small-12 large-6 columns biblebook_list">
-    <h2 style="display:none;"><span id="teaching_biblebook" class="hh1"><%= @biblebook.name %></span></h2>
     <div id="jp_container_1" class="jp-playlist">
-      <ul class="biblebook_teaching_list">
+      <ul class="pricing-table">
+        <li class="title">
+          <h3><%= @biblebook.name  %></h3>
+        </li>
       <% @biblebook.teachings.each do |teaching| %>
-        <li>
+        <li class="bullet-item clearfix">
           <div class="play_this_teaching button-play-list" data-name="<%= teaching.name %>" data-mp3="<%= teaching.mp3 %>" data-refurl="">
-            teaching
+            <h5><%= teaching.name %></h5>
           </div>
         </li>
       <% end %>
       </ul>
     </div>
+    <div class="small-12 columns">
+     <%= link_to 'Back', biblebooks_path %>
+    </div>
   </div>
 
-
-</div>
 
