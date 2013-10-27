@@ -1,9 +1,15 @@
+$font-heading: 'junction', sans-serif;
+$font-body: 'raleway', sans-serif;
+
+
 body {
   background-image: url(image_path("back2.jpg"));
   // background-image: url('images/back.jpg');
   background-attachment: fixed;
   background-position: 100% 100%;
   background-repeat: no-repeat;
+
+  font-family:$font-body;
 }
 
 a {
