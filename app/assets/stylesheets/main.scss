@@ -1,5 +1,5 @@
 body {
-  background-image: url(image_path('back2.jpg'));
+  background-image: url(image_path("back2.jpg"));
   // background-image: url('images/back.jpg');
   background-attachment: fixed;
   background-position: 100% 100%;
@@ -13,6 +13,7 @@ a {
   border-radius: 2px;
 }
 nav{
+  margin-top: 7px;
   ul{
     margin: 0 auto;
     max-width: 800px;
@@ -20,8 +21,9 @@ nav{
     li{
       float:left;
       list-style-type: none;
-      padding: 0 20px;
+      padding: 20px;
       text-align: center;
+      text-transform: uppercase;
       width: 20%;
     }
   }
@@ -30,16 +32,18 @@ nav{
 
 .row {
   border-bottom: 1px solid #333;
+  margin:3px auto;
 }
 
-.bg-1 {
-
-
+.logo {
+  background-image: url(image_path("logo.png"));
   background-repeat: no-repeat;
-  background-size:100%;
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: 1px;
+  left: 3%;
 }
-
-
 
 .clearfix:after {
   content: ".";
@@ -53,4 +57,6 @@ nav{
 .clearfix {
   display: inline-block;
 }
+
+
 
