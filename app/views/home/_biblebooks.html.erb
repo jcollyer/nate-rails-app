@@ -1,0 +1,27 @@
+<div class="row">
+  <span id="teachings-link"></span>
+<% @biblebooks.each do |biblebook| %>
+  <div class="small-2 large-4 columns">
+    <%= image_tag biblebook.image.url(:large) %>
+    <%= link_to 'Show', biblebook %>
+      <% if current_user %>
+        <%= link_to 'Edit', edit_biblebook_path(biblebook) %>
+        <%= link_to 'Destroy', biblebook, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+
+
+    <% biblebook.teachings.each do |teaching| %>
+      <li class="bullet-item clearfix">
+        <div class="play_this_teaching button-play-list" data-name="<%= teaching.name %>" data-mp3="<%= teaching.mp3 %>" data-refurl="">
+          <h5><%= teaching.name %></h5>
+        </div>
+      </li>
+    <% end %>
+
+  </div>
+
+<% end %>
+<% if current_user %>
+  <%= link_to 'New Biblebook', new_biblebook_path, remote: true %>
+<% end %>
+</div>

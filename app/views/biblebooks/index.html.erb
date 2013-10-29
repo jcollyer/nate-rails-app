@@ -1,44 +1,19 @@
 <div class="row">
-  <div class="small-12 columns">
-    <%= link_to "back", root_url %>
+  <span id="teachings-link"></span>
+<% @biblebooks.each do |biblebook| %>
+  <div class="small-2 large-4 columns">
+    <%= image_tag biblebook.image.url(:large) %>
+    <%= link_to 'Show', biblebook %>
+  <% if current_user %>
+    <%= link_to 'Edit', edit_biblebook_path(biblebook) %>
+    <%= link_to 'Destroy', biblebook, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
   </div>
-  <div class="small-12 columns">
-    <h1>Listing biblebooks</h1>
-  </div>
-  <div class="small-12 columns">
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>New T?</th>
-          <th>Position</th>
-          <th>Image</th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @biblebooks.each do |biblebook| %>
-          <tr>
-            <td><%= biblebook.name %></td>
-            <td><%= biblebook.testament %></td>
-            <td><%= biblebook.position %></td>
-            <td><%= image_tag biblebook.image.url(:thumb) %></td>
-            <td><%= link_to 'Show', biblebook %></td>
-            <% if current_user %>
-              <td><%= link_to 'Edit', edit_biblebook_path(biblebook) %></td>
-              <td><%= link_to 'Destroy', biblebook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <% end %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-  <div class="small-12 columns">
-    <% if current_user %>
-      <%= link_to 'New Biblebook', new_biblebook_path %>
-    <% end %>
-  </div>
+<% end %>
+<% if current_user %>
+  <%= link_to 'New Biblebook', new_biblebook_path, remote: true %>
+<% end %>
 </div>
+
+
+

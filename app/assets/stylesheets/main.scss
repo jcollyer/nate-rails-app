@@ -39,6 +39,15 @@ nav{
   }
 }
 
+#user {
+  background: #eee;
+  height: 70px;
+  top: 0px;
+  position: fixed;
+  width: 220px;
+  z-index: 10;
+}
+
 .fixed-nav {
   background: #eee;
 }
