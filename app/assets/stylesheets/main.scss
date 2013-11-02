@@ -52,11 +52,6 @@ nav{
   background: #eee;
 }
 
-.row {
-  border-bottom: 1px solid #333;
-  margin:3px auto;
-}
-
 .logo {
   background-image: url(image_path("logo.png"));
   background-repeat: no-repeat;
@@ -77,6 +72,7 @@ nav{
   background: #999;
   border-left: 1px solid #fff;
   height: 100%;
+  margin:70px 0 0 0;
   position: fixed;
   top: 0px;
   left: -120px;
@@ -116,7 +112,10 @@ nav{
   }
 }
 
-
+.fancy-stratum {
+  background: rgba(0,0,0,0.2);
+  padding: 40px 0px;
+}
 
 .clearfix:after {
   content: ".";

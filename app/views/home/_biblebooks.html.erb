@@ -1,17 +1,19 @@
-<div class="row">
-  <span id="teachings-link"></span>
-<% @biblebooks.each do |biblebook| %>
-  <div class="small-2 large-4 columns biblebook-cover">
-    <%= image_tag biblebook.image.url(:large), :data => { :biblebook => biblebook.id }  %>
-    <%= link_to 'Show', biblebook %>
-      <% if current_user %>
-        <%= link_to 'Edit', edit_biblebook_path(biblebook) %>
-        <%= link_to 'Destroy', biblebook, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-  </div>
+<div class="fancy-stratum">
+  <div class="row">
+    <span id="teachings-link"></span>
+  <% @biblebooks.each do |biblebook| %>
+    <div class="small-2 large-4 columns biblebook-cover">
+      <%= image_tag biblebook.image.url(:large), :data => { :biblebook => biblebook.id }  %>
+        <% if current_user %>
+          <%= link_to 'Show', biblebook %>
+          <%= link_to 'Edit', edit_biblebook_path(biblebook) %>
+          <%= link_to 'Destroy', biblebook, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+    </div>
 
-<% end %>
-<% if current_user %>
-  <%= link_to 'New Biblebook', new_biblebook_path %>
-<% end %>
+  <% end %>
+  <% if current_user %>
+    <%= link_to 'New Biblebook', new_biblebook_path %>
+  <% end %>
+  </div>
 </div>

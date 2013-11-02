@@ -59,7 +59,7 @@ $ ->
     $(".container").css "margin-bottom", "0px"
 
 
-  $(document).on "click", ".play_this_teaching", ->
+  $(document).on "click", ".play-this-teaching", ->
     $(".spin").css "-webkit-animation", "spin 5s infinite"
     $(".spin").css "-moz-animation",    "spin 5s infinite"
     $(".spin").css "-o-animation",      "spin 5s infinite"
