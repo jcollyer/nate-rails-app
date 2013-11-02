@@ -1,14 +1,16 @@
 <div class="teaching-panels">
-  <div class="teaching-image">
-    <img src="" />
-  </div>
   <% @biblebooks.each do |biblebook| %>
+  <div class="teaching-panel">
     <% biblebook.teachings.each do |teaching| %>
+      <div class="teaching-image">
+        <%= image_tag biblebook.image.url(:thumb) %>
+      </div>
       <div class="teaching-item" data-id="<%= teaching.biblebook_id %>">
-        <div class="play_this_teaching button-play-list" data-name="<%= teaching.name %>" data-mp3="<%= teaching.mp3 %>" data-refurl="">
-          <h5><%= teaching.name %></h5>
+        <div class="play-this-teaching button-play-list" data-name="<%= teaching.name %>" data-mp3="<%= teaching.mp3 %>" data-refurl="">
         </div>
+        <p> <%= teaching.name %></p>
       </div>
     <% end %>
+  </div>
   <% end %>
 </div>
