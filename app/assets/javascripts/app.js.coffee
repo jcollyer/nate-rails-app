@@ -17,9 +17,25 @@ $ ->
   $(window).scroll ->
     pagePlace()
 
+  #click Logo
   $(".logo").on "click", ->
     $("html, body").animate( scrollTop: 0, 450)
 
+
+  #click biblebook
+  $(".biblebook-cover img").on "click", ->
+    $el = $(this)
+    theID = $el.data("biblebook")
+
+    if $(".teaching-panels").css("left") == "-160px"
+      $(".teaching-panels").animate(left: "0px", 450)
+    else
+      $(".teaching-panels").animate(left: "-160px", 450, ->
+        $(".teaching-item").hide()
+        $(".teaching-panels").find("[data-id='" + theID + "']").show( ->
+          $(".teaching-panels").animate(left: "0px", 450)
+        )
+      )
 
 
 
