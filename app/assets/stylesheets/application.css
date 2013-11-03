@@ -21,12 +21,3 @@
     url("/assets/raleway_thin-webfont.otf") format("opentype"),
     url("/assets/raleway_thin-webfont.svg#raleway_thin-webfont") format("svg");
   }
-
-@font-face {
-  font-family: "junction";
-  src: url("Junction-webfont.eot");
-  src: local("☺"),
-    url("/assets/Junction-webfont.woff") format("woff"),
-    url("/assets/Junction-webfont.otf") format("opentype"),
-    url("/assets/Junction-webfont.svg#Junction-webfont") format("svg");
-  }
