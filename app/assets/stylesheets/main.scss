@@ -34,28 +34,30 @@ h2 {
   margin: 0em;
   line-height: 1em;
 }
-nav{
+#main-nav {
   color: white;
-  cursor: pointer;
   height: 70px;
   top: 0px;
   position: fixed;
+  background: #2980b9;
   width: 100%;
-  z-index: 9;
+  z-index: 12;
   ul{
     margin: 0 auto;
     max-width: 800px;
     width: 100%;
     li{
+      cursor: pointer;
+      font-size: 20px;
       float:left;
       list-style-type: none;
       padding: 20px;
       text-align: center;
-      text-transform: uppercase;
       width: 20%;
     }
   }
 }
+
 
 #user {
   background: #eee;
@@ -66,12 +68,6 @@ nav{
   z-index: 10;
 }
 
-#main-nav {
-  position: fixed;
-  background: #424242;
-  border-bottom: 1px solid #393939;
-  box-shadow: 0 -1px 0 #666 inset;
-}
 
 .logo {
   background-image: url(image_path("logo.png"));
@@ -85,7 +81,7 @@ nav{
 
 .page-buffer {
   position: relative;
-  margin: 40px 0px;
+  margin: 25px 0px;
 }
 
 .teaching-panels {
@@ -133,25 +129,60 @@ nav{
   }
 }
 
-.blue {
-  background: #34495e;
-  border-bottom: 1px solid #30455a;
-  border-top: 1px solid #30455a;
-  box-shadow: 0 1px 0 #4d6a88 inset, 0 -1px 0 #4d6a88 inset;
+.biblebook-cover {
+  position: relative;
+  z-index: 11;
 }
 
-.green {
-  background: #13927b;
-  border-bottom: 1px solid #0e8772;
-  border-top: 1px solid #0e8772;
-  box-shadow: 0 1px 0 #15ab91 inset, 0 -1px 0 #15ab91 inset;
-}
 .fancy-stratum {
+  position: relative;
   padding: 10px 0px;
   h1 {
     color: rgba(255,255,255,0.7);
   }
 }
+
+.one {
+  @extend .fancy-stratum;
+  background: #3498db;
+}
+
+.two {
+  @extend .fancy-stratum;
+  background: #2980b9;
+}
+
+/* Triangles */
+.triangle {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  &:before {
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background: #2980b9;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+  }
+}
+
+.icon {
+  display: block;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.1);
+  color: #fff;
+  text-align: center;
+  font-size: 8em;
+  line-height: 2em;
+  margin: 0 auto;
+}
+
+
+
 
 .clearfix:after {
   content: ".";
@@ -165,6 +196,3 @@ nav{
 .clearfix {
   display: inline-block;
 }
-
-
-
