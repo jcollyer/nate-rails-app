@@ -1,5 +1,6 @@
-$font-raleway:  'raleway', sans-serif;
-$font-questrial:'Questrial', sans-serif;
+// $font-raleway:    'raleway', sans-serif;
+// $font-questrial:  'Questrial', sans-serif;
+$font-lato:       'Lato', Arial, sans-serif;
 
 
 body {
@@ -9,7 +10,7 @@ body {
   background-position: 100% 100%;
   background-repeat: no-repeat;
 
-  font-family: $font-questrial;
+  font-family: $font-lato;
 }
 
 a {
@@ -20,20 +21,24 @@ a {
 }
 
 p {
- font-size: 18px;
+  color: rgba(0,0,0,0.5);
+  font-size: 18px;
 }
 
 h1 {
-  font-family: $font-raleway;
+  color: white;
+  font-family: $font-lato;
   font-size: 3em;
   margin: 0.1em 0;
 }
 
 h2 {
-  font-family: $font-raleway;
+  color: white;
+  font-family: $font-lato;
   margin: 0em;
   line-height: 1em;
 }
+
 #main-nav {
   color: white;
   height: 70px;
@@ -137,9 +142,6 @@ h2 {
 .fancy-stratum {
   position: relative;
   padding: 10px 0px;
-  h1 {
-    color: rgba(255,255,255,0.7);
-  }
 }
 
 .one {
