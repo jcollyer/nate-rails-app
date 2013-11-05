@@ -1,12 +1,14 @@
 <div class="two">
+  <div class="absolute icon icon-headphones" style="top:-40px; right: -40px">&nbsp;</div>
   <div class="triangle">&nbsp;</div>
   <div class="row">
     <div class="small-12 columns">
       <h1>Teachings</h1>
+      </br>
     </div>
     <span id="teachings-link"></span>
   <% @biblebooks.each do |biblebook| %>
-    <div class="small-6 large-3 columns biblebook-cover">
+    <div class="small-6 large-4 columns biblebook-cover">
       <%= image_tag biblebook.image.url(:large), :data => { :biblebook => biblebook.id }  %>
         <% if current_user %>
           <%= link_to 'Show', biblebook %>
@@ -15,9 +17,6 @@
         <% end %>
     </div>
   <% end %>
-    <div class="small-6 large-3 columns">
-      <div class="icon icon-headphones">&nbsp;</div>
-    </div>
 
   <% if current_user %>
     <%= link_to 'New Biblebook', new_biblebook_path %>

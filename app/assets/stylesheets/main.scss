@@ -1,7 +1,9 @@
 // $font-raleway:    'raleway', sans-serif;
 // $font-questrial:  'Questrial', sans-serif;
-$font-lato:       'Lato', Arial, sans-serif;
-
+$font-lato: 'Lato', Arial, sans-serif;
+html, body {
+  overflow-x: hidden;
+}
 
 body {
   background-image: url(image_path("back2.jpg"));
@@ -11,6 +13,7 @@ body {
   background-repeat: no-repeat;
 
   font-family: $font-lato;
+  text-align: center;
 }
 
 a {
@@ -144,6 +147,9 @@ h2 {
   }
 }
 
+.tall-pic {
+  margin: 50px auto;
+}
 .biblebook-cover {
   position: relative;
   z-index: 11;
@@ -235,6 +241,10 @@ h2 {
 
 
 
+
+.absolute {
+  position: absolute;
+}
 
 .clearfix:after {
   content: ".";
