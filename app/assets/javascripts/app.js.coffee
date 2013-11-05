@@ -8,14 +8,14 @@ $ ->
 
 
   #nav Scroll
-  pagePlace = ->
-    pagePosition = $("body").scrollTop()
-    if pagePosition > 10
-      $("#main-nav").addClass("fixed-nav")
-    else
-      $("#main-nav").removeClass("fixed-nav")
-  $(window).scroll ->
-    pagePlace()
+  # pagePlace = ->
+  #   pagePosition = $("body").scrollTop()
+  #   if pagePosition > 10
+  #     $("#main-nav").addClass("fixed-nav")
+  #   else
+  #     $("#main-nav").removeClass("fixed-nav")
+  # $(window).scroll ->
+  #   pagePlace()
 
   #click Logo
   $(".logo").on "click", ->

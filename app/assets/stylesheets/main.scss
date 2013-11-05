@@ -35,6 +35,8 @@ h2 {
   line-height: 1em;
 }
 nav{
+  color: white;
+  cursor: pointer;
   height: 70px;
   top: 0px;
   position: fixed;
@@ -64,8 +66,11 @@ nav{
   z-index: 10;
 }
 
-.fixed-nav {
-  background: #eee;
+#main-nav {
+  position: fixed;
+  background: #424242;
+  border-bottom: 1px solid #393939;
+  box-shadow: 0 -1px 0 #666 inset;
 }
 
 .logo {
@@ -128,13 +133,24 @@ nav{
   }
 }
 
-.fancy-stratum {
-  background: #000;
-  border-bottom: 1px solid #000;
-  border-top: 1px solid #000;
-  box-shadow: 0 1px 0 #555 inset, 0 -1px 0 #555 inset;
-  padding: 10px 0px;
+.blue {
+  background: #34495e;
+  border-bottom: 1px solid #30455a;
+  border-top: 1px solid #30455a;
+  box-shadow: 0 1px 0 #4d6a88 inset, 0 -1px 0 #4d6a88 inset;
+}
 
+.green {
+  background: #13927b;
+  border-bottom: 1px solid #0e8772;
+  border-top: 1px solid #0e8772;
+  box-shadow: 0 1px 0 #15ab91 inset, 0 -1px 0 #15ab91 inset;
+}
+.fancy-stratum {
+  padding: 10px 0px;
+  h1 {
+    color: rgba(255,255,255,0.7);
+  }
 }
 
 .clearfix:after {
