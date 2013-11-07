@@ -263,6 +263,40 @@ h2 {
 }
 
 
+// Social
+
+.icon2 {
+  background-color: rgba(0,0,0,0.4);
+  margin: 40px auto 20px;
+  width: 190px;
+  height: 190px;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  font-size: 40px;
+  border-radius: 200px;
+  box-shadow: none;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  &:hover {
+    box-shadow: 0px 0px 0px  4px rgba(0,0,0,0.5);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 .absolute {
