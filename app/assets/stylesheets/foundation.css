@@ -10,9 +10,7 @@ meta.foundation-mq-large {
   font-family: "only screen and (min-width:1440px)";
   width: 1440px; }
 
-*,
-*:before,
-*:after {
+*{
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }

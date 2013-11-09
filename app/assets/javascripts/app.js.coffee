@@ -8,14 +8,14 @@ $ ->
 
 
   #nav Scroll
-  # pagePlace = ->
-  #   pagePosition = $("body").scrollTop()
-  #   if pagePosition > 10
-  #     $("#main-nav").addClass("fixed-nav")
-  #   else
-  #     $("#main-nav").removeClass("fixed-nav")
-  # $(window).scroll ->
-  #   pagePlace()
+  pagePlace = ->
+    pagePosition = $("body").scrollTop()
+    if pagePosition > 10
+      $("#main-nav").removeClass("old-nav").addClass("new-nav")
+    else
+      $("#main-nav").removeClass("new-nav").addClass("old-nav")
+  $(window).scroll ->
+    pagePlace()
 
   #click Logo
   $(".logo").on "click", ->
@@ -23,8 +23,8 @@ $ ->
 
 
   #click biblebook
-  $(".biblebook-cover img").on "click", ->
-    $el = $(this)
+  $(".biblebook-hover").on "click", ->
+    $el = $(this).siblings("img")
     theID = $el.data("biblebook")
     console.log theID
     if $(".teaching-panels").css("left") == "-120px"

@@ -24,7 +24,8 @@ html, body {
 }
 
 body {
-  background-image: url(image_path("back2.jpg"));
+  background-image: url(image_path("landscape.jpg"));
+  background-size: 100%;
   // background-image: url('images/back.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -62,7 +63,6 @@ h2 {
 .gradi-1 {
   @include gradi-1
 }
-
 .gradi-2 {
   @include gradi-2
 }
@@ -72,21 +72,57 @@ h2 {
 .color-2 {
   background: #3e3e3e;
 }
+.color-3 {
+  background: #e4e4e4;
+}
 .back-1 {
   background: url(image_path("back-dimond.png")) white;
   background-position: bottom;
   background-repeat: repeat-x;
 }
+.back-2 {
+  background: url(image_path("blueprint.png"));
+}
+.back-3 {
+  border: 8px solid rgba(255,255,255,0.3);
+  border-radius: 10px;
+  h1 {
+    background: rgba(0,0,0,0.5);
+    border-radius: 4px;
+    color: rgba(255,255,255,0.9);
+    margin:0px;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.3);
+  }
+}
+.fancy-border {
+  border-top: 8px solid transparent;
+  position: relative;
+  &:after {
+    bottom: -8px;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    left: 0px;
+    background: rgba(255,255,255,0.3);
+  }
+}
 
+.padding {
+  padding: 0px;
+}
+
+.top-margin {
+  margin-top: 20px;
+}
 
 #main-nav {
   color: white;
-  height: 80px;
+  height: 72px;
   top: 0px;
   position: fixed;
-  background: #21242C;
   width: 100%;
-  z-index: 12;
+  z-index: 8;
   ul{
     margin: 0 auto;
     max-width: 800px;
@@ -99,8 +135,19 @@ h2 {
       padding: 20px;
       text-align: center;
       width: 20%;
+      &:hover {
+        background: #333;
+      }
     }
   }
+}
+.old-nav{
+  background: rgba(0,0,0,0.5);
+}
+.new-nav {
+  background: rgba(0, 0, 0, 1);
+  box-shadow: 0 -1px 0 #333 inset;
+  border-bottom: 1px solid #000;
 }
 
 
@@ -117,11 +164,12 @@ h2 {
 .logo {
   background-image: url(image_path("logo.png"));
   background-repeat: no-repeat;
-  left: 3%;
-  height: 80px;
+  background-size: 100%;
+  left: 90px;
+  height: 110px;
   top: 1px;
   position: absolute;
-  width: 80px;
+  width: 110px;
 }
 
 .page-buffer {
@@ -139,11 +187,11 @@ h2 {
 }
 
 .teaching-panels {
-  // background: rgba(255,255,255,1);
-  background: #999;
-  border-left: 1px solid #fff;
+  background: #21242C;
+  box-shadow: -2px 0px 6px #000 inset;
+  border-right: 1px solid #000;
   height: 100%;
-  margin:70px 0 0 0;
+  margin:20px 0 0 0;
   position: fixed;
   top: 0px;
   left: -120px;
@@ -156,6 +204,10 @@ h2 {
       top: 0px;
       position: absolute;
       width: 100%;
+      display:none;
+    .teaching-image:first {
+      display: block;
+    }
       @extend .clearfix;
       img {
         width: 100%;
@@ -163,11 +215,17 @@ h2 {
     }
     .teaching-item {
       @extend .clearfix;
+      cursor: pointer;
       width: 100%;
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid rgba(255,255,255,0.4);
       position: relative;
+      &:hover {
+        background: rgba(255,255,255,0.4);
+      }
       p {
-        margin: 2px 10px 0px;
+        color: white;
+        margin:0px;
+        text-align: left;
       }
       .play-this-teaching {
         position: absolute;
@@ -182,13 +240,56 @@ h2 {
     }
   }
 }
+.teaching-panel-close {
+  position: absolute;
+  width: 26px;
+  height:24px;
+  background: #333;
+  border-top: 1px solid #444;
+  border-left: 1px solid #444;
+  border-right: 1px solid #444;
+  top: -25px;
+  left: 20px;
+}
+
+.biblebook-hover{
+  cursor: pointer;
+  position: absolute;
+  width: 91%;
+  height: 100.5%;
+  &:hover {
+    background: rgba(0,0,0,0.5);
+    &:after {
+      color: white;
+      content: "play";
+      position: absolute;
+      left: 41%;
+      top: 41%;
+      padding: 10px;
+      border-radius: 3px;
+      font-size: 24px;
+      background: rgba(255,255,255,0.3);
+    }
+  }
+}
+
+.button2 {
+  border: 1px solid #222;
+  padding: 4px 30px;
+  cursor:pointer;
+  &:hover {
+    background: #222;
+    color: white;
+  }
+}
 
 .tall-pic {
   margin: 50px auto;
 }
 .biblebook-cover {
   position: relative;
-  z-index: 11;
+  z-index: 7;
+  margin: 40px 0px 70px;
 }
 
 .fancy-stratum {
@@ -196,14 +297,37 @@ h2 {
   padding: 10px 0px;
 }
 
+.book-buy {
+  margin: 30px 0px;
+}
 .one {
   @extend .fancy-stratum;
   // background: #3498db;
+  &:after {
+    content: '';
+    width: 100%;
+    height: 30px;
+    background: #e4e4e4;
+    left: 0px;
+    bottom: -30px;
+    position: absolute;
+  }
 }
 
 .two {
   @extend .fancy-stratum;
-  background: #2980b9;
+  border-bottom: 12px solid #333;
+  box-shadow: 20px 0px 30px #111;
+}
+
+.three {
+  @extend .fancy-stratum;
+  p {
+    color: white;
+  }
+  h1 {
+    color: white;
+  }
 }
 
 // Triangles
@@ -267,7 +391,7 @@ h2 {
 
 .icon2 {
   background-color: rgba(0,0,0,0.4);
-  margin: 40px auto 20px;
+  margin: 40px auto 50px;
   width: 190px;
   height: 190px;
   text-align: center;
