@@ -10,7 +10,7 @@ $ ->
   #nav Scroll
   pagePlace = ->
     pagePosition = $("body").scrollTop()
-    if pagePosition > 10
+    if pagePosition > 30
       $("#main-nav").removeClass("old-nav").addClass("new-nav")
     else
       $("#main-nav").removeClass("new-nav").addClass("old-nav")
@@ -38,6 +38,13 @@ $ ->
           $(".teaching-panels").animate(left: "0px", 450)
         )
       )
+
+  # click close button teaching teaching-panel
+  $(".teaching-panel-close").on "click", ->
+     $(".teaching-panels").animate(left: "-120px", 450, ->
+        $(".teaching-panel").hide()
+      )
+
 
 
 

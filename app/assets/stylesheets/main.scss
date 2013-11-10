@@ -75,6 +75,9 @@ h2 {
 .color-3 {
   background: #e4e4e4;
 }
+.color-4 {
+  background: white;
+}
 .back-1 {
   background: url(image_path("back-dimond.png")) white;
   background-position: bottom;
@@ -84,7 +87,7 @@ h2 {
   background: url(image_path("blueprint.png"));
 }
 .back-3 {
-  border: 8px solid rgba(255,255,255,0.3);
+  border: 5px solid rgba(255,255,255,0.3);
   border-radius: 10px;
   h1 {
     background: rgba(0,0,0,0.5);
@@ -94,20 +97,73 @@ h2 {
     text-shadow: 0px -1px 0px rgba(0,0,0,0.3);
   }
 }
+
 .fancy-border {
-  border-top: 8px solid transparent;
+  border-top: 5px solid transparent;
   position: relative;
   &:after {
-    bottom: -8px;
+    bottom: -5px;
     content: '';
     position: absolute;
     width: 100%;
-    height: 8px;
+    height: 5px;
     left: 0px;
     background: rgba(255,255,255,0.3);
   }
 }
-
+.fb-wraper {
+  top: -40px;
+  position:absolute;
+  width: 100%;
+  .fancy-border-top {
+    position: relative;
+    &:after {
+      top: -5px;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      left: 0px;
+      background: rgba(255,255,255,0.3);
+    }
+  }
+}
+.negitive-top{
+  position: absolute;
+  width: 100%;
+  top: -37px;
+}
+.corners {
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 7;
+  width: 8px;
+  height: 8px;
+}
+.top-left {
+  @extend .corners;
+  background: url(image_path("top-left.png"));
+  left: 0px;
+  top: 0px;
+}
+.top-right {
+  @extend .corners;
+  background: url(image_path("top-right.png"));
+  right: 0px;
+  top: 0px;
+}
+.bottom-left {
+  @extend .corners;
+  background: url(image_path("bottom-left.png"));
+  left: 0px;
+  bottom: 0px;
+}
+.bottom-right {
+  @extend .corners;
+  background: url(image_path("bottom-right.png"));
+  right: 0px;
+  bottom: 0px;
+}
 .padding {
   padding: 0px;
 }
@@ -116,9 +172,13 @@ h2 {
   margin-top: 20px;
 }
 
+.bottom-margin-height {
+  margin-bottom: 20px;
+  height: 40px;
+}
+
 #main-nav {
   color: white;
-  height: 72px;
   top: 0px;
   position: fixed;
   width: 100%;
@@ -132,7 +192,6 @@ h2 {
       font-size: 20px;
       float:left;
       list-style-type: none;
-      padding: 20px;
       text-align: center;
       width: 20%;
       &:hover {
@@ -142,12 +201,19 @@ h2 {
   }
 }
 .old-nav{
-  background: rgba(0,0,0,0.5);
+  ul {
+    li {
+      padding: 32px 0px;
+    }
+  }
 }
 .new-nav {
   background: rgba(0, 0, 0, 1);
-  box-shadow: 0 -1px 0 #333 inset;
-  border-bottom: 1px solid #000;
+  ul {
+    li {
+      padding: 5px 0px;
+    }
+  }
 }
 
 
@@ -174,7 +240,7 @@ h2 {
 
 .page-buffer {
   position: relative;
-  margin: 30px 0px;
+  margin: 80px 0px;
 }
 
 .page-buffer-color {
@@ -187,9 +253,9 @@ h2 {
 }
 
 .teaching-panels {
-  background: #21242C;
-  box-shadow: -2px 0px 6px #000 inset;
-  border-right: 1px solid #000;
+  background: #eee;
+  box-shadow: -1px 0px 4px #333 inset;
+  border-right: 1px solid #444;
   height: 100%;
   margin:20px 0 0 0;
   position: fixed;
@@ -198,38 +264,43 @@ h2 {
   width: 120px;
   z-index: 9;
   .teaching-panel {
-    margin-top: 120px;
+    margin-top: 140px;
     .teaching-image {
       left: 0px;
       top: 0px;
       position: absolute;
       width: 100%;
       display:none;
-    .teaching-image:first {
-      display: block;
-    }
-      @extend .clearfix;
       img {
         width: 100%;
       }
     }
+    .teaching-image:first-child {
+      display: block;
+    }
     .teaching-item {
-      @extend .clearfix;
       cursor: pointer;
       width: 100%;
-      border-bottom: 1px solid rgba(255,255,255,0.4);
+      border-bottom: 1px solid rgba(0,0,0,0.4);
       position: relative;
       &:hover {
-        background: rgba(255,255,255,0.4);
+        background: rgba(0,0,0,0.7);
+        color: white;
+      }
+      &:hover > .play-this-teaching {
+        display: block;
+      }
+      &:hover > p {
+        color: #999;
       }
       p {
-        color: white;
         margin:0px;
-        text-align: left;
+
       }
       .play-this-teaching {
+        display: none;
         position: absolute;
-        right: 5px;
+        left: 5px;
         bottom: 0px;
         padding: 3px 0 0 0;
       }
@@ -241,34 +312,57 @@ h2 {
   }
 }
 .teaching-panel-close {
+  background: #eee;
+  cursor: pointer;
   position: absolute;
-  width: 26px;
-  height:24px;
-  background: #333;
+  width: 100%;
+  height: 20px;
   border-top: 1px solid #444;
   border-left: 1px solid #444;
   border-right: 1px solid #444;
-  top: -25px;
-  left: 20px;
+  top: -20px;
+  left: 0px;
+  &:hover {
+    background: #222;
+    color: white;
+  }
 }
-
+.teaching-chapter {
+  background: #111;
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #222;
+  color: white;
+  left: 0px;
+  height: 23px;
+  top: 119px;
+  line-height: 1.1em;
+  padding: 0 0 0 1px;
+  position: absolute;
+  width: 100%;
+  z-index: 9;
+}
+.bigger {
+  font-size: 125%;
+  color: #777;
+}
 .biblebook-hover{
+  box-shadow: 0px 0px 26px #000;
   cursor: pointer;
   position: absolute;
   width: 91%;
-  height: 100.5%;
+  height: 100%;
   &:hover {
     background: rgba(0,0,0,0.5);
     &:after {
-      color: white;
+
       content: "play";
       position: absolute;
-      left: 41%;
-      top: 41%;
-      padding: 10px;
-      border-radius: 3px;
+      left: 34%;
+      top: 34%;
+      padding: 40px 30px;
+      border-radius: 50%;
       font-size: 24px;
-      background: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.7);
     }
   }
 }
@@ -284,12 +378,12 @@ h2 {
 }
 
 .tall-pic {
-  margin: 50px auto;
+  margin: 20px auto;
 }
 .biblebook-cover {
   position: relative;
   z-index: 7;
-  margin: 40px 0px 70px;
+  margin: 40px 0px 170px;
 }
 
 .fancy-stratum {
@@ -302,7 +396,6 @@ h2 {
 }
 .one {
   @extend .fancy-stratum;
-  // background: #3498db;
   &:after {
     content: '';
     width: 100%;
@@ -391,7 +484,7 @@ h2 {
 
 .icon2 {
   background-color: rgba(0,0,0,0.4);
-  margin: 40px auto 50px;
+  margin: 40px auto 140px;
   width: 190px;
   height: 190px;
   text-align: center;

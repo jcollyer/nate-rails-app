@@ -59,7 +59,7 @@ $ ->
     $(".container").css "margin-bottom", "0px"
 
 
-  $(document).on "click", ".play-this-teaching", ->
+  $(document).on "click", ".teaching-item", ->
     $(".spin").css "-webkit-animation", "spin 5s infinite"
     $(".spin").css "-moz-animation",    "spin 5s infinite"
     $(".spin").css "-o-animation",      "spin 5s infinite"
@@ -70,7 +70,8 @@ $ ->
     if $(window).width() < 768
       $(".container").css "margin-bottom", "170px"
     audioPlayer.fadeIn()
-    $button = $(this)
+    $button = $(this).find(".play-this-teaching")
+    console.log $button
     mediaPath =  $button.data("mp3")
     bibleBook = $("#teaching_biblebook").text()
     titlePath = $button.data("title")
