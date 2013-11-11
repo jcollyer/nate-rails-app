@@ -8,7 +8,7 @@
         <%= image_tag biblebook.image.url(:thumb) %>
       </div>
       <div class="teaching-item" data-id="<%= teaching.biblebook_id %>">
-        <div class="play-this-teaching button-play-list" data-name="<%= teaching.name %>" data-mp3="<%= teaching.mp3 %>" data-refurl="">
+        <div class="play-this-teaching button-play-list" data-name="<%= teaching.name %>" data-mp3="<%= teaching.mp3 %>" data-refurl="<%= teaching.refurl %>" data-biblebook="<%= teaching.biblebook.name %>">
         </div>
         <p> <%= teaching.name %></p>
       </div>

@@ -10,7 +10,7 @@
           <th>Position</th>
           <th>Biblebook</th>
           <th>MP3</th>
-          <th></th>
+          <th>Ref URL</th>
           <th></th>
           <th></th>
           <th></th>
@@ -24,6 +24,7 @@
             <td><%= teaching.position %></td>
             <td><%= teaching.biblebook.name %></td>
             <td><%= image_tag teaching.biblebook.image.url(:thumb) %></td>
+            <td><%= teaching.refurl %></td>
             <td>
               <audio controls>
                 <source src="<%= teaching.mp3%>" type="audio/ogg">

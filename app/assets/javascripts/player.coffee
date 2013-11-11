@@ -73,8 +73,8 @@ $ ->
     $button = $(this).find(".play-this-teaching")
     console.log $button
     mediaPath =  $button.data("mp3")
-    bibleBook = $("#teaching_biblebook").text()
-    titlePath = $button.data("title")
+    bibleBook = $button.data("biblebook")
+    titlePath = $button.data("name")
     refurlPath = $button.data("refurl")
     imagePath = $(".book_image").attr("src")
     downloadMp3 = mediaPath
