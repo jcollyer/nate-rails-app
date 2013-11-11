@@ -194,8 +194,10 @@ h2 {
       list-style-type: none;
       text-align: center;
       width: 20%;
+      text-transform: uppercase;
       &:hover {
-        background: #333;
+        background: rgba(0,0,0,0.5);
+        border-radius: 5px;
       }
     }
   }
@@ -203,39 +205,50 @@ h2 {
 .old-nav{
   ul {
     li {
-      padding: 32px 0px;
+      margin-top: 15px;
+      padding: 12px 0px;
     }
   }
 }
 .new-nav {
-  background: rgba(0, 0, 0, 1);
+  background: #333;
   ul {
     li {
+      margin-top: 0px;
       padding: 5px 0px;
     }
   }
 }
 
-
-#user {
-  background: #eee;
-  height: 70px;
-  top: 0px;
-  position: fixed;
-  width: 220px;
-  z-index: 10;
-}
-
-
 .logo {
   background-image: url(image_path("logo.png"));
   background-repeat: no-repeat;
   background-size: 100%;
-  left: 4px;
-  height: 160px;
-  top: -10px;
   position: absolute;
-  width: 160px;
+}
+.old-logo{
+  left: 4px;
+  height: 130px;
+  top: 0px;
+  opacity: 0.4;
+  width: 130px;
+}
+.new-logo {
+  left: 20px;
+  height: 40px;
+  top: 0px;
+  opacity: 1;
+  width: 40px;
+  &:before {
+    width: 22px;
+    height: 20px;
+    content: '';
+    position: absolute;
+    background: white;
+    top: 5px;
+    left: 8px;
+    z-index: -1;
+  }
 }
 
 .logo-light {
@@ -525,7 +538,14 @@ h2 {
 
 
 
-
+#user {
+  background: #eee;
+  height: 70px;
+  top: 0px;
+  position: fixed;
+  width: 220px;
+  z-index: 10;
+}
 
 .absolute {
   position: absolute;

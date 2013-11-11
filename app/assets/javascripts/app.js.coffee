@@ -3,7 +3,7 @@ $ ->
   $("#main-nav li").click ->
     el   = $(this).text()
     temp = "#" + el + "-link"
-    scroll = $(temp).offset().top - 95
+    scroll = $(temp).offset().top - 125
     $("html, body").animate( scrollTop: scroll, 250)
 
 
@@ -12,8 +12,10 @@ $ ->
     pagePosition = $("body").scrollTop()
     if pagePosition > 30
       $("#main-nav").removeClass("old-nav").addClass("new-nav")
+      $(".logo").removeClass("old-logo").addClass("new-logo")
     else
       $("#main-nav").removeClass("new-nav").addClass("old-nav")
+      $(".logo").removeClass("new-logo").addClass("old-logo")
   $(window).scroll ->
     pagePlace()
 
