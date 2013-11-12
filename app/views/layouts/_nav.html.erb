@@ -1,10 +1,26 @@
-<nav id="main-nav" class="old-nav">
-  <div class="logo old-logo">&nbsp;</div>
-  <ul>
-    <li>about</li>
-    <li>writing</li>
-    <li>teachings</li>
-    <li>calvary</li>
-    <li>social</li>
-  </ul>
-</nav>
+<% if current_user %>
+  <div class="row" id="user">
+    <div class="small-12 large-2 columns">
+      Logged in as <%= current_user.email %>.
+    </div>
+    <div class="small-12 large-2 columns">
+      <%= link_to "Log out", log_out_path %>
+    </div>
+    <div class="small-12 large-2 columns">
+      <%= link_to "Teachings", teachings_path %>
+      <div>&nbsp;</div>
+      <%= link_to "Biblebooks", biblebooks_path %>
+    </div>
+  </div>
+<% else %>
+  <nav id="main-nav" class="old-nav">
+    <div class="logo old-logo">&nbsp;</div>
+    <ul>
+      <li>about</li>
+      <li>writing</li>
+      <li>teachings</li>
+      <li>calvary</li>
+      <li>social</li>
+    </ul>
+  </nav>
+<% end %>
