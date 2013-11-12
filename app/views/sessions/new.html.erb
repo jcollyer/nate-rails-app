@@ -4,15 +4,15 @@
   </div>
 <%= form_tag sessions_path do %>
   <div class="large-6 small-12 columns">
-    <%= label_tag :email %><br />
+    <h2><%= label_tag :email %></h2>
     <%= text_field_tag :email, params[:email] %>
   </div>
   <div class="large-6 small-12 columns">
-    <%= label_tag :password %><br />
+    <h2><%= label_tag :password %></h2>
     <%= password_field_tag :password %>
   </div>
   <div class="small-12 columns">
-    <%= submit_tag "Log in" %>
+    <%= submit_tag "Log in", :class => "button2" %>
   </div>
 <% end %>
 </div>
