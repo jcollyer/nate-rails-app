@@ -6,12 +6,13 @@
     <h1><%= @biblebook.name %></h1>
   </div>
    <div class="small-12 columns">
-    <% if current_user %>
-      <%= link_to 'Edit', edit_biblebook_path(@biblebook) %>
-    <% end %>
   </div>
   <div class="small-12 large-6 columns">
     <img src="<%= @biblebook.image.url(:medium) %>">
+    <% if current_user %>
+      <h3><%= link_to 'Edit', edit_biblebook_path(@biblebook) %></h3>
+      <h3><%= link_to 'Back', biblebooks_path %></h3>
+    <% end %>
   </div>
   <div class="small-12 large-6 columns biblebook_list">
     <div id="jp_container_1" class="jp-playlist">
@@ -27,9 +28,6 @@
         </li>
       <% end %>
       </ul>
-    </div>
-    <div class="small-12 columns">
-     <%= link_to 'Back', biblebooks_path %>
     </div>
   </div>
 
