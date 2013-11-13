@@ -3,16 +3,18 @@
     <h1>Log in</h1>
   </div>
 <%= form_tag sessions_path do %>
-  <div class="large-6 small-12 columns">
+  <div class="small-4 columns">
+    &nbsp;
+  </div>
+  <div class="small-4 columns">
     <h2><%= label_tag :email %></h2>
     <%= text_field_tag :email, params[:email] %>
-  </div>
-  <div class="large-6 small-12 columns">
     <h2><%= label_tag :password %></h2>
     <%= password_field_tag :password %>
-  </div>
-  <div class="small-12 columns">
     <%= submit_tag "Log in", :class => "button2" %>
+  </div>
+  <div class="small-4 columns">
+    &nbsp;
   </div>
 <% end %>
 </div>
