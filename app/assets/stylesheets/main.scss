@@ -61,6 +61,13 @@ h2 {
 }
 table {
   width: 100%;
+  thead {
+    tr {
+      th {
+        text-align: center;
+      }
+    }
+  }
 }
 
 .gradi-1 {
