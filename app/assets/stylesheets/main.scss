@@ -35,10 +35,10 @@ body {
 }
 
 a {
-  color: #333;
-  padding: 0px 7px;
   border: 1px solid rgba(0,0,0,0.5);
   border-radius: 2px;
+  color: #333;
+  padding: 0px 7px;
 }
 
 p {
@@ -516,6 +516,7 @@ table {
 
 .icon2 {
   background-color: rgba(0,0,0,0.4);
+  cursor: pointer;
   margin: 40px auto 140px;
   width: 190px;
   height: 190px;
@@ -536,7 +537,9 @@ table {
     transform: scale(1.2);
   }
 }
-
+a.social {
+  border: 0;
+}
 
 
 
