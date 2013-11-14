@@ -32,18 +32,18 @@ $ ->
     if $(".teaching-panels").css("left") == "-120px"
       $(".teaching-panel").hide()
       $(".teaching-panel").find("[data-id='" + theID + "']").parent(".teaching-panel").show()
-      $(".teaching-panels").animate(left: "0px", 450)
+      $(".teaching-panels").animate(left: "0px", 250)
     else
-      $(".teaching-panels").animate(left: "-120px", 450, ->
+      $(".teaching-panels").animate(left: "-120px", 150, ->
         $(".teaching-panel").hide()
         $(".teaching-panel").find("[data-id='" + theID + "']").parent(".teaching-panel").show( ->
-          $(".teaching-panels").animate(left: "0px", 450)
+          $(".teaching-panels").animate(left: "0px", 150)
         )
       )
 
   # click close button teaching teaching-panel
   $(".teaching-panel-close").on "click", ->
-     $(".teaching-panels").animate(left: "-120px", 450, ->
+     $(".teaching-panels").animate(left: "-120px", 250, ->
         $(".teaching-panel").hide()
       )
 
