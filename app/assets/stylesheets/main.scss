@@ -175,6 +175,18 @@ table {
   right: 0px;
   bottom: 0px;
 }
+.bottom-left-dark {
+  @extend .corners;
+  background: url(image_path("bottom-left-dark.png"));
+  left: 0px;
+  bottom: 0px;
+}
+.bottom-right-dark {
+  @extend .corners;
+  background: url(image_path("bottom-right-dark.png"));
+  right: 0px;
+  bottom: 0px;
+}
 .padding {
   padding: 0px;
 }
@@ -511,6 +523,11 @@ table {
   padding: 10px 0px 0 20px;
 }
 
+.calvary {
+  p {
+    color: white;
+  }
+}
 
 // Social
 
@@ -604,6 +621,9 @@ a.social {
 
 .absolute {
   position: absolute;
+}
+.relative {
+  position: relative;
 }
 
 .clearfix:after {
