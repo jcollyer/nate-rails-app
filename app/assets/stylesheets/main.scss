@@ -360,18 +360,14 @@ table {
       }
       p {
         margin:0px;
-
+        text-align: left;
+        padding: 0 0 0 4px;
       }
       .play-this-teaching {
         display: none;
         position: absolute;
-        left: 5px;
-        bottom: 0px;
-        padding: 3px 0 0 0;
-      }
-      .play-button-list {
-        width: 20px;
-        height: 20px;
+        right: 5px;
+        bottom: 3px;
       }
     }
   }
@@ -546,6 +542,46 @@ table {
 
 
 
+#loader{
+  display: none;
+  border-radius:4px;
+  background: rgba(255,255,255,0.8);
+  left:40%;
+  position:fixed;
+  padding:20px;
+  top:60px;
+  z-index: 99;
+  @media all and (max-width: 767px){
+    left: 34%;
+  }
+  @media all and (max-width: 525px){
+    left: 23%;
+  }
+  .spin {
+    border: 2px dashed #222;
+    border-radius: 50%;
+    height: 70px;
+    margin-left: 25px;
+    position: relative;
+    width: 70px;
+  }
+}
+@-webkit-keyframes spin {
+  0%   {  -webkit-transform:rotate(0deg); }
+  100% {  -webkit-transform:rotate(360deg); }
+}
+@-moz-keyframes spin {
+  0%   {  -moz-transform:rotate(0deg); }
+  100% {  -moz-transform:rotate(360deg); }
+}
+@-o-keyframes spin {
+  0%   {  -o-transform:rotate(0deg); }
+  100% {  -o-transform:rotate(360deg); }
+}
+@keyframes spin {
+  0%   {  transform:rotate(0deg); }
+  100% {  transform:rotate(360deg); }
+}
 
 
 
