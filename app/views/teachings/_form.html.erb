@@ -36,8 +36,11 @@
       <%= f.collection_select(:biblebook_id, Biblebook.all, :id, :name) %>
     </div>
     <div class="large-4 small-12 columns">
-      <h3>&nbsp;</div>
-      <h3><%= f.submit %></h3>
+
     </div>
+  </div>
+  <div class="row">
+    <h3>&nbsp;</div>
+    <h3><%= f.submit %></h3>
   </div>
 <% end %>
