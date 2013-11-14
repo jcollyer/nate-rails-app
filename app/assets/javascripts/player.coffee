@@ -82,7 +82,7 @@ $ ->
     # console.log refurlPath
     # console.log imagePath
     $(".lesson_mod_info").empty()
-    $(".lesson_mod_info").prepend("<h1 class='teaching_title'> "+bibleBook+" </h1> <h1 class='teaching_title'><span class='chapter_text'> Chapter</span>"+titlePath+" </h1> ")
+    $(".lesson_mod_info").prepend("<h1 class='teaching_title'> "+bibleBook+" </h1> <h1 class='teaching_title'><span class='chapter_text'>Chapter </span>"+ titlePath+" </h1> ")
 
     $(".mod_img").attr("src", imagePath)
     $(".player_download_url").attr("src")
