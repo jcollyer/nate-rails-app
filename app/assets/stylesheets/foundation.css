@@ -1125,7 +1125,6 @@ small {
   line-height: inherit; }
 
 code {
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: bold;
   color: #7f0a0c; }
 
@@ -4066,7 +4065,6 @@ kbd {
   border-style: solid;
   border-width: 1px;
   margin: 0;
-    : "Consolas", "Menlo", "Courier", monospace;
   font-size: 0.875em;
   padding: 0.125em 0.25em 0;
   -webkit-border-radius: 3px;
