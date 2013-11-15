@@ -34,7 +34,7 @@ group :doc do
 end
 
 group :production do
-  gem 'rails_12factor'
+  gem 'rails_12factor' # Makes running your Rails app easier. Based on the ideas behind 12factor.net
 end
 
 gem "paperclip", "~> 3.0"
