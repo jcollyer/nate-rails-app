@@ -116,6 +116,7 @@ table {
   }
   img {
     width: 200px;
+    margin-top: -10px;
   }
 }
 
@@ -228,9 +229,11 @@ table {
       text-align: center;
       width: 20%;
       text-transform: uppercase;
+      transition: all 0.5s;
       &:hover {
         background: rgba(0,0,0,0.5);
         border-radius: 5px;
+        transition: all 0.5s;
       }
     }
   }
@@ -245,6 +248,7 @@ table {
 }
 .new-nav {
   background: #333;
+  border-bottom: 1px solid #555;
   ul {
     li {
       margin-top: 0px;
@@ -405,10 +409,11 @@ table {
   position: absolute;
   width: 91%;
   height: 100%;
+  transition: all 0.5s;
   &:hover {
     background: rgba(0,0,0,0.5);
+    transition: all 0.5s;
     &:after {
-
       content: "play";
       position: absolute;
       left: 34%;
@@ -536,6 +541,20 @@ table {
 .calvary {
   p {
     color: white;
+  }
+  a {
+    border-radius: 3px;
+    color: #33;
+    border: 1px solid #444;
+    padding: 15px;
+    font-size: 25px;
+    transition: all 0.5s;
+    &:hover {
+      background: #333;
+      color: #999;
+      border: 1px solid #333;
+      transition: all 0.5s;
+    }
   }
 }
 
