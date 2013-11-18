@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-     @biblebooks = Biblebook.all
+    @biblebooks = Biblebook.find(:all, :order => "position ASC")
   end
 
 end
