@@ -26,26 +26,37 @@ $ ->
 
   #click biblebook
   $(".biblebook-hover").on "click", ->
-    $el = $(this).siblings("img")
-    theID = $el.data("biblebook")
-    console.log theID
-    if $(".teaching-panels").css("left") == "-120px"
-      $(".teaching-panel").hide()
-      $(".teaching-panel").find("[data-id='" + theID + "']").parent(".teaching-panel").show()
-      $(".teaching-panels").animate(left: "0px", 250)
-    else
-      $(".teaching-panels").animate(left: "-120px", 150, ->
-        $(".teaching-panel").hide()
-        $(".teaching-panel").find("[data-id='" + theID + "']").parent(".teaching-panel").show( ->
-          $(".teaching-panels").animate(left: "0px", 150)
-        )
-      )
+    $this             = $(this)
+    $el               = $this.siblings("img")
+    panels            = $(".teaching-panels")
+    panel             = $(".teaching-panel")
+    openPanelID       = $(".teaching-panel:visible").data("id")
+    pageWrapper       = $("#page-wrapper")
+    theID             = $el.data("biblebook")
+    thisPanel         = $(".teaching-panel[data-id='"+theID+"']")
+
+    windowWidth       = $(window).width()
+    negPanelsWidth    = "-160px"
+    panelsPercentage  = 160 / windowWidth
+    widthMinusPanels  = (1 - panelsPercentage) * 100 + "%"
+    unless theID == openPanelID
+      if panels.css("left") == negPanelsWidth
+        panel.hide()
+        thisPanel.show()
+        panels.animate(left: "0px", 250)
+        pageWrapper.animate(width: widthMinusPanels, 250)
+      else
+        panel.fadeOut().css("left", negPanelsWidth)
+        thisPanel.show().animate(left: "0px", 150)
+
 
   # click close button teaching teaching-panel
   $(".teaching-panel-close").on "click", ->
-     $(".teaching-panels").animate(left: "-120px", 250, ->
-        $(".teaching-panel").hide()
-      )
+    negPanelsWidth    = "-160px"
+    $("#page-wrapper").animate(width: "100%", 250)
+    $(".teaching-panels").animate(left: negPanelsWidth, 250, ->
+      $(".teaching-panel").hide()
+    )
 
 
 
