@@ -235,7 +235,8 @@ table {
       text-align: center;
       width: 20%;
       text-transform: uppercase;
-      transition: all 0.5s;
+      transition: border-radius 0.5s;
+      transition: background 0.5s;
       &:hover {
         background: rgba(0,0,0,0.5);
         border-radius: 5px;
@@ -327,8 +328,8 @@ table {
   margin:20px 0 0 0;
   position: fixed;
   top: 0px;
-  left: -120px;
-  width: 120px;
+  left: -160px;
+  width: 160px;
   z-index: 9;
   .teaching-panel-close {
     background: #eee;
@@ -353,7 +354,7 @@ table {
     color: #777;
     left: 0px;
     height: 28px;
-    top: 119px;
+    top: 159px;
     line-height: 1.3em;
     padding: 0 0 0 1px;
     position: absolute;
@@ -361,7 +362,7 @@ table {
     z-index: 9;
   }
   .teaching-panel {
-    margin-top: 145px;
+    margin-top: 185px;
     .teaching-image {
       left: 0px;
       top: 0px;
