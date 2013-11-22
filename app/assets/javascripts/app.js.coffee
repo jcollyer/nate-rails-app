@@ -13,7 +13,7 @@ $ ->
     if pagePosition > 30
       $("#main-nav").removeClass("old-nav").addClass("new-nav")
       $(".logo").removeClass("old-logo").addClass("new-logo")
-      $(".teaching-panels").css("margin-top","43px")
+      $(".teaching-panels").css("margin-top","59px")
     else
       $("#main-nav").removeClass("new-nav").addClass("old-nav")
       $(".logo").removeClass("new-logo").addClass("old-logo")
