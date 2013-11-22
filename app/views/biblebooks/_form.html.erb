@@ -12,24 +12,25 @@
   <% end %>
 
   <div class="large-4 small-12 columns">
-    <%= f.label :name %><br>
+    <h3><%= f.label :name %><br></h3>
     <%= f.text_field :name %>
   </div>
   <div class="large-4 small-12 columns">
-    <%= f.label "New testament ?" %><br>
+    <h3><%= f.label "New testament ?" %><br></h3>
     <%= f.check_box :testament %>
   </div>
   <div class="large-4 small-12 columns">
-    <%= f.label :position %><br>
+    <h3><%= f.label :position %><br></h3>
     <%= f.number_field :position %>
   </div>
 
 
   <div class="large-4 small-12 columns">
-    <%= f.label :image %>
+    <h3><%= f.label :image %></h3>
     <%= f.file_field :image %>
   </div>
   <div class="large-4 small-12 columns">
-    <%= f.submit %>
+    <h3>&nbsp;</h3>
+    <h3><%= f.submit %></h3>
   </div>
 <% end %>
