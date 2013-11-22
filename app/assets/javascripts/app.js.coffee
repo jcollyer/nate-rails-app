@@ -51,7 +51,8 @@ $ ->
         pageWrapper.animate(width: widthMinusPanels, 250)
         close.css("right", "-46px")
       else
-        panel.fadeOut().css("left", negPanelsWidth)
+        panel.css("left": negPanelsWidth, "display": "none")
+        console.log negPanelsWidth
         thisPanel.show().animate(left: "0px", 150)
 
 
