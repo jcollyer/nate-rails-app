@@ -46,7 +46,7 @@ a {
   color: #333;
   padding: 0px 7px;
 }
-a.jp-play{border:none;}
+a.jp-play, a.jp-pause, a.icon-volume, a.player_refurl,  a.button-download {border:none;}
 
 p {
   color: rgba(0,0,0,0.5);
@@ -272,11 +272,10 @@ table {
   cursor: pointer;
 }
 .old-logo{
-  left: 4px;
-  height: 130px;
-  top: 0px;
-  opacity: 0.4;
-  width: 130px;
+  left: 30px;
+  height: 120px;
+  top: 5px;
+  width: 120px;
 }
 .new-logo {
   left: 20px;
@@ -331,7 +330,6 @@ table {
   top: 0px;
   left: -160px;
   width: 160px;
-  z-index: 9;
   .teaching-panel-close {
     background: #333;
     cursor: pointer;
@@ -369,8 +367,9 @@ table {
     z-index: 9;
   }
   .teaching-panel {
-    margin-top: 185px;
     display: none;
+    position: relative;
+    padding-top:187px;
     .teaching-image {
       left: 0px;
       top: 0px;
@@ -429,35 +428,6 @@ table {
 
 .bigger {
   font-size: 125%;
-}
-.biblebook-hover{
-  box-shadow: 0px 0px 26px #000;
-  cursor: pointer;
-  position: absolute;
-  top: 0px;
-  width: 91%;
-  height: 100%;
-  transition: all 0.5s;
-  z-index: 9;
-  &:hover {
-    background: rgba(0,0,0,0.5);
-    transition: all 0.5s;
-    &:after {
-      content: "play";
-      color: white;
-      position: absolute;
-      font-size: 80px;
-      left: 24%;
-      line-height: 1.7em;
-      top: 26%;
-      padding: 3px;
-      height: 160px;
-      width: 160px;
-      border-radius: 50%;
-      text-shadow: 0 1px 0 #333 inset;
-      background: rgba(255,255,255,0.7);
-    }
-  }
 }
 
 .button2 {
@@ -606,15 +576,15 @@ table {
   font-size: 40px;
   border-radius: 200px;
   box-shadow: none;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 
   &:hover {
     box-shadow: 0px 0px 0px  4px rgba(0,0,0,0.5);
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
   }
 }
 a.social {
