@@ -1,5 +1,5 @@
 class Biblebook < ActiveRecord::Base
-  has_many :teachings
+  has_many :teachings, :order => "position ASC"
 
 
   has_attached_file :image,
