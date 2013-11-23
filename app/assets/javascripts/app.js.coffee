@@ -6,7 +6,11 @@ $ ->
     scroll = $(temp).offset().top - 125
     $("html, body").animate( scrollTop: scroll, 250)
 
-
+  # Safari styles
+  if navigator.userAgent.match(/AppleWebKit/) && ! navigator.userAgent.match(/Chrome/)
+    console.log "true"
+    $(".fancy-border-top.color-4").addClass("fancy-top-right")
+    $(".fancy-border-top.color-2").addClass("fancy-top-right-dark")
   #nav Scroll
   pagePlace = ->
     pagePosition = $(window).scrollTop()
