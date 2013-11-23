@@ -25,6 +25,23 @@ $ ->
   $(".logo").on "click", ->
     $("html, body").animate( scrollTop: 0, 450)
 
+  windowWrapperReSize = ->
+    windowWidth       = $(window).width()
+    negPanelsWidth    = "-160px"
+    panelsPercentage  = 160 / windowWidth
+    widthMinusPanels  = (1 - panelsPercentage) * 100 + "%"
+    $("#page-wrapper").css "width", widthMinusPanels
+
+  windowWrapperSize = ->
+    windowWidth       = $(window).width()
+    negPanelsWidth    = "-160px"
+    panelsPercentage  = 160 / windowWidth
+    widthMinusPanels  = (1 - panelsPercentage) * 100 + "%"
+    $("#page-wrapper").animate(width: widthMinusPanels, 250)
+
+
+  $(window).resize ->
+    windowWrapperReSize()
 
   #click biblebook
   $(".biblebook-hover").on "click", ->
@@ -37,22 +54,17 @@ $ ->
     theID             = $el.data("biblebook")
     thisPanel         = $(".teaching-panel[data-id='"+theID+"']")
     close             = $(".teaching-panel-close")
-    #figure out how much to push screen right
-    windowWidth       = $(window).width()
-    negPanelsWidth    = "-160px"
-    panelsPercentage  = 160 / windowWidth
-    widthMinusPanels  = (1 - panelsPercentage) * 100 + "%"
 
+    negPanelsWidth    = "-160px"
     unless theID == openPanelID
       if panels.css("left") == negPanelsWidth
         panel.hide()
         thisPanel.show()
         panels.animate(left: "0px", 250)
-        pageWrapper.animate(width: widthMinusPanels, 250)
         close.css("right", "-46px")
+        windowWrapperSize()
       else
         panel.css("left": negPanelsWidth, "display": "none")
-        console.log negPanelsWidth
         thisPanel.show().animate(left: "0px", 150)
 
 
