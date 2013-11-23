@@ -1,3 +1,4 @@
+$font-raleway:    'raleway', sans-serif;
 #jp_container_1 {
   padding:0px;
   margin:0px;
@@ -271,6 +272,7 @@
 .lesson_mod_info h1 {
   color: #fff;
   font-size: 150%;
+  font-family: $font-raleway;
   line-height: 1em;
   margin:0px;
   .chapter_text {
