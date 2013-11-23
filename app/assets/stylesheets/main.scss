@@ -1,4 +1,4 @@
-// $font-raleway:    'raleway', sans-serif;
+$font-raleway:    'raleway', sans-serif;
 // $font-questrial:  'Questrial', sans-serif;
 $font-lato: 'Lato', Arial, sans-serif;
 @mixin gradi-1 {
@@ -26,7 +26,6 @@ html, body {
 body {
   background-image: url(image_path("landscape.jpg"));
   background-size: 100%;
-  // background-image: url('images/back.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
 
@@ -155,6 +154,28 @@ table {
       left: 0px;
       background: rgba(255,255,255,0.3);
     }
+  }
+}
+.fancy-top-right {
+  &:before {
+    background: #fff;
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: 0px;
+    width:2px;
+    height:40px;
+  }
+}
+.fancy-top-right-dark {
+  &:before {
+    background: #444;
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: 0px;
+    width:2px;
+    height:40px;
   }
 }
 .negitive-top{
@@ -443,6 +464,7 @@ table {
 .fancy-stratum {
   position: relative;
   padding: 10px 0px;
+  width: 100%;
 }
 
 .book-buy {
@@ -538,10 +560,6 @@ table {
 a.social {
   border: 0;
 }
-
-
-
-
 
 #loader{
   display: none;
