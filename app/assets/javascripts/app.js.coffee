@@ -9,7 +9,7 @@ $ ->
 
   #nav Scroll
   pagePlace = ->
-    pagePosition = $("body").scrollTop()
+    pagePosition = $(window).scrollTop()
     if pagePosition > 30
       $("#main-nav").removeClass("old-nav").addClass("new-nav")
       $(".logo").removeClass("old-logo").addClass("new-logo")
