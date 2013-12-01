@@ -60,27 +60,28 @@ $ ->
 
 
   $(document).on "click", ".teaching-item", ->
-    $(".spin").css "-webkit-animation", "spin 5s infinite"
-    $(".spin").css "-moz-animation",    "spin 5s infinite"
-    $(".spin").css "-o-animation",      "spin 5s infinite"
-    $(".spin").css "animation",         "spin 5s infinite"
-    $("#loader").fadeIn()
-    window.audioPlayer = $("#lesson_mod_menu")
+
+    $(".teaching-item").removeClass("active-item")
     $(".container").css "margin-bottom", "100px"
-    if $(window).width() < 768
-      $(".container").css "margin-bottom", "170px"
+    $(".container").css "margin-bottom", "170px" if $(window).width() < 768
+
+    $this              = $(this)
+    $button            = $(this).find(".play-this-teaching")
+
+    window.audioPlayer = $("#lesson_mod_menu")
+    mediaPath          =  $button.data("mp3")
+    bibleBook          = $button.data("biblebook")
+    titlePath          = $button.data("name")
+    refurlPath         = $button.data("refurl")
+    imagePath          = $(".book_image").attr("src")
+    downloadMp3        = mediaPath
+
+    $(".spin").fadeIn()
+    $("#loader").fadeIn()
     audioPlayer.fadeIn()
-    $button = $(this).find(".play-this-teaching")
-    console.log $button
-    mediaPath =  $button.data("mp3")
-    bibleBook = $button.data("biblebook")
-    titlePath = $button.data("name")
-    refurlPath = $button.data("refurl")
-    imagePath = $(".book_image").attr("src")
-    downloadMp3 = mediaPath
+
+    $this.addClass("active-item")
     $("#player_download_url").attr("href", downloadMp3).attr("download", titlePath)
-    # console.log refurlPath
-    # console.log imagePath
     $(".lesson_mod_info").empty()
     $(".lesson_mod_info").prepend("<h1 class='teaching_title'> "+bibleBook+" </h1> <h1 class='teaching_title'><span class='chapter_text'>Chapter </span>"+ titlePath+" </h1> ")
 
@@ -101,10 +102,7 @@ $ ->
       ready: ->
         player.bind $.jPlayer.event.canplay, ->
           # console.log "ready"
-          $(".spin").css "-webkit-animation", "none"
-          $(".spin").css "-moz-animation", "none"
-          $(".spin").css "-ms-animation", "none"
-          $(".spin").css "animation", "none"
+          $(".spin").fadeOut()
           $("#loader").fadeOut()
         player.bind $.jPlayer.event.play, ->
           $button.removeClass "paused"
