@@ -17,7 +17,7 @@ $ ->
     if pagePosition > 30
       $("#main-nav").removeClass("old-nav").addClass("new-nav")
       $(".logo").removeClass("old-logo").addClass("new-logo")
-      $(".teaching-panels").css("margin-top","59px")
+      $(".teaching-panels").css("margin-top","57px")
     else
       $("#main-nav").removeClass("new-nav").addClass("old-nav")
       $(".logo").removeClass("new-logo").addClass("old-logo")
@@ -45,7 +45,8 @@ $ ->
 
 
   $(window).resize ->
-    windowWrapperReSize()
+    if $(".teaching-panels").hasClass("opened")
+      windowWrapperReSize()
 
   #click biblebook
   $(".biblebook-hover").on "click", ->
@@ -58,6 +59,8 @@ $ ->
     theID             = $el.data("biblebook")
     thisPanel         = $(".teaching-panel[data-id='"+theID+"']")
     close             = $(".teaching-panel-close")
+
+    $(".teaching-panels").addClass("opened")
 
     negPanelsWidth    = "-160px"
     unless theID == openPanelID
@@ -81,6 +84,7 @@ $ ->
       $(".teaching-panel").hide()
       close.css("right", "0px")
     )
+    $(".teaching-panels").removeClass("opened")
 
 
 
