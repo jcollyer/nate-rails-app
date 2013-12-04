@@ -33,14 +33,14 @@ $ ->
     windowWidth       = $(window).width()
     negPanelsWidth    = "-160px"
     panelsPercentage  = 160 / windowWidth
-    widthMinusPanels  = (1 - panelsPercentage) * 100 + "%"
+    widthMinusPanels  = ( 1 - panelsPercentage ) * 100 + "%"
     $("#page-wrapper").css "width", widthMinusPanels
 
   windowWrapperSize = ->
     windowWidth       = $(window).width()
     negPanelsWidth    = "-160px"
     panelsPercentage  = 160 / windowWidth
-    widthMinusPanels  = (1 - panelsPercentage) * 100 + "%"
+    widthMinusPanels  = ( 1 - panelsPercentage ) * 100 + "%"
     $("#page-wrapper").animate(width: widthMinusPanels, 250)
 
 
