@@ -10,25 +10,17 @@ $font-lato: 'Lato', Arial, sans-serif;
   background-image: -o-linear-gradient(top, #fff, #e4e4e4);
 }
 
-@mixin gradi-2 {
-  background: #02838f;
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#016777), to(#02838f no-repeat left));
-  background: -webkit-linear-gradient(top, #016777, #02838f no-repeat left);
-  background: -moz-linear-gradient(top, #016777, #02838f no-repeat left);
-  background: -ms-linear-gradient(top, #016777, #02838f no-repeat left);
-  background: -o-linear-gradient(top, #016777, #02838f no-repeat left);
-}
-
 html, body {
   overflow-x: hidden;
 }
 
 body {
-  background-image: url(image_path("landscape.jpg"));
-  background-size: 100%;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  // background-image: url(image_path("landscape.jpg"));
+  // background-size: 100%;
+  // background-attachment: fixed;
+  // background-repeat: no-repeat;
 
+  background: #1c638d;
   font-family: $font-lato;
   text-align: center;
 }
@@ -79,14 +71,8 @@ table {
 .gradi-1 {
   @include gradi-1
 }
-.gradi-2 {
-  @include gradi-2
-}
-.color-1 {
-  background: #e7e7e7;
- }
 .color-2 {
-  background: #3e3e3e;
+  background: #111111;
 }
 .color-3 {
   background: #e4e4e4;
@@ -94,14 +80,7 @@ table {
 .color-4 {
   background: white;
 }
-.back-1 {
-  background: url(image_path("back-dimond.png")) white;
-  background-position: bottom;
-  background-repeat: repeat-x;
-}
-.back-2 {
-  background: url(image_path("blueprint.png"));
-}
+
 .back-3 {
   border: 3px solid rgba(255,255,255,0.3);
   border-radius: 10px;
@@ -579,7 +558,7 @@ a.social {
   left:40%;
   position:fixed;
   padding:20px;
-  top:60px;
+  top:200px;
   z-index: 99;
   @media all and (max-width: 767px){
     left: 34%;
