@@ -291,26 +291,33 @@ table {
   background-image: url(image_path("logo.png"));
   background-repeat: no-repeat;
   background-size: 100%;
-  position: absolute;
   cursor: pointer;
-  z-index: -1;
+  left: 30px;
+  position: absolute;
+
 }
 .old-logo{
-  left: 30px;
   height: 120px;
   top: 5px;
   width: 120px;
   transition: all 0.5s;
 }
 .new-logo {
-  left: 180px;
-  height: 80px;
-  top: -3px;
-  width: 80px;
-  transform:rotate(-30deg);
-  -webkit-transform: rotate(-30deg);
-  -ms-transform:rotate(-30deg);
+  height: 55px;
+  top: 1px;
+  width: 55px;
   transition: all 0.5s;
+  &:after {
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    width: 40px;
+    height: 40px;
+    background: #eee;
+    z-index: -1;
+  }
 }
 
 .page-buffer {
