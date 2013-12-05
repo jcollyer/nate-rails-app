@@ -12,13 +12,13 @@
  *= require_tree .
  */
 
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+ @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
-@font-face {
+ @font-face {
   font-family: "raleway";
-  src: url("/assets/raleway_thin-webfont.eot");
+  src: url("raleway_thin-webfont.eot");
   src: local("☺"),
-    url("/assets/raleway_thin-webfont.woff") format("woff"),
-    url("/assets/raleway_thin-webfont.svg#/assets/raleway_thin-webfont") format("svg");
+    url("raleway_thin-webfont.woff") format("woff"),
+    url("raleway_thin-webfont.otf") format("opentype"),
+    url("raleway_thin-webfont.svg#raleway_thin-webfont") format("svg");
   }
-
