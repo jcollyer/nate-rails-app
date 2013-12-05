@@ -1,4 +1,4 @@
-$font-raleway:    'raleway', sans-serif;
+$font-raleway: 'raleway', sans-serif;
 // $font-questrial:  'Questrial', sans-serif;
 $font-lato: 'Lato', Arial, sans-serif;
 @mixin gradi-1 {
@@ -56,6 +56,12 @@ h2 {
   font-family: $font-lato;
   margin: 0em;
   line-height: 1em;
+}
+.hh2 {
+  font-family: $font-raleway;
+  margin: 30px 0px;
+  line-height: 2em;
+  border-bottom: 1px solid #ddd;
 }
 table {
   width: 100%;
