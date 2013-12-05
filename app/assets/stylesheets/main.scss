@@ -457,9 +457,11 @@ table {
   margin: 20px auto;
 }
 .biblebook-cover {
+  float: left;
+  margin: 20px 2%;
   position: relative;
+  width: 21%;
   z-index: 7;
-  margin: 20px 0px;
 }
 
 .fancy-stratum {

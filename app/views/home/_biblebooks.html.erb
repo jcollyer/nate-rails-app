@@ -19,13 +19,17 @@
       <h2>A through the bible studio series</h2>
     </div>
     <span id="teachings-link"></span>
-  <% @biblebooks.each do |biblebook| %>
-    <div class="small-6 large-4 columns biblebook-cover">
-      <%= image_tag biblebook.image.url(:large), :data => { :biblebook => biblebook.id }  %>
-      <div class="biblebook-hover">&nbsp;</div>
-      <div class="home-vol">play</div>
-    </div>
-  <% end %>
   </div>
+
+  <div class="clearfix">
+    <% @biblebooks.each do |biblebook| %>
+      <div class="biblebook-cover">
+        <%= image_tag biblebook.image.url(:large), :data => { :biblebook => biblebook.id },  class: "br-small" %>
+        <div class="biblebook-hover">&nbsp;</div>
+        <div class="home-vol">play</div>
+      </div>
+    <% end %>
+  </div>
+
 </div>
 <div class="page-buffer-2">&nbsp;</div>
