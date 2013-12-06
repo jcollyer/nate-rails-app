@@ -88,11 +88,11 @@ table {
 }
 
 .back-3 {
-  border: 3px solid rgba(255,255,255,0.3);
-  border-radius: 10px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 7px;
   h1 {
     background: rgba(255,255,255,0.8);
-    border-radius: 7px;
+    border-radius: 5px;
     border: 1px solid #ccc;
     box-shadow: 0px 0px 1px 1px #fff inset;
     color: #111;
@@ -115,14 +115,14 @@ table {
   border-radius: 2px;
 }
 .fancy-border {
-  border-top: 3px solid transparent;
+  border-top: 2px solid transparent;
   position: relative;
   &:after {
-    bottom: -3px;
+    bottom: -2px;
     content: '';
     position: absolute;
     width: 100%;
-    height: 3px;
+    height: 2px;
     left: 0px;
     background: rgba(255,255,255,0.3);
   }
@@ -156,11 +156,11 @@ table {
   .fancy-border-top {
     position: relative;
     &:after {
-      top: -3px;
+      top: -2px;
       content: '';
       position: absolute;
       width: 100%;
-      height: 3px;
+      height: 2px;
       left: 0px;
       background: rgba(255,255,255,0.3);
     }
@@ -170,7 +170,7 @@ table {
 .negitive-top{
   position: absolute;
   width: 100%;
-  top: -34px;
+  top: -33px;
 }
 .corners {
   background-repeat: no-repeat;
