@@ -1,10 +1,12 @@
 Nate::Application.routes.draw do
+
   root to: "home#index"
 
   resources :biblebooks
   resources :teachings
   resources :users
   resources :sessions
+  resources :abouts
 
   #all for authentication ########
 
