@@ -1,16 +1,16 @@
 <% if current_user %>
 <div id="user">
-  <div class="page-buffer">&nbsp;</div>
   <div class="row">
     <div class="small-12 columns">
       <h1>Logged in as <%= current_user.email %></h1>
     </div>
   </div>
   <div class="row">
-    <div class="small-12 large-4 columns">
+    <div class="small-12 large-2 columns">
       <h3>&nbsp;</h3>
     </div>
     <div class="small-12 large-4 columns">
+    <div class="small-12 large-8 columns">
       <h3>
         <%= link_to "Teachings", teachings_path %>
         <%= link_to "Biblebooks", biblebooks_path %>
@@ -18,7 +18,7 @@
         <%= link_to "Log out", log_out_path %>
       </h3>
     </div>
-    <div class="small-12 large-4 columns">
+    <div class="small-12 large-2 columns">
       <h3>&nbsp;</h3>
     </div>
   </div>
