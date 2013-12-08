@@ -1,6 +1,33 @@
-<h1>Editing about</h1>
+<div class="row">
+  <h1>Editing about</h1>
+</div>
+<div class="row">
+  <%= form_for(@about) do |f| %>
+    <% if @about.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@about.errors.count, "error") %> prohibited this about from being saved:</h2>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @about %> |
-<%= link_to 'Back', abouts_path %>
+        <ul>
+        <% @about.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="small-12 columns">
+      <div class="field">
+        <%= f.text_area :body, class: "edit-about" %>
+      </div>
+    </div>
+    <div class="small-12 columns">
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <h3><%= link_to 'Back', abouts_path %></h3>
+  </div>
+</div>
