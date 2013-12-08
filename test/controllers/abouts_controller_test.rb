@@ -44,6 +44,6 @@ class AboutsControllerTest < ActionController::TestCase
       delete :destroy, id: @about
     end
 
-    assert_redirected_to abouts_path
+    assert_redirected_to root_url
   end
 end
