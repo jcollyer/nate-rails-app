@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @about.body %>
-</p>
+<div class="row">
+  <div class="small-12 columns">
+    <%=  markdown(@about.body) %>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_about_path(@about) %> |
-<%= link_to 'Back', abouts_path %>
+<div class="row">
+  <div class="small-12 columns">
+    <h3><%= link_to 'Edit', edit_about_path(@about) %></h3>
+    <h3><%= link_to 'Back', root_url %></h3>
+  </div>
+</div>
+
