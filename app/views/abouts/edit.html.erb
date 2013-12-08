@@ -1,5 +1,6 @@
 <div class="row">
   <h1>Editing about</h1>
+  <h3><%= link_to 'Back', abouts_path %></h3>
 </div>
 <div class="row">
   <%= form_for(@about) do |f| %>
@@ -20,14 +21,11 @@
       </div>
     </div>
     <div class="small-12 columns">
+      <br>
       <div class="actions">
         <%= f.submit %>
       </div>
+      <br>
     </div>
   <% end %>
-</div>
-<div class="row">
-  <div class="small-12 columns">
-    <h3><%= link_to 'Back', abouts_path %></h3>
-  </div>
 </div>
