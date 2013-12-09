@@ -13,8 +13,13 @@
     </p>
 
     <p>
+      <h3>Image:</h3>
+      <%= image_tag @book.image.url(:large) %>
+    </p>
+
+    <p>
       <h3>Buylink:</h3>
-      <%= @book.buylink %>
+      <a href="<%= @book.buylink %>">Amazon</a>
     </p>
 
     <h3><%= link_to 'Edit', edit_book_path(@book) %></h3>

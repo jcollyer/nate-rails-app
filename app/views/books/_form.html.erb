@@ -17,15 +17,19 @@
 <div class="row">
   <div class="small-12 columns">
     <div class="field">
-      <%= f.label :title %><br>
+      <h3><%= f.label :title %></h3><br>
       <%= f.text_field :title %>
     </div>
     <div class="field">
-      <%= f.label :body %><br>
+      <h3><%= f.label :body %></h3><br>
       <%= f.text_area :body, class: "text-area" %>
     </div>
     <div class="field">
-      <%= f.label :buylink %><br>
+      <h3><%= f.label :image %></h3><br>
+      <%= f.file_field :image %>
+    </div>
+    <div class="field">
+      <h3><%= f.label :buylink %></h3><br>
       <%= f.text_area :buylink %>
     </div>
     <div class="actions">
