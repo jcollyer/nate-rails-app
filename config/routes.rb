@@ -1,8 +1,5 @@
 Nate::Application.routes.draw do
 
-  get "books/title"
-  get "books/body:text"
-  get "books/buylink"
   root to: "home#index"
 
   resources :biblebooks
