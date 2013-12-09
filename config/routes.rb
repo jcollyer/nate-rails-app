@@ -1,5 +1,8 @@
 Nate::Application.routes.draw do
 
+  get "books/title"
+  get "books/body:text"
+  get "books/buylink"
   root to: "home#index"
 
   resources :biblebooks
@@ -7,6 +10,7 @@ Nate::Application.routes.draw do
   resources :users
   resources :sessions
   resources :abouts
+  resources :books
 
   #all for authentication ########
 
