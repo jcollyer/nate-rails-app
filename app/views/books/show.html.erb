@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="small-12 columns">
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <h3>Title:</h3>
+      <%= @book.title %>
+    </p>
+
+    <p>
+      <h3>Body:</h3>
+      <%= @book.body %>
+    </p>
+
+    <p>
+      <h3>Buylink:</h3>
+      <%= @book.buylink %>
+    </p>
+
+    <h3><%= link_to 'Edit', edit_book_path(@book) %></h3>
+    <h3><%= link_to 'Back', books_path %></h3>
+  </div>
+</div>

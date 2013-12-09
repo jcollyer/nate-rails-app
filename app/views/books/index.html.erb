@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Listing books</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Buylink</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @books.each do |book| %>
+          <tr>
+            <td><%= book.title %></td>
+            <td><%= book.buylink %></td>
+            <td><%= link_to 'Show', book %></td>
+            <td><%= link_to 'Edit', edit_book_path(book) %></td>
+            <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <h3><%= link_to 'New Book', new_book_path %></h3>
+    <h3><%= link_to 'Back', root_url %></h3>
+  </div>
+</div>
