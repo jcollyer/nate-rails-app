@@ -23,16 +23,12 @@
     <div class="small-12 large-8 columns">
       <br>
       <span id="about-link"></span>
-      <h1>Pastor Nate!</h1>
-      <p>
-        Pastor Nate has been Senior Pastor of Calvary since 2008. He has served in various capacities including Associate Pastor, Youth Pastor, and College Ministry Pastor. Pastor Nate graduated from Calvary Chapel Bible College in 1998 with an Associates Degree in Theology. Nate married his lovely bride, Christina, in 2002 and is the proud father of three beautiful daughters: Lauren, Violet, and June. He loves being a father and husband.
-      </p>
-      <p>
-        Along with carrying the main pulpit duties of the church Pastor Nate is actively involved in mentoring young men in the church and casting a vision for local outreach. His passion to reach the local community has him dreaming of expanding the church and creating multiple sites in every town that we can reach.
-      </p>
+      <% @abouts.each do |about| %>
+        <%= markdown(about.body) %>
     </div>
     <div class="small-12 large-4 columns">
-      <%= image_tag "holdridge-family.jpg", :class => "tall-pic br-small" %>
+      <%= image_tag about.image.url(:large) %>
+      <% end %>
     </div>
   </div>
 </div>

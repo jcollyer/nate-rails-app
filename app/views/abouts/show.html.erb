@@ -1,13 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <div class="small-12 columns">
+  <div class="small-12 large-8 columns">
     <%=  markdown(@about.body) %>
+  </div>
+  <div class="small-12 large-4 columns">
+    <%= image_tag @about.image.url(:large) %>
   </div>
 </div>
 
 <div class="row">
-  <div class="small-12 columns">
+  <div class="small-8 columns">
     <h3><%= link_to 'Edit', edit_about_path(@about) %></h3>
     <h3><%= link_to 'Back', root_url %></h3>
   </div>
