@@ -21,19 +21,19 @@
     <div class="small-12 large-8 columns">
       <span id="books-link"></span>
       <p>&nbsp;</p>
-      <% @books.each do |book| %>
-        <h2 class="hh2"><%= book.title %></h2>
 
-        <p><%= markdown(book.body) %></p>
+        <h2 class="hh2"></h2>
+
+        <p></p>
     </div>
     </br>
     <div class="small-12 large-4 columns">
       <p>&nbsp;</p>
-      <%= image_tag "book.jpg", class: "br-small" %>
+
       <div class="book-buy">
-        <a href="<%= book.buylink %>" target="_blank" class="button2">buy here</a>
+        <a href="" target="_blank" class="button2">buy here</a>
       </div>
-      <% end %>
+
     </div>
 
   </div>
