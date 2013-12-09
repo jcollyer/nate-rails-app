@@ -1,0 +1,31 @@
+<%= form_for @book, :html => { :multipart => true } do |f| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation small-12 columns">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @book.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="large-4 small-12 columns">
+    <h3><%= f.label :title %><br></h3>
+    <%= f.text_field :title %>
+    <h3><%= f.label "Amazon" %><br></h3>
+    <%= f.text_field :buylink %>
+  </div>
+  <div class="large-8 small-12 columns">
+    <h3><%= f.label :body %><br></h3>
+    <%= f.text_area :body, class: "text-area" %>
+    <h3>&nbsp;</h3>
+    <h3><%= f.submit %></h3>
+  </div>
+
+<!--   <div class="large-4 small-12 columns">
+    <h3><%= f.label :image %></h3>
+    <%= f.file_field :image %>
+  </div> -->
+<% end %>
