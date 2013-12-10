@@ -17,11 +17,11 @@
   </div>
 
 
+<% @books.each do |book| %>
   <div class="row">
     <div class="small-12 large-8 columns">
       <span id="books-link"></span>
       <p>&nbsp;</p>
-      <% @books.each do |book| %>
         <h2 class="hh2"><%= book.title %></h2>
 
         <p><%= markdown(book.body) %></p>
@@ -33,8 +33,7 @@
       <div class="book-buy">
         <h3><a href="<%= book.buylink %>" target="_blank" class="button2">buy here</a></h3>
       </div>
-      <% end %>
     </div>
-
   </div>
+<% end %>
 </div>
