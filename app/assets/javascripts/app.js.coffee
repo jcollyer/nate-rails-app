@@ -66,7 +66,7 @@ $ ->
     unless theID == openPanelID
       if panels.css("left") == negPanelsWidth
         panel.hide()
-        thisPanel.show()
+        thisPanel.css("left", "0px").show()
         panels.animate(left: "0px", 250)
         close.css("right", "-46px")
         windowWrapperSize()
