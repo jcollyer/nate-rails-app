@@ -111,6 +111,10 @@ table {
     margin-top: -10px;
   }
 }
+.float-left {
+  float: left;
+}
+
 .br-small {
   border-radius: 2px;
 }
@@ -378,7 +382,10 @@ table {
   .teaching-panel {
     display: none;
     position: relative;
+    padding-bottom: 160px;
     padding-top:187px;
+    overflow-y: scroll;
+    height: 100%;
     .teaching-image {
       left: 0px;
       top: 0px;
@@ -613,7 +620,29 @@ a.social {
 }
 
 
-
+.example {
+  background: white;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: left;
+  .example-inner {
+    padding: 10px;
+    width: 100%;
+    p, h3, h5 {
+      margin: 0px;
+      line-height: 20px;
+    }
+    .bigger {
+      width: 70%;
+    }
+    .smaller {
+      width: 30%;
+    }
+  }
+  .example-inner:nth-child(even) {
+    background: #eee;
+  }
+}
 
 #user {
   background: #eee;
