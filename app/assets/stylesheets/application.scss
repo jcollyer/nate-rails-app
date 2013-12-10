@@ -16,9 +16,9 @@
 
  @font-face {
   font-family: "raleway";
-  src: url("raleway_thin-webfont.eot");
+  src: asset_url("raleway_thin-webfont.eot");
   src: local("☺"),
-    url("raleway_thin-webfont.woff") format("woff"),
-    url("raleway_thin-webfont.otf") format("opentype"),
-    url("raleway_thin-webfont.svg#raleway_thin-webfont") format("svg");
+    asset_url("raleway_thin-webfont.woff") format("woff"),
+    asset_url("raleway_thin-webfont.otf") format("opentype"),
+    asset_url("raleway_thin-webfont.svg#raleway_thin-webfont") format("svg");
   }
