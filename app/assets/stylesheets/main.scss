@@ -383,21 +383,13 @@ table {
     display: none;
     position: relative;
     padding-bottom: 160px;
-    padding-top:187px;
     overflow-y: scroll;
     height: 100%;
     .teaching-image {
       left: 0px;
       top: 0px;
-      position: absolute;
+      position: relative;
       width: 100%;
-      display:none;
-      img {
-        width: 100%;
-      }
-    }
-    .teaching-image:first-child {
-      display: block;
       &:after {
         display:block;
         content:'';
@@ -408,8 +400,10 @@ table {
         left: 0px;
         box-shadow: -1px 1px 6px #333 inset;
       }
+      img {
+        width: 100%;
+      }
     }
-
     .teaching-item {
       cursor: pointer;
       width: 100%;
@@ -446,7 +440,6 @@ table {
     }
   }
 }
-
 
 .bigger {
   font-size: 125%;

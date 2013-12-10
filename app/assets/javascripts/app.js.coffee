@@ -21,7 +21,7 @@ $ ->
     else
       $("#main-nav").removeClass("new-nav").addClass("old-nav")
       $(".logo").removeClass("new-logo").addClass("old-logo")
-      $(".teaching-panels").css("margin-top","133px")
+      $(".teaching-panels").css("margin-top","134px")
   $(window).scroll ->
     pagePlace()
 
