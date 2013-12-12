@@ -538,6 +538,9 @@ table {
 
 .calvary {
   background-image: url(image_path("CalvaryBuilding.jpg"));
+  background-repeat: no-repeat;
+  background-size:100%;
+  background-position:top left;
   p {
     color: white;
   }
@@ -555,6 +558,14 @@ table {
       transition: all 0.5s;
     }
   }
+}
+
+.info-box {
+  border-radius: 3px;
+  background: rgba(255,255,255,0.5);
+  border: 1px solid #fff;
+  padding: 20px;
+  p{color: #333;}
 }
 
 // Social
