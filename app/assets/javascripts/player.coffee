@@ -158,12 +158,12 @@ $ ->
 
 
   # Keyboard Control Overides
-  $(document.documentElement).keydown (event) ->
-    if event.which is 32
-      event.preventDefault()
-      if $("#jquery_jplayer_1").data("jPlayer").status.paused
-        $("#jquery_jplayer_1").jPlayer "play"
-      else
-        $("#jquery_jplayer_1").jPlayer "pause"
+  # $(document.documentElement).keydown (event) ->
+  #   if event.which is 32
+  #     event.preventDefault()
+  #     if $("#jquery_jplayer_1").data("jPlayer").status.paused
+  #       $("#jquery_jplayer_1").jPlayer "play"
+  #     else
+  #       $("#jquery_jplayer_1").jPlayer "pause"
 
 
