@@ -14,7 +14,7 @@ $ ->
   #nav Scroll
   pagePlace = ->
     pagePosition = $(window).scrollTop()
-    if pagePosition > 30
+    if pagePosition > 50
       $("#main-nav").removeClass("old-nav").addClass("new-nav")
       $(".logo").removeClass("old-logo").addClass("new-logo")
       $(".teaching-panels").css("margin-top","57px")
