@@ -15,12 +15,6 @@ html, body {
 }
 
 body {
-  // background-image: url(image_path("landscape.jpg"));
-  // background-size: 100%;
-  // background-attachment: fixed;
-  // background-repeat: no-repeat;
-
-  background: #1c638d;
   font-family: $font-lato;
   text-align: center;
 }
@@ -56,6 +50,9 @@ h2 {
   font-family: $font-lato;
   margin: 0em;
   line-height: 1em;
+}
+input[type="file"] {
+  width: auto;
 }
 .hh2 {
   font-family: $font-raleway;
@@ -688,7 +685,7 @@ a.social {
 }
 
 #user {
-  background: #eee;
+  background: #dddddd;
   top: 0px;
   position: fixed;
   height: 100%;

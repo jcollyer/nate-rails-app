@@ -8,8 +8,13 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <span id="about-link"></span>
+<% if current_user %>
+<body style="background:#dddddd;">
+<% else %>
+<body style="background:#1c638d;">
+<% end%>
+
+<span id="about-link"></span>
 
 
 <%= yield %>
