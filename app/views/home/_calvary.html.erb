@@ -20,26 +20,24 @@
       <p>&nbsp;</p>
     </div>
   </div>
-</br>
-</br>
-</br>
-<% @notes.each do |note| %>
-  <div class="row">
-    <div class="small-12 large-6 columns">
-      <div class="info-box">
-        <%= markdown(note.body) %>
+
+  <% @notes.each do |note| %>
+    <div class="row">
+      <div class="small-12 large-6 columns">
+        <div class="info-box">
+          <%= markdown(note.body) %>
+        </div>
+      </div>
+      </br>
+      </br>
+      <div class="small-12 large-6 columns">
+        <%= render :partial => note.links %>
+        </br>
+        </br>
+        </br>
       </div>
     </div>
-    </br>
-    </br>
-    <div class="small-12 large-6 columns">
-      <%= render :partial => note.links %>
-      </br>
-      </br>
-      </br>
-    </div>
-  </div>
-<% end %>
+  <% end %>
 </br>
 </br>
 </br>
