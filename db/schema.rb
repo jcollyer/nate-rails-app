@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131215222945) do
+ActiveRecord::Schema.define(version: 20131216154249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,17 @@ ActiveRecord::Schema.define(version: 20131215222945) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+
+  create_table "links", force: true do |t|
+    t.string   "link"
+    t.string   "name"
+    t.integer  "type"
+    t.integer  "note_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "links", ["note_id"], name: "index_links_on_note_id", using: :btree
 
   create_table "notes", force: true do |t|
     t.text     "body"

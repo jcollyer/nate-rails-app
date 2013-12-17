@@ -30,15 +30,12 @@
         <%= markdown(note.body) %>
       </div>
     </div>
+    </br>
+    </br>
     <div class="small-12 large-6 columns">
+      <%= render :partial => note.links %>
       </br>
       </br>
-      </br>
-      </br>
-      </br>
-      <h1><a href="<%= note.link %>" target="_blank"><span class="big">calvary.com</span></a></h1>
-      </br>
-      <h1><a href="<%= note.linktwo %>" target="_blank">calvary - <span class="big">teachings</span></a></h1>
       </br>
     </div>
   </div>

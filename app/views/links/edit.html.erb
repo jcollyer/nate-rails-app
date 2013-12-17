@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="small-12 columns">
+  <%= form_for([@note, @link]) do |f| %>
+    <div class="field">
+     <h3><%= f.label :name %><br></h3>
+      <%= f.text_field :name  %>
+    </div>
+    <div class="field">
+      <h3><%= f.label :link %><br></h3>
+      <%= f.text_field :link  %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+      <h3><%= link_to "Back", "/notes/1/edit" %>
+    </div>
+  <% end %>
+
+  </div>
+</div>

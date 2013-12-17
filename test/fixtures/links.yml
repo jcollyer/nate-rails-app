@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  link: MyString
+  name: MyString
+  type: 1
+  note_id: 
+
+two:
+  link: MyString
+  name: MyString
+  type: 1
+  note_id: 

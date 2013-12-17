@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="small-12 columns">
+  </br>
+  </br>
+  </br>
+  </br>
+    <h2>Links</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="small-6 columns">
+    <h5>Add Links</h5>
+    <%= form_for [note, Link.new] do |f| %>
+      <p>
+        <%= f.label :name, "Link Name" %><br/>
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :link, "Link URL" %><br/>
+        <%= f.text_field :link %>
+      </p>
+      <p><%= f.submit "Add link" %></p>
+    <% end %>
+  </div>
+  <div class="small-6 columns">
+  </br>
+  </br>
+  <h5>Edit Links</h5>
+  </br>
+     <%= render :partial => note.links %>
+  </div>
+  <div class="small-4 columns">
+
+  </div>
+</div>

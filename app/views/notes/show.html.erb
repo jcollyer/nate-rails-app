@@ -4,8 +4,7 @@
     <%=  markdown(@note.body) %>
   </div>
   <div class="small-12 large-4 columns">
-    <h3><a href="<%= @note.link %>">Link One</a></h3>
-    <h3><a href="<%= @note.linktwo %>">Link Two</a></h3>
+     <%= render :partial => @note.links %>
   </div>
 </div>
 
