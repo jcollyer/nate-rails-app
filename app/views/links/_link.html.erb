@@ -2,7 +2,7 @@
 
 <%= div_for link do %>
 
-      <h3><a href="<%= link.link %>" class="white-link"><%= link.name %></a></h3>
+      <h3><a href="<%= link.link %>" class="white-link" target="_blank"><%= link.name %></a></h3>
     <% if current_user %>
       <%= link_to "Edit link above", edit_note_link_path(@note, link) %>
     <% end %>
