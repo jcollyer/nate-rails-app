@@ -21,7 +21,7 @@
         <tr>
           <td><%= teaching.name %></td>
           <td><%= teaching.position %></td>
-          <td><%= teaching.biblebook.name %></td>
+          <td><% if teaching.biblebook.present? %><%= teaching.biblebook.name %></td><% end %>
           <td><%= teaching.refurl %></td>
           <td><%= link_to 'Edit', edit_teaching_path(teaching) %></td>
           <td><%= link_to 'Destroy', teaching, method: :delete, data: { confirm: 'Are you sure?' } %></td>
