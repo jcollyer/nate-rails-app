@@ -31,7 +31,15 @@
       </br>
       </br>
       <div class="small-12 large-6 columns">
-        <%= render :partial => note.links %>
+        </br>
+        </br>
+        <%# render :partial => note.links %>
+        <% note.links.each do |link| %>
+          </br>
+          </br>
+          <h3><%= link_to link.name, link.link %></h3>
+
+        <% end %>
         </br>
         </br>
         </br>

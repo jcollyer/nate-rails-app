@@ -1,12 +1,8 @@
-</br>
-
 <%= div_for link do %>
-
-      <h3><a href="<%= link.link %>" class="white-link" target="_blank"><%= link.name %></a></h3>
-    <% if current_user %>
-      <%= link_to "Edit link above", edit_note_link_path(@note, link) %>
-    <% end %>
-    </br>
-    </br>
-
+  <h3><%= link_to link.name, link.link, class: "white-link", target: "_blank" %></a></h3>
+  <%= link_to "Edit link above", edit_note_link_path(@note, link) %> |
+  <%= link_to 'Destroy', [@note, link], method: :delete, data: { confirm: 'Are you sure?' } %>
+  </br>
+  </br>
 <% end %>
+
