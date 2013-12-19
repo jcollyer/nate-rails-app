@@ -39,6 +39,6 @@ class LinksController < ApplicationController
 
   private
     def link_params
-      params.require(:link).permit(:note, :link, :name, :type)
+      params.require(:link).permit(:note, :link, :name, :type, :position)
     end
 end

@@ -9,6 +9,10 @@
       <h3><%= f.label :link %><br></h3>
       <%= f.text_field :link  %>
     </div>
+    <div class="field">
+      <h3><%= f.label :position %><br></h3>
+      <%= f.number_field :position %>
+    </div>
     <div class="actions">
       <%= f.submit %>
       <h3><%= link_to "Back", "/notes/2/edit" %>
