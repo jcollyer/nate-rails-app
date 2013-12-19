@@ -19,7 +19,7 @@ class LinksController < ApplicationController
     @link = @note.links.find(params[:id])
     respond_to do |format|
       if @link.update(link_params)
-        format.html { redirect_to "/notes/2/edit", notice: 'Link was successfully updated.' }
+        format.html { redirect_to "/notes/1/edit", notice: 'Link was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -32,7 +32,7 @@ class LinksController < ApplicationController
     @link = Link.find(params[:id])
     @link.destroy
     respond_to do |format|
-      format.html { redirect_to "/notes/2/edit" }
+      format.html { redirect_to "/notes/1/edit" }
       format.json { head :no_content }
     end
   end
