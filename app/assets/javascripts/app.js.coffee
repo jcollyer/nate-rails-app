@@ -11,6 +11,7 @@ $ ->
     console.log "true"
     $(".fancy-border-top.color-4").addClass("fancy-top-right")
     $(".fancy-border-top.color-2").addClass("fancy-top-right-dark")
+
   #nav Scroll
   pagePlace = ->
     pagePosition = $(window).scrollTop()
@@ -22,8 +23,10 @@ $ ->
       $("#main-nav").removeClass("new-nav").addClass("old-nav")
       $(".logo").removeClass("new-logo").addClass("old-logo")
       $(".teaching-panels").css("margin-top","134px")
-  $(window).scroll ->
-    pagePlace()
+
+  if $(window).width() > 767
+    $(window).scroll ->
+      pagePlace()
 
   #click Logo
   $(".logo").on "click", ->
