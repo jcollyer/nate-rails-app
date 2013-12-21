@@ -56,7 +56,7 @@ input[type="file"] {
 }
 .hh2 {
   font-family: $font-raleway;
-  margin: 30px 0px;
+  margin: 20px 0px;
   line-height: 2em;
   border-bottom: 1px solid #ddd;
 }
@@ -68,6 +68,13 @@ table {
         text-align: center;
       }
     }
+  }
+}
+
+.fa {
+  font-size: 5em;
+  @media all and (max-width: "767px"){
+    font-size: 3em;
   }
 }
 
@@ -86,9 +93,7 @@ table {
 .color-4 {
   background: white;
 }
-.back-1 {
 
-}
 .back-3 {
   border: 2px solid #5f91ae;
   border-radius: 7px;
@@ -152,7 +157,7 @@ table {
   float: left;
 }
 
-.hidden-desktop {
+.show-mobile {
   @media all and (min-width: "767px"){
     display: none;
   }
@@ -162,6 +167,10 @@ table {
   @media all and (max-width: "767px"){
     display: none;
   }
+}
+
+.white-text {
+  color: white;
 }
 
 .br-small {
@@ -322,6 +331,8 @@ table {
       @media all and (max-width: "767px") {
         float: none;
         width: 100%;
+        border-top: 1px solid #555;
+        border-radius: 0px;
       }
       &:hover {
         background: #444;
@@ -361,7 +372,6 @@ table {
   cursor: pointer;
   left: 30px;
   position: absolute;
-
 }
 .old-logo{
   height: 120px;
@@ -590,6 +600,11 @@ table {
   background-repeat: no-repeat;
   background-size:100%;
   background-position:top left;
+  background-color: #333;
+  @media all and (max-width: "767px"){
+    background-color: #fff;
+    background-image: none;
+  }
   p {
     color: white;
   }
@@ -600,7 +615,10 @@ table {
     border: 1px solid #fff;
     padding: 15px;
     font-size: 25px;
-    transition: all 0.5s;
+    transition: background 0.5s;
+    @media all and (max-width: "767px"){
+      border: 1px solid #333;
+    }
     &:hover {
       background: #333;
       color: #999;
@@ -635,6 +653,11 @@ table {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   transition: box-shadow 0.3s ease;
+  @media all and (max-width: "767px"){
+    width: 110px;
+    height: 110px;
+    margin: 0px auto;
+  }
   &:hover {
     box-shadow: 0px 0px 0px 4px rgba(0,0,0,0.5);
   }
