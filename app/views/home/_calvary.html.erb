@@ -1,11 +1,7 @@
-<div class="page-buffer-2">&nbsp;</div>
+<div class="page-buffer-2 show-desktop">&nbsp;</div>
 <div class="calvary relative color-2">
-      <span id="calvary-link"></span>
-  </br>
-  </br>
-  </br>
-  </br>
-  </br>
+  <span id="calvary-link"></span>
+  <div class="page-buffer show-desktop">&nbsp;</div>
   </br>
   <div class="fb-wraper2">
     <div class="small-4 columns fancy-border-top">
@@ -28,11 +24,9 @@
           <%= markdown(note.body) %>
         </div>
       </div>
-      </br>
-      </br>
+
       <div class="small-12 large-6 columns">
-        </br>
-        </br>
+
         <%# render :partial => note.links %>
         <% note.links.each do |link| %>
           </br>
@@ -40,20 +34,14 @@
           <h3><%= link_to link.name, link.link %></h3>
 
         <% end %>
-        </br>
-        </br>
-        </br>
+        <div class="page-buffer show-desktop">&nbsp;</div>
       </div>
     </div>
   <% end %>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
 
+<br>
+<br>
+<br>
+<br>
 </div>
 

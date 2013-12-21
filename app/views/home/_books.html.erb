@@ -16,12 +16,13 @@
     </div>
   </div>
 
+  <h1 class="show-mobile">Books</h1>
+
 
 <% @books.each do |book| %>
   <div class="row">
     <div class="small-12 large-8 columns">
       <span id="books-link"></span>
-      <p>&nbsp;</p>
         <h2 class="hh2"><%= book.title %></h2>
 
         <p><%= markdown(book.body) %></p>
@@ -36,7 +37,5 @@
     </div>
   </div>
 <% end %>
-<br>
-<br>
-<br>
+
 </div>
