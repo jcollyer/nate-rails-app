@@ -480,6 +480,18 @@ $font-raleway:    'raleway', sans-serif;
     content: "";
     left: -85px;
   }
+  @media all and (max-width: 1200px){
+    font-size: 45px;
+    left: 37%;
+    top: 40%;
+    height: 45px;
+    width: 100px;
+    &:after {
+      left: -47px;
+      height: 40px;
+      width: 40px;
+    }
+  }
 }
 
 .biblebook-hover{

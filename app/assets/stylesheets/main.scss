@@ -152,9 +152,22 @@ table {
   float: left;
 }
 
+.hidden-desktop {
+  @media all and (min-width: "767px"){
+    display: none;
+  }
+}
+
+ .show-desktop {
+  @media all and (max-width: "767px"){
+    display: none;
+  }
+}
+
 .br-small {
   border-radius: 2px;
 }
+
 .fancy-border {
   border-top: 2px solid transparent;
   position: relative;
@@ -194,6 +207,9 @@ table {
   top: -40px;
   position:absolute;
   width: 100%;
+  @media all and (max-width: "767px") {
+    display:none;
+  }
   .fancy-border-top {
     position: relative;
     &:after {
@@ -281,6 +297,7 @@ table {
   position: absolute;
   width: 100%;
 }
+
 #main-nav {
   background: #333;
   top: 0px;
@@ -302,6 +319,10 @@ table {
       text-shadow: 0 -1px 0 #000;
       text-transform: uppercase;
       transition: margin 0.5s;
+      @media all and (max-width: "767px") {
+        float: none;
+        width: 100%;
+      }
       &:hover {
         background: #444;
       }
@@ -310,9 +331,15 @@ table {
 }
 .old-nav{
   position: absolute;
+  @media all and (max-width: "767px") {
+    position: relative;
+  }
   ul {
     li {
       margin: 25px 0px;
+      @media all and (max-width: "767px") {
+        margin: auto;
+      }
     }
   }
 }
@@ -500,6 +527,10 @@ table {
   position: relative;
   width: 21%;
   z-index: 7;
+  @media all and (max-width: "767px") {
+    width: 46%;
+    margin: 20px 2% 0px;
+  }
 }
 
 .fancy-stratum {
@@ -601,9 +632,9 @@ table {
   border-radius: 200px;
   box-shadow: none;
   -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
   &:hover {
     box-shadow: 0px 0px 0px 4px rgba(0,0,0,0.5);
   }
