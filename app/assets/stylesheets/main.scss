@@ -328,12 +328,6 @@ table {
       text-shadow: 0 -1px 0 #000;
       text-transform: uppercase;
       transition: margin 0.5s;
-      @media all and (max-width: "767px") {
-        float: none;
-        width: 100%;
-        border-top: 1px solid #555;
-        border-radius: 0px;
-      }
       &:hover {
         background: #444;
       }
@@ -342,15 +336,9 @@ table {
 }
 .old-nav{
   position: absolute;
-  @media all and (max-width: "767px") {
-    position: relative;
-  }
   ul {
     li {
       margin: 25px 0px;
-      @media all and (max-width: "767px") {
-        margin: auto;
-      }
     }
   }
 }
@@ -361,6 +349,30 @@ table {
   ul {
     li {
       margin: 2px 0px;
+    }
+  }
+}
+#main-nav-mobile {
+  background: #333;
+  top: 0px;
+  width: 100%;
+  position: fixed;
+  z-index: 9;
+  ul{
+    margin: 0px;
+    li {
+      float: none;
+      border-top: 1px solid #555;
+      color: #fff;
+      cursor: pointer;
+      font-size: 20px;
+      list-style-type: none;
+      text-align: center;
+      padding: 5px 0px;
+      width: 100%;
+      margin: auto;
+      text-shadow: 0 -1px 0 #000;
+      text-transform: uppercase;
     }
   }
 }
@@ -579,6 +591,10 @@ table {
   h1 {
     color: white;
   }
+}
+
+.hide-show {
+  display: none;
 }
 
 .icon {

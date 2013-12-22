@@ -21,8 +21,8 @@
 
 <% @books.each do |book| %>
   <div class="row">
+    <span id="books-link" style="position:absolute;top:-45px"></span>
     <div class="small-12 large-8 columns">
-      <span id="books-link"></span>
         <h2 class="hh2"><%= book.title %></h2>
 
         <p><%= markdown(book.body) %></p>

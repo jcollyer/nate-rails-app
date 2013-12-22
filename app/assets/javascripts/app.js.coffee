@@ -3,8 +3,8 @@ $ ->
   $("#main-nav li").click ->
     el   = $(this).text()
     temp = "#" + el + "-link"
-    scroll = $(temp).offset().top - 125
-    $("html, body").animate( scrollTop: scroll, 250)
+    scroll = $(temp).offset().top - 90
+    $("html, body").animate( scrollTop: scroll, 400)
 
   # Safari styles
   if navigator.userAgent.match(/AppleWebKit/) && ! navigator.userAgent.match(/Chrome/)
@@ -89,6 +89,27 @@ $ ->
     )
     $(".teaching-panels").removeClass("opened")
 
+  # MOBILE STUFF #
+
+  #nav Click
+  $(".hide-show").click ->
+    el   = $(this).text()
+    temp = "#" + el + "-link"
+    scroll = $(temp).offset().top - 245
+    $("html, body").animate( scrollTop: scroll, 400)
+
+  # page buffer for mobile
+  if $(window).width() < 768
+    $("body").css("margin-top", "55px")
+
+  # click nav hamburger
+  $(".fa-bars").on "click", ->
+    if $(".hide-show").css("display") == "none"
+      $(".hide-show").fadeIn()
+      $("body").animate({"marginTop": "270px"}, 500)
+    else
+      $(".hide-show").fadeOut()
+      $("body").animate({"marginTop": "55px"})
 
 
 
