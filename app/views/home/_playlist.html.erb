@@ -2,9 +2,9 @@
   <div class="teaching-panel-close">close</div>
   <% @biblebooks.each do |biblebook| %>
   <div class="teaching-panel" data-id="<%= biblebook.id %>">
-      <div class="teaching-image">
-        <%= image_tag biblebook.image.url(:medium) %>
-      </div>
+    <div class="teaching-image">
+      <%= image_tag biblebook.image.url(:medium) %>
+    </div>
     <div class="teaching-chapter">play <span class="bigger"> Chapter</span></div>
     <% biblebook.teachings.each do |teaching| %>
       <div class="teaching-item">
