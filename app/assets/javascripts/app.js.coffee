@@ -52,30 +52,31 @@ $ ->
       windowWrapperReSize()
 
   #click biblebook
-  $(".biblebook-hover").on "click", ->
-    $this             = $(this)
-    $el               = $this.siblings("img")
-    panels            = $(".teaching-panels")
-    panel             = $(".teaching-panel")
-    openPanelID       = $(".teaching-panel:visible").data("id") or null
-    pageWrapper       = $("#page-wrapper")
-    theID             = $el.data("biblebook")
-    thisPanel         = $(".teaching-panel[data-id='"+theID+"']")
-    close             = $(".teaching-panel-close")
+  if $(window).width() > 550
+    $(".biblebook-hover").on "click", ->
+      $this             = $(this)
+      $el               = $this.siblings("img")
+      panels            = $(".teaching-panels")
+      panel             = $(".teaching-panel")
+      openPanelID       = $(".teaching-panel:visible").data("id") or null
+      pageWrapper       = $("#page-wrapper")
+      theID             = $el.data("biblebook")
+      thisPanel         = $(".teaching-panel[data-id='"+theID+"']")
+      close             = $(".teaching-panel-close")
 
-    $(".teaching-panels").addClass("opened")
+      $(".teaching-panels").addClass("opened")
 
-    negPanelsWidth    = "-160px"
-    unless theID == openPanelID
-      if panels.css("left") == negPanelsWidth
-        panel.hide()
-        thisPanel.css("left", "0px").show()
-        panels.animate(left: "0px", 250)
-        close.css("right", "-46px")
-        windowWrapperSize()
-      else
-        panel.css("left": negPanelsWidth, "display": "none")
-        thisPanel.show().animate(left: "0px", 150)
+      negPanelsWidth    = "-160px"
+      unless theID == openPanelID
+        if panels.css("left") == negPanelsWidth
+          panel.hide()
+          thisPanel.css("left", "0px").show()
+          panels.animate(left: "0px", 250)
+          close.css("right", "-46px")
+          windowWrapperSize()
+        else
+          panel.css("left": negPanelsWidth, "display": "none")
+          thisPanel.show().animate(left: "0px", 150)
 
 
   # click close button teaching teaching-panel
