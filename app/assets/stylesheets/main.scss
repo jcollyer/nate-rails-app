@@ -31,7 +31,7 @@ a {
   color: #333;
   padding: 0px 7px;
 }
-a.jp-play, a.jp-pause, a.icon-volume, a.player_refurl,  a.button-download {border:none;}
+a.jp-play, a.jp-pause, a.icon-volume, a.player_refurl,  a.button-download, a.button-download-mobile {border:none;}
 
 p {
   color: rgba(0,0,0,0.5);
@@ -642,6 +642,11 @@ table {
       transition: all 0.5s;
     }
   }
+}
+
+.show-link {
+  border: 1px solid #aaa;
+  color: #aaa;
 }
 
 .info-box {
