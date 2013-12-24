@@ -56,20 +56,17 @@ $ ->
   $(document).on "click", ".player_close_button", ->
     $("#lesson_mod_menu").css "display", "none"
     player.jPlayer "pause"
-    $(".container").css "margin-bottom", "0px"
 
+  $("body").css "margin-bottom", "130px" if $(window).width() < 768
 
   $(document).on "click", ".teaching-item", ->
-
     $(".teaching-item").removeClass("active-item")
-    $(".container").css "margin-bottom", "100px"
-    $(".container").css "margin-bottom", "170px" if $(window).width() < 768
 
     $this              = $(this)
     $button            = $(this).find(".play-this-teaching")
 
     window.audioPlayer = $("#lesson_mod_menu")
-    mediaPath          =  $button.data("mp3")
+    mediaPath          = $button.data("mp3")
     bibleBook          = $button.data("biblebook")
     titlePath          = $button.data("name")
     refurlPath         = $button.data("refurl")
@@ -90,6 +87,7 @@ $ ->
     $(".player_download_url").attr("src", mediaPath)
     $(".player_refurl").attr("href")
     $(".player_refurl").attr("href", refurlPath)
+    console.log mediaPath
     window.player = $("#jquery_jplayer_1").jPlayer
       swfPath: "http://www.jplayer.org/latest/js/Jplayer.swf"
       supplied: "mp3"
@@ -100,13 +98,13 @@ $ ->
       errorAlerts: false
       warningAlerts: false
       ready: ->
-        player.bind $.jPlayer.event.canplay, ->
+        player.on $.jPlayer.event.canplay, ->
           # console.log "ready"
           $(".spin").fadeOut()
           $("#loader").fadeOut()
-        player.bind $.jPlayer.event.play, ->
+        player.on $.jPlayer.event.play, ->
           $button.removeClass "paused"
-        player.bind $.jPlayer.event.pause, ->
+        player.on $.jPlayer.event.pause, ->
           $button.addClass "paused"
 
     if $button.data("state") == "playing"
@@ -121,6 +119,7 @@ $ ->
       }
       # console.log mediaPath
       player.jPlayer "play"
+      player.jPlayer "pauseOthers"
       $button.data "state", "playing"
       $button.removeClass "paused"
 
@@ -155,6 +154,11 @@ $ ->
     # alert currentTime
     # alert currentTimeRewind
     audioDiv.currentTime = currentTimeRewind
+
+  # $("#jquery_jplayer_1").on $.jPlayer.event.play, ->
+  #   $(this).jPlayer("pauseOthers")
+  #   console.log "hi"
+
 
 
   # Keyboard Control Overides
