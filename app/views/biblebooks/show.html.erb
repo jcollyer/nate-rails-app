@@ -1,73 +1,75 @@
-<nav id="main-nav" class="new-nav">
-  <h3 style="text-align:left;margin:8px 20px 6px;">
-    <%= link_to "Back", root_url, class: "show-link" %>
-  </h3>
-</nav>
+<div style="background:#111111;">
+  <nav id="main-nav" class="new-nav">
+    <h3 style="text-align:left;margin:15px 20px 13px;">
+      <%= link_to "Back", root_url, class: "show-link" %>
+    </h3>
+  </nav>
 
+  <%= image_tag @biblebook.image.url(:medium) %>
 
-<%= image_tag @biblebook.image.url(:medium) %>
-
-<div class="playlist-mobile">
-  <% @biblebook.teachings.each do |teaching| %>
-    <div class="teaching-item">
-      <div data-name="<%= teaching.name %>" data-mp3="<%= teaching.mp3 %>" data-refurl="<%= teaching.refurl %>" data-biblebook="<%= teaching.biblebook.name %>">
+  <div class="playlist-mobile">
+    <% @biblebook.teachings.each do |teaching| %>
+      <div class="teaching-item">
+        <div class="play-this-teaching" data-name="<%= teaching.name %>" data-mp3="<%= teaching.mp3 %>" data-refurl="<%= teaching.refurl %>" data-biblebook="<%= teaching.biblebook.name %>">
+        </div>
+        <p> Chapter <%= teaching.name %></p>
       </div>
-      <p> Chapter <%= teaching.name %></p>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
-<div id="lesson_mod_mobile">
-  <div id="lesson_mod_menu_mobile">
-    <div id="jquery_jplayer_1" class="jp-jplayer">
-      <!--  AUDIO ELEMENT  -->
-    </div>
-    <div id="jp_container_1" class="jp-audio">
-      <div class="jp-controls">
-        <div class="small-12 columns">
-          <div class="lesson_goback_mobile">
-            <div class="button-goback player_rewind">&nbsp;</div>
-          </div>
-          <div class="lesson_progress_mobile">
-            <div class="lesson_mod_time">
-              <div class="jp-duration lesson_duration hide">
-                <!--  button-down-arrow -->
-              </div>
+  <div id="lesson_mod_mobile">
+    <div id="lesson_mod_menu_mobile">
+      <div id="jquery_jplayer_1" class="jp-jplayer">
+        <!--  AUDIO ELEMENT  -->
+      </div>
+      <div id="jp_container_1" class="jp-audio">
+        <div class="jp-controls">
+          <div class="small-12 columns">
+            <div class="lesson_goback_mobile">
+              <div class="button-goback player_rewind">&nbsp;</div>
             </div>
-            <div class="jp-progress lesson_progress_bar">
-              <div class="jp-seek-bar seek_bar">
-                <div class="jp-play-bar progress_bar">
-                  <div class="jp-current-time lesson_current_time">
-                   <!--   button-down-arrow -->
+            <div class="lesson_progress_mobile">
+              <div class="lesson_mod_time">
+                <div class="jp-duration lesson_duration hide">
+                  <!--  button-down-arrow -->
+                </div>
+              </div>
+              <div class="jp-progress lesson_progress_bar">
+                <div class="jp-seek-bar seek_bar">
+                  <div class="jp-play-bar progress_bar">
+                    <div class="jp-current-time lesson_current_time">
+                     <!--   button-down-arrow -->
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="small-12 columns">
-          <div class="play-pause-mobile">
-            <a href="javascript:;" class="jp-play" tabindex="1">
-              <div class="player_play">
-                <div class="button-play"></div>
-              </div>
-            </a>
-            <a href="javascript:;" class="jp-pause" tabindex="1" style="display:none;">
-              <div class="player_pause">
-                <div class="button-pause"></div>
-              </div>
-            </a>
-          </div>
-          <div class="more-options-mobile">
-            <a href="" class="player_refurl button-read-along-mobile" target="_blank">
-              <!-- read along -->
-            </a>
-            <a href="" id="player_download_url" class="button-download-mobile" download="Nate's teaching">
-              <!-- download  -->
-            </a>
+          <div class="small-12 columns">
+            <div class="play-pause-mobile">
+              <a href="javascript:;" class="jp-play" tabindex="1">
+                <div class="player_play">
+                  <div class="button-play"></div>
+                </div>
+              </a>
+              <a href="javascript:;" class="jp-pause" tabindex="1" style="display:none;">
+                <div class="player_pause">
+                  <div class="button-pause"></div>
+                </div>
+              </a>
+            </div>
+            <div class="more-options-mobile">
+              <a href="" class="player_refurl button-read-along-mobile" target="_blank">
+                <!-- read along -->
+              </a>
+              <a href="" id="player_download_url" class="button-download-mobile" download="Nate's teaching">
+                <!-- download  -->
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>
