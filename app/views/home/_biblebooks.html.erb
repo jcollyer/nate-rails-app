@@ -28,7 +28,7 @@
     <% @biblebooks.each do |biblebook| %>
       <div class="biblebook-cover">
         <%= image_tag biblebook.image.url(:large), :data => { :biblebook => biblebook.id },  class: "br-small" %>
-        <div class="biblebook-hover">&nbsp;</div>
+        <div class="biblebook-hover" data-id="<%= biblebook.id %>">&nbsp;</div>
         <div class="home-vol">play</div>
       </div>
     <% end %>
