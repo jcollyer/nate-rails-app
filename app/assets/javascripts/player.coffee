@@ -57,8 +57,6 @@ $ ->
     $("#lesson_mod_menu").css "display", "none"
     player.jPlayer "pause"
 
-  $("body").css "margin-bottom", "130px" if $(window).width() < 768
-
   $(document).on "click", ".teaching-item", ->
     $(".teaching-item").removeClass("active-item")
 

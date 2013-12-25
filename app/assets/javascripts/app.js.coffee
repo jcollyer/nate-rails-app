@@ -52,8 +52,12 @@ $ ->
       windowWrapperReSize()
 
   #click biblebook
-  if $(window).width() > 550
-    $(".biblebook-hover").on "click", ->
+  $(".biblebook-hover").on "click", ->
+    if $(window).width() < 400
+      thisID   = $(this).data("id")
+      thisLink = "/biblebooks/"+thisID
+      window.location = thisLink
+    else
       $this             = $(this)
       $el               = $this.siblings("img")
       panels            = $(".teaching-panels")
@@ -79,6 +83,7 @@ $ ->
           thisPanel.show().animate(left: "0px", 150)
 
 
+
   # click close button teaching teaching-panel
   $(".teaching-panel-close").on "click", ->
     negPanelsWidth    = "-160px"
@@ -99,18 +104,18 @@ $ ->
     scroll = $(temp).offset().top - 245
     $("html, body").animate( scrollTop: scroll, 400)
 
-  # page buffer for mobile
-  if $(window).width() < 768
-    $("body").css("margin-top", "55px")
-
   # click nav hamburger
   $(".fa-bars").on "click", ->
     if $(".hide-show").css("display") == "none"
+      $(".nav-buffer.show-mobile").remove() if $(".nav-buffer.show-mobile").length
       $(".hide-show").fadeIn()
       $("body").animate({"marginTop": "270px"}, 500)
     else
       $(".hide-show").fadeOut()
       $("body").animate({"marginTop": "55px"})
+
+  # add black background to mobile show pages
+  $("body").css("background-color","#111111") if $(".js-black-background").length
 
 
 
