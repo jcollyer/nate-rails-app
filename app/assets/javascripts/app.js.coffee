@@ -53,7 +53,7 @@ $ ->
 
   #click biblebook
   $(".biblebook-hover").on "click", ->
-    if $(window).width() < 400
+    if $(window).width() < 767
       thisID   = $(this).data("id")
       thisLink = "/biblebooks/"+thisID
       window.location = thisLink
