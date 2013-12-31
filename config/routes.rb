@@ -2,6 +2,8 @@ Nate::Application.routes.draw do
 
 
 
+  resources :bios
+
   root to: "home#index"
 
   resources :biblebooks
