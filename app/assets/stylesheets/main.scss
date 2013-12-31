@@ -353,14 +353,15 @@ table {
   }
 }
 #main-nav-mobile {
-  background: #333;
   top: 0px;
   width: 100%;
   position: fixed;
   z-index: 9;
+  li {list-style-type: none;}
   ul{
     margin: 0px;
     li {
+      background: #333;
       float: none;
       border-top: 1px solid #555;
       color: #fff;
@@ -375,6 +376,16 @@ table {
       text-transform: uppercase;
     }
   }
+}
+#hamburger {
+  background: #333;
+  text-align:left;
+  width:100%;
+  padding: 5px 0 5px 20px;
+  color: white;
+}
+#mobile-links {
+  display: none;
 }
 
 .logo {
@@ -397,6 +408,19 @@ table {
   width: 55px;
   transition: all 0.5s;
 }
+.mobile-logo{
+  background-image: url(image_path("logo-white-letters.png"));
+  background-repeat: no-repeat;
+  background-size: 100%;
+  top: -24px;
+  left: 0;
+  right: 0;
+  margin: 45px auto 0px;
+  height: 55px;
+  width: 55px;
+  position: absolute;
+}
+
 
 .page-buffer {
   position: relative;
@@ -595,10 +619,6 @@ table {
   h1 {
     color: white;
   }
-}
-
-.hide-show {
-  display: none;
 }
 
 .icon {
