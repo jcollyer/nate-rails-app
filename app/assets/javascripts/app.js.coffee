@@ -8,7 +8,6 @@ $ ->
 
   # Safari styles
   if navigator.userAgent.match(/AppleWebKit/) && ! navigator.userAgent.match(/Chrome/)
-    console.log "true"
     $(".fancy-border-top.color-4").addClass("fancy-top-right")
     $(".fancy-border-top.color-2").addClass("fancy-top-right-dark")
 
@@ -97,22 +96,24 @@ $ ->
 
   # MOBILE STUFF #
 
-  #nav Click
-  $(".hide-show").click ->
+  # Click Nav Hamburger
+  $("#hamburger").on "click", ->
+    if $(this).css("color") == "#ffffff"
+      $(this).css("color","lightblue")
+      $("#mobile-links").fadeIn()
+    else
+      $(this).css("color","#ffffff")
+      $("#mobile-links").fadeIn()
+
+  # Mobile Nav Click
+  $("#mobile-links li").click ->
     el   = $(this).text()
     temp = "#" + el + "-link"
-    scroll = $(temp).offset().top - 245
+    scroll = $(temp).offset().top - 90
     $("html, body").animate( scrollTop: scroll, 400)
+    $("#mobile-links").fadeOut()
+    $("#hamburger").css("color","#ffffff")
 
-  # click nav hamburger
-  $(".fa-bars").on "click", ->
-    if $(".hide-show").css("display") == "none"
-      $(".nav-buffer.show-mobile").remove() if $(".nav-buffer.show-mobile").length
-      $(".hide-show").fadeIn()
-      $("body").animate({"marginTop": "270px"}, 500)
-    else
-      $(".hide-show").fadeOut()
-      $("body").animate({"marginTop": "55px"})
 
   # add black background to mobile show pages
   $("body").css("background-color","#111111") if $(".js-black-background").length
