@@ -636,11 +636,11 @@ table {
 }
 
 .calvary {
-  background-image: url(image_path("CalvaryBuilding.jpg"));
+  background-image: url(image_path("NateTeaching.jpg"));
   background-repeat: no-repeat;
   background-size:100%;
-  background-position:top left;
-  background-color: #333;
+  background-position:bottom left;
+  background-color: #000;
   @media all and (max-width: "767px"){
     background-color: #fff;
     background-image: none;
