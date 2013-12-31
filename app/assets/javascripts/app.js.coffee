@@ -98,12 +98,13 @@ $ ->
 
   # Click Nav Hamburger
   $("#hamburger").on "click", ->
-    if $(this).css("color") == "#ffffff"
-      $(this).css("color","lightblue")
+    console.log $(this).css("color")
+    if $(this).css("color") == "rgb(255, 255, 255)"
+      $(this).css("color","#2e97d7")
       $("#mobile-links").fadeIn()
     else
       $(this).css("color","#ffffff")
-      $("#mobile-links").fadeIn()
+      $("#mobile-links").fadeOut()
 
   # Mobile Nav Click
   $("#mobile-links li").click ->
