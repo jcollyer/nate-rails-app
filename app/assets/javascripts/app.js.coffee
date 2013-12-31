@@ -110,7 +110,7 @@ $ ->
   $("#mobile-links li").click ->
     el   = $(this).text()
     temp = "#" + el + "-link"
-    scroll = $(temp).offset().top - 90
+    scroll = $(temp).offset().top - 20
     $("html, body").animate( scrollTop: scroll, 400)
     $("#mobile-links").fadeOut()
     $("#hamburger").css("color","#ffffff")
