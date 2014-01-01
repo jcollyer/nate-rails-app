@@ -562,6 +562,7 @@ table {
   border: 1px solid #222;
   padding: 4px 30px;
   cursor:pointer;
+  transition: color, background 0.5s;
   &:hover {
     background: #222;
     color: white;
@@ -658,6 +659,7 @@ table {
     transition: background 0.5s;
     @media all and (max-width: "767px"){
       border: 1px solid #333;
+      font-size: 15px;
     }
     &:hover {
       background: #333;
