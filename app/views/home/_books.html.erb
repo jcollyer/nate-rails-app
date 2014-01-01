@@ -30,7 +30,8 @@
     </br>
     <div class="small-12 large-4 columns">
       <p>&nbsp;</p>
-      <%= image_tag book.image.url(:large), class: "br-small" %>
+      <%= image_tag book.image.url(:large), class: "br-small show-desktop" %>
+      <%= image_tag book.image.url(:medium), class: "show-mobile" %>
       <div class="book-buy">
         <h3><a href="<%= book.buylink %>" target="_blank" class="button2">buy here</a></h3>
       </div>
