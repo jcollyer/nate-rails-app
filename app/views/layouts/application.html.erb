@@ -10,9 +10,9 @@
   <%= csrf_meta_tags %>
 </head>
 <% if current_user %>
-<body style="background:#dddddd;">
+<body style="background:#dddddd;" data-no-turbolink>
 <% else %>
-<body style="background:#1c638d;">
+<body style="background:#1c638d;" data-no-turbolink>
 <% end %>
 
 <%= yield %>
