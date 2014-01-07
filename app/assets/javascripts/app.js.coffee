@@ -9,6 +9,7 @@ $ ->
   # Safari styles
   if navigator.userAgent.match(/AppleWebKit/) && ! navigator.userAgent.match(/Chrome/)
     $(".fancy-border-top.color-4").addClass("fancy-top-right")
+    $(".fancy-border.color-3").addClass("fancy-bottom-right")
     $(".fancy-border-top.color-2").addClass("fancy-top-right-dark")
 
   #nav Scroll

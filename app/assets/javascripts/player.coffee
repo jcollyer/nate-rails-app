@@ -71,9 +71,9 @@ $ ->
     imagePath          = $(".book_image").attr("src")
     downloadMp3        = mediaPath
 
-    $(".spin").fadeIn()
     $("#loader").fadeIn()
     audioPlayer.fadeIn()
+    $("#lesson_mod_menu_mobile").fadeIn()
 
     $this.addClass("active-item")
     $("#player_download_url").attr("href", downloadMp3).attr("download", titlePath)
@@ -98,7 +98,6 @@ $ ->
       ready: ->
         player.on $.jPlayer.event.canplay, ->
           # console.log "ready"
-          $(".spin").fadeOut()
           $("#loader").fadeOut()
         player.on $.jPlayer.event.play, ->
           $button.removeClass "paused"

@@ -201,6 +201,17 @@ table {
     height:40px;
   }
 }
+.fancy-bottom-right {
+  &:before {
+    background: #e4e4e4;
+    content: '';
+    position: absolute;
+    left: -2px;
+    bottom: 0px;
+    width:2px;
+    height:40px;
+  }
+}
 .fancy-top-right-dark {
   &:before {
     background: #444;
@@ -719,12 +730,13 @@ a.social {
 
 #loader{
   display: none;
-  border-radius:4px;
+  border-radius:6px;
   background: rgba(255,255,255,0.8);
   left:40%;
   position:fixed;
   padding:20px;
-  top:200px;
+  top:40%;
+  margin-top: -50px;
   z-index: 99;
   @media all and (max-width: 767px){
     left: 34%;
@@ -736,7 +748,8 @@ a.social {
     border: 2px dashed #222;
     border-radius: 50%;
     height: 70px;
-    margin-left: 25px;
+    margin-left: -35px;
+    left: 50%;
     position: relative;
     width: 70px;
     -webkit-animation: spin 5s infinite;
