@@ -120,5 +120,18 @@ $ ->
   # add black background to mobile show pages
   $("body").css("background-color","#111111") if $(".js-black-background").length
 
+  # split chapter into two lines on Biblebook show pages
+  $('.js-split').each ->
+    text   = $(this).text()
+    split  = text.split("-")
+    first  = split[0]
+    second = split[1] || ""
+
+    $(this).html("<span>"+first+"</span>")
+    unless second == ""
+      $(this).append("<span> - "+second+"</span>")
+
+
+
 
 
