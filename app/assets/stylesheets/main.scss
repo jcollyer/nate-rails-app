@@ -31,7 +31,7 @@ a {
   color: #333;
   padding: 0px 7px;
 }
-a.jp-play, a.jp-pause, a.icon-volume, a.player_refurl,  a.button-download, a.button-download-mobile {border:none;}
+a.jp-play, a.jp-pause, a.icon-volume, a.player_refurl,  a.button-download, a.button-download-mobile, a.book-link {border:none;}
 
 p {
   color: rgba(0,0,0,0.5);
@@ -168,7 +168,9 @@ table {
     display: none;
   }
 }
-
+.book-link {
+  display: block;
+}
 .white-text {
   color: white;
 }
