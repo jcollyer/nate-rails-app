@@ -488,10 +488,10 @@ $font-raleway:    'raleway', sans-serif;
 .home-vol {
   position: absolute;
   top: 40%;
-  left: 45%;
+  left: 40%;
   height: 60px;
   width: 160px;
-  font-size: 60px;
+  font-size: 55px;
   color: white;
   line-height: 0.7;
   border-left: 1px solid #fff;
@@ -501,8 +501,8 @@ $font-raleway:    'raleway', sans-serif;
     left: -85px;
   }
   @media all and (max-width: 1200px){
-    font-size: 45px;
-    left: 37%;
+    font-size: 40px;
+    left: 39%;
     top: 40%;
     height: 45px;
     width: 100px;
@@ -512,6 +512,15 @@ $font-raleway:    'raleway', sans-serif;
       width: 40px;
     }
   }
+}
+
+.coming-soon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 43%;
+  color: white;
 }
 
 .biblebook-hover{
