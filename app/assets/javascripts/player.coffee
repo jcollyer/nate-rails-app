@@ -61,31 +61,26 @@ $ ->
     $(".teaching-item").removeClass("active-item")
 
     $this              = $(this)
-    $button            = $(this).find(".play-this-teaching")
+    $button            = $this.find(".play-this-teaching")
 
-    window.audioPlayer = $("#lesson_mod_menu")
     mediaPath          = $button.data("mp3")
     bibleBook          = $button.data("biblebook")
     titlePath          = $button.data("name")
     refurlPath         = $button.data("refurl")
     imagePath          = $(".book_image").attr("src")
-    downloadMp3        = mediaPath
 
+    # open player
     $("#loader").fadeIn()
-    audioPlayer.fadeIn()
+    $("#lesson_mod_menu").fadeIn()
     $("#lesson_mod_menu_mobile").fadeIn()
-
+    # add active to teaching in playlist
     $this.addClass("active-item")
-    $("#player_download_url").attr("href", downloadMp3).attr("download", titlePath)
-    $(".lesson_mod_info").empty()
-    $(".lesson_mod_info").prepend("<h1 class='teaching_title'> "+bibleBook+" </h1> <h1 class='teaching_title'><span class='chapter_text'>Chapter </span>"+ titlePath+" </h1> ")
-
+    # add/update teaching details
+    $(".lesson_mod_info").empty().prepend("<h1 class='teaching_title'> "+bibleBook+" </h1> <h1 class='teaching_title'><span class='chapter_text'>Chapter </span>"+ titlePath+" </h1> ")
     $(".mod_img").attr("src", imagePath)
-    $(".player_download_url").attr("src")
-    $(".player_download_url").attr("src", mediaPath)
-    $(".player_refurl").attr("href")
+    $("#player_download_url").attr("href":mediaPath,"download":titlePath)
     $(".player_refurl").attr("href", refurlPath)
-    console.log mediaPath
+    # jplayer
     window.player = $("#jquery_jplayer_1").jPlayer
       swfPath: "http://www.jplayer.org/latest/js/Jplayer.swf"
       supplied: "mp3"
@@ -146,10 +141,11 @@ $ ->
 
   $(document).on "click", ".player_rewind", ->
     audioDiv = document.getElementById("jp_audio_0")
+    alert audioDiv
     currentTime = audioDiv.currentTime
     currentTimeRewind = currentTime - 30
-    # alert currentTime
-    # alert currentTimeRewind
+    alert currentTime
+    alert currentTimeRewind
     audioDiv.currentTime = currentTimeRewind
 
   # $("#jquery_jplayer_1").on $.jPlayer.event.play, ->
