@@ -90,7 +90,7 @@ $ ->
       swfPath: "http://www.jplayer.org/latest/js/Jplayer.swf"
       supplied: "mp3"
       solution: "html, flash"
-      volume: 1.0
+      volume: 0.8
       wmode: "window"
       smoothPlayBar: false
       errorAlerts: false
