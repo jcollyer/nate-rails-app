@@ -20,11 +20,10 @@
 
 
   <div class="row">
-  </br>
+    <div class="small-12 columns" style="margin">
+      <div class="logo">&nbsp;</div>
+    </div>
     <div class="small-12 large-8 columns">
-      <div class="mobile-logo show-mobile">&nbsp;</div>
-      <br>
-      <div class="nav-buffer show-mobile"> &nbsp;</div>
       <% @bios.each do |bio| %>
         <%= markdown(bio.text) %>
     </div>

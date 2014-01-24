@@ -401,37 +401,20 @@ table {
   display: none;
 }
 
-.logo {
+.logo{
   background-image: url(image_path("logo-white-letters.png"));
   background-repeat: no-repeat;
   background-size: 100%;
-  cursor: pointer;
-  left: 30px;
-  position: absolute;
-}
-.old-logo{
-  height: 120px;
-  top: 5px;
-  width: 120px;
-  transition: all 0.5s;
-}
-.new-logo {
-  height: 55px;
-  top: 1px;
-  width: 55px;
-  transition: all 0.5s;
-}
-.mobile-logo{
-  background-image: url(image_path("logo-white-letters.png"));
-  background-repeat: no-repeat;
-  background-size: 100%;
-  top: -24px;
   left: 0;
   right: 0;
-  margin: 45px auto 0px;
-  height: 55px;
-  width: 55px;
-  position: absolute;
+  margin: 25px auto 0px;
+  height: 120px;
+  width: 120px;
+  position: relative;
+  @media all and (max-width: "767px") {
+    height: 55px;
+    width: 55px;
+  }
 }
 
 
