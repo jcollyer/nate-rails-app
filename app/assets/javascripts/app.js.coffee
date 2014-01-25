@@ -6,6 +6,11 @@ $ ->
     scroll = $(temp).offset().top - 90
     $("html, body").animate( scrollTop: scroll, 400)
 
+  $(".about-link").click (event) ->
+    event.preventDefault()
+    scroll = $("#about-link").offset().top - 90
+    $("html, body").animate( scrollTop: scroll, 400)
+
   # Safari styles
   if navigator.userAgent.match(/AppleWebKit/) && ! navigator.userAgent.match(/Chrome/)
     $(".fancy-border-top.color-4").addClass("fancy-top-right")
