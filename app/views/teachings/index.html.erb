@@ -13,6 +13,7 @@
         <th>Position</th>
         <th>Biblebook</th>
         <th>Ref URL</th>
+        <th>Podcast URL</th>
       </tr>
     </thead>
 
@@ -23,6 +24,7 @@
           <td><%= teaching.position %></td>
           <td><% if teaching.biblebook.present? %><%= teaching.biblebook.name %></td><% end %>
           <td><%= teaching.refurl %></td>
+          <td><%= teaching.podcasturl %></td>
           <td><%= link_to 'Edit', edit_teaching_path(teaching) %></td>
           <td><%= link_to 'Destroy', teaching, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
