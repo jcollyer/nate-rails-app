@@ -69,6 +69,6 @@ class BiosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bio_params
-      params.require(:bio).permit(:text, :image)
+      params.require(:bio).permit(:text, :image, :subtext)
     end
 end

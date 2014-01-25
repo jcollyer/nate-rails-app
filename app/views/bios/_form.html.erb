@@ -17,8 +17,12 @@
 <div class="row">
   <div class="small-12 columns">
     <div class="field">
-      <%= f.label :text %><br>
+      <h3><%= f.label :text %></h3>
       <%= f.text_area :text, class: "text-area" %>
+    </div>
+    <div class="field">
+      <h3><%= f.label :subtext %></h3>
+      <%= f.text_area :subtext, class: "text-area" %>
     </div>
     <div class="field">
       <h3><%= f.label :image %></h3><br>
