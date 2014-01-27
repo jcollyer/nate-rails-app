@@ -421,11 +421,10 @@ $font-raleway:    'raleway', sans-serif;
   height:45px;
   width:45px;
   @media all and (max-width: 767px){
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    top: 2px;
-    right: 1px;
+    height: 55px;
+    width: 55px;
+    float: left;
+    margin: 8px 0px 0px 0px;
   }
 }
 
@@ -473,20 +472,20 @@ $font-raleway:    'raleway', sans-serif;
 .button-play-mobile {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJwbGF5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjIwMHB4IiBoZWlnaHQ9IjIwMHB4IiB2aWV3Qm94PSIwIDAgMjAwIDIwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjAwIDIwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Y2lyY2xlIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSI3IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGN4PSI5OS41ODgiIGN5PSIxMDIuMzUzIiByPSI5My41MjkiLz4NCjxwb2x5Z29uIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIxMiIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludHM9IjczLDEwMS4yNzMgNzMsMzguMjQ0IDExMy40NzEsNjkuNzU4DQoJMTUzLjE1OSwxMDEuMjczIDExMy4wNzksMTMyLjc4OCA3MywxNjQuMzAyICIvPg0KPC9zdmc+DQo=);
   background-size: 100%;
-  top: 10px;
+  top: -5px;
   left: -10px;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   position: absolute;
 }
 .button-pause-mobile {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJwYXVzZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSIyMDBweCIgaGVpZ2h0PSIyMDBweCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwMCAyMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjIzIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHgxPSI3MS41IiB5MT0iNDAiIHgyPSI3MS41IiB5Mj0iMTY0Ii8+DQo8bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMjMiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgeDE9IjEyOS41IiB5MT0iNDAiIHgyPSIxMjkuNSIgeTI9IjE2NCIvPg0KPGNpcmNsZSBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iNyIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBjeD0iOTkuNTg4IiBjeT0iMTAyLjM1MyIgcj0iOTMuNTI5Ii8+DQo8L3N2Zz4NCg==);
   background-size: 100%;
-  top: 10px;
+  top: -5px;
   left: -10px;
-  width: 70px;
-  height: 70px;
-  position:absolute;
+  width: 60px;
+  height: 60px;
+  position: absolute;
 }
 
 .home-vol {
@@ -584,6 +583,10 @@ $font-raleway:    'raleway', sans-serif;
     position:absolute;
     width:60px;
   }
+  @media all and (max-width: 767px){
+    top: 10px;
+    left: 22px;
+  }
 }
 
 .button-read-along {
@@ -651,8 +654,6 @@ $font-raleway:    'raleway', sans-serif;
   width: 100%;
   position: fixed;
   bottom: 0px;
-  background: #333;
-  border-top: 4px solid #333;
   z-index: 9;
 }
 .mobile-show-header {
@@ -707,27 +708,28 @@ $font-raleway:    'raleway', sans-serif;
   width:40px;
 }
 .lesson_podcast_mobile {
-  float: left;
+  float: right;
   height: 55px;
-  width:40px;
+  width: 20%;
+}
+.lesson_download_mobile{
+  float: right;
+  height: 55px;
+  width: 20%;
+  position: relative;
 }
 .lesson_progress_mobile {
-  float:left;
-  margin: 6px 0px 0px 3px;
-  width: 65%;
   .lesson_mod_time_mobile {
     height: 14px;
     width: 100%;
   }
   .lesson_progress_bar_mobile {
-    background: #222;
-    border-radius: 2px;
-    height: 31px;
-    border: 2px solid #fff;
+    background: #555;
+    height: 8px;
   }
   .progress_bar_mobile {
-    background: #555;
-    height: 27px;
+    background: #ddd;
+    height: 8px;
     position: relative;
     .lesson_current_time {
       color: #ccc;
@@ -744,11 +746,15 @@ $font-raleway:    'raleway', sans-serif;
     }
   }
 }
+
+.control-container {
+  background: #333;
+  height: 55px;
+  width: 100%;
+}
 .play-pause-mobile {
   float: left;
-  height: 90px;
-  margin-top: -20px;
-  width: 20%;
+  width: 25%;
   position: relative;
 }
 
