@@ -19,7 +19,7 @@
   <div class="playlist-mobile clearfix">
     <% @biblebook.teachings.each do |teaching| %>
       <div class="teaching-item">
-        <div class="play-this-teaching button-play-list-mobile" data-name="<%= teaching.name %>" data-mp3="<%= teaching.mp3 %>" data-refurl="<%= teaching.refurl %>" data-biblebook="<%= teaching.biblebook.name %>">
+        <div class="play-this-teaching button-play-list-mobile" data-name="<%= teaching.name %>" data-mp3="<%= teaching.mp3 %>" data-refurl="<%= teaching.refurl %>" data-podcasturl="<%= teaching.podcasturl %>" data-biblebook="<%= teaching.biblebook.name %>">
         </div>
         <div class="js-split"><%= teaching.name %></div>
       </div>
@@ -35,8 +35,20 @@
         <!--  AUDIO ELEMENT  -->
       </div>
       <div id="jp_container_1" class="jp-audio">
+        <div class="progress-container">
+          <!--  progress bar -->
+          <div class="lesson_progress_mobile">
+            <div class="lesson_mod_time_mobile">
+              <div class="jp-duration lesson_duration hide">&nbsp;</div>
+            </div>
+            <div class="jp-progress lesson_progress_bar_mobile">
+              <div class="jp-seek-bar seek_bar">
+                <div class="jp-play-bar progress_bar_mobile"><div class="jp-current-time lesson_current_time" style="right:-15px;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="jp-controls">
-
           <!--  play/pause buttons -->
           <div class="play-pause-mobile">
             <a href="javascript:;" class="jp-play" tabindex="1">
@@ -50,22 +62,16 @@
               </div>
             </a>
           </div>
-          <!--  progress bar -->
-          <div class="lesson_progress_mobile">
-            <div class="lesson_mod_time_mobile">
-              <div class="jp-duration lesson_duration hide">&nbsp;</div>
-            </div>
-            <div class="jp-progress lesson_progress_bar_mobile">
-              <div class="jp-seek-bar seek_bar">
-                <div class="jp-play-bar progress_bar_mobile"><div class="jp-current-time lesson_current_time" style="right:-15px;"></div></div>
-              </div>
-            </div>
+          <!--  podcast button -->
+          <div class="lesson_podcast_mobile">
+            <div class="button-podcast player_rewind">&nbsp;</div>
           </div>
           <!--  rewind button -->
           <div class="lesson_goback_mobile">
-            <div class="button-goback player_rewind">&nbsp;</div>
+            <div class="button-goback">
+              <a href="" class="player_podcasturl">&npsp;</a>
+            </div>
           </div>
-
 
         </div>
       </div>

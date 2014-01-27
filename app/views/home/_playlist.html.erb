@@ -8,7 +8,7 @@
     <div class="teaching-chapter">play <span class="bigger"> Chapter</span></div>
     <% biblebook.teachings.each do |teaching| %>
       <div class="teaching-item">
-        <div class="play-this-teaching button-play-list" data-name="<%= teaching.name %>" data-mp3="<%= teaching.mp3 %>" data-refurl="<%= teaching.refurl %>" data-biblebook="<%= teaching.biblebook.name %>">
+        <div class="play-this-teaching button-play-list" data-name="<%= teaching.name %>" data-mp3="<%= teaching.mp3 %>" data-refurl="<%= teaching.refurl %>" data-podcasturl="<%= teaching.podcasturl %>" data-biblebook="<%= teaching.biblebook.name %>">
         </div>
         <p> <%= teaching.name %></p>
       </div>
