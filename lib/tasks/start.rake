@@ -5,5 +5,4 @@ task :start => :environment do
     t.podcasturl = "https://itunes.apple.com/us/podcast/calvary-monterey-audio/id216918040"
     t.save
   end
-
 end
