@@ -20,6 +20,7 @@
 
 
   <div class="row">
+  <h1 class="show-mobile">About</h1>
   </br>
     <div class="small-12 large-8 columns">
       <% @abouts.each do |about| %>
@@ -30,6 +31,7 @@
       <%= image_tag about.image.url(:large), class: "show-desktop" %>
       <%= image_tag about.image.url(:medium), class: "show-mobile" %>
       <% end %>
+      <div class="show-mobile nav-buffer">&nbsp;</div>
     </div>
   </div>
 </div>
