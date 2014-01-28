@@ -586,6 +586,11 @@ $font-raleway:    'raleway', sans-serif;
   @media all and (max-width: 767px){
     top: 10px;
     left: 22px;
+    height: 40px;
+    width: 40px;
+    &:after {
+      content: ""
+    }
   }
 }
 
@@ -612,13 +617,14 @@ $font-raleway:    'raleway', sans-serif;
 
 .button-podcast {
   background-image: url(image_path("itunes.png"));
-  background-size:100%;
+  background-size: 100%;
   background-repeat:no-repeat;
-  height:40px;
-  width:40px;
+  height: 40px;
+  width: 40px;
   top: 1px;
   left: 18px;
   position: relative;
+  display: block;
   &:after{
     bottom: -10px;
     content: "podcast";
@@ -628,6 +634,16 @@ $font-raleway:    'raleway', sans-serif;
     height:10px;
     position:absolute;
     width:60px;
+  }
+  @media all and (max-width: 767px){
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    height: 55px;
+    width: 55px;
+    &:after {
+      content: ""
+    }
   }
 }
 
@@ -711,6 +727,7 @@ $font-raleway:    'raleway', sans-serif;
   float: right;
   height: 55px;
   width: 20%;
+  position: relative;
 }
 .lesson_download_mobile{
   float: right;
@@ -719,6 +736,8 @@ $font-raleway:    'raleway', sans-serif;
   position: relative;
 }
 .lesson_progress_mobile {
+  display: block;
+  position: relative;
   .lesson_mod_time_mobile {
     height: 14px;
     width: 100%;

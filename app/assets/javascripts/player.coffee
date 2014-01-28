@@ -88,11 +88,8 @@ $ ->
 
   $(document).on "click", ".player_rewind", ->
     audioDiv = document.getElementById("jp_audio_0")
-    alert audioDiv
     currentTime = audioDiv.currentTime
     currentTimeRewind = currentTime - 30
-    alert currentTime
-    alert currentTimeRewind
     audioDiv.currentTime = currentTimeRewind
 
   # $("#jquery_jplayer_1").on $.jPlayer.event.play, ->
