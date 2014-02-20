@@ -4,7 +4,7 @@ class TeachingsController < ApplicationController
   # GET /teachings
   # GET /teachings.json
   def index
-    @teachings = Teaching.all
+    @teachings = Teaching.all.order(params[:sort])
   end
 
   # GET /teachings/1
