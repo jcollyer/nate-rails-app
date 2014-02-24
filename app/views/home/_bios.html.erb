@@ -31,10 +31,9 @@
         <%= markdown(bio.subtext) %>
     </div>
     <div class="small-12 large-4 columns">
-      <div class="nav-buffer show-desktop">&nbsp;</div>
+      <div class="nav-buffer show-desktop"></div>
       </br>
-      <%= image_tag bio.image.url(:medium), class: "show-desktop" %>
-      <%= image_tag bio.image.url(:thumb), class: "show-mobile" %>
+      <%= image_tag bio.image.url(:medium) %>
       <% end %>
     </div>
   </div>
