@@ -656,13 +656,13 @@ table {
 .icon2 {
   background-color: #103b54;
   cursor: pointer;
-  margin: 60px auto 0px;
-  width: 190px;
-  height: 190px;
+  margin: 0px auto;
+  width: 120px;
+  height: 120px;
   text-align: center;
   line-height: 100px;
   color: #fff;
-  font-size: 40px;
+  font-size: 25px;
   border-radius: 200px;
   box-shadow: none;
   -webkit-transition: all 0.3s ease;
@@ -707,9 +707,10 @@ a.social {
   width: 25%;
 }
 
-.m-link {
+.footer-icon {
   display: block;
   line-height: 1;
+  min-height: 120px;
   @media all and (max-width: "767px"){
     min-height: 100px;
   }
