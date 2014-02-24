@@ -1,4 +1,4 @@
-<div class="calvary relative color-2">
+<div class="calvary relative">
 
   <div class="show-desktop">
       <div class="small-4 columns color-3 fancy-border">
@@ -19,33 +19,73 @@
   <span id="calvary-link"></span>
   <div class="nav-buffer show-desktop">&nbsp;</div>
   <div class="nav-buffer show-desktop">&nbsp;</div>
-  <div class="nav-buffer show-desktop">&nbsp;</div>
   </br>
   <% @notes.each do |note| %>
     <div class="row">
-      <div class="small-12 large-6 columns">
-        <div class="info-box">
-          <%= markdown(note.body) %>
+      <div class="large-3 columns show-desktop">
+        <div class="large-12 columns">
+          <a href="https://twitter.com/nholdridge" class="social" target="_blank">
+            <div class="icon2"><i class="fa fa-twitter"></i></div>
+          </a>
+        </div>
+        <div class="large-12 columns">
+          <a href="https://www.facebook.com/nate.holdridge" class="social" target="_blank">
+            <div class="icon2"><i class="fa fa-facebook"></i></div>
+          </a>
         </div>
       </div>
 
       <div class="small-12 large-6 columns">
-
-        <%# render :partial => note.links %>
+        <div class="info-box">
+          <%= markdown(note.body) %>
+        </div>
         <% note.links.each do |link| %>
           </br>
+          <h3><%= link_to link.name, link.link, class: "calvary-link" %></h3>
           </br>
-          <h3><%= link_to link.name, link.link %></h3>
-
         <% end %>
-        <div class="page-buffer show-desktop">&nbsp;</div>
+      </div>
+
+      <div class="large-3 columns show-desktop">
+        <div class="large-12 columns">
+          <a href="http://instagram.com/nateholdridge" class="social" target="_blank">
+            <div class="icon2 "><i class="fa fa-instagram"></i></div>
+          </a>
+        </div>
+        <div class="large-12 columns">
+          <a href="http://instagram.com/nateholdridge" class="social" target="_blank">
+            <div class="icon2 "><i class="fa fa-instagram"></i></div>
+          </a>
+        </div>
+      </div>
+
+
+
+      <!-- mobile links -->
+      <div class="small-12 columns show-mobile">
+        <div class="m-link-box">
+          <a href="http://" class="social" target="_blank">
+            <div class="icon2"><div class="m-link m-calvary-app">&nbsp;</div></div>
+          </a>
+        </div>
+        <div class="m-link-box">
+          <a href="http://" class="social" target="_blank">
+            <div class="icon2"><div class="m-link m-google-play">&nbsp;</div></div>
+          </a>
+        </div>
+        <div class="m-link-box">
+          <a href="http//" class="social" target="_blank">
+            <div class="icon2"><div class="m-link m-bible">&nbsp;</div></div>
+          </a>
+        </div>
+        <div class="m-link-box">
+          <a href="http//" class="social" target="_blank">
+            <div class="icon2 "><div class="m-link m-podcast">&nbsp;</div></div>
+          </a>
+        </div>
       </div>
     </div>
   <% end %>
-
-<br>
-<br>
-<br>
-<br>
+</br>
 </div>
 
