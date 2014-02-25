@@ -24,7 +24,7 @@
     <span id="teachings-link"></span>
   </div>
 
-  <div class="clearfix">
+  <div class="clearfix" style="max-width:1100px;">
     <% @biblebooks.each do |biblebook| %>
       <div class="biblebook-cover">
         <%= image_tag biblebook.image.url(:large), :data => { :biblebook => biblebook.id },  class: "br-small" %>
