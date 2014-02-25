@@ -23,7 +23,10 @@
     <div class="small-12 columns" style="margin">
       <div class="logo">&nbsp;</div>
     </div>
-    <div class="small-12 large-8 columns">
+    <div class="small-12 large-1 columns show-desktop">
+      <div class="nav-buffer">&nbsp;</div>
+    </div>
+    <div class="small-12 large-7 columns">
       <% @bios.each do |bio| %>
         <%= markdown(bio.text) %>
         <a href="#" class="about-link">more</a>
@@ -33,7 +36,8 @@
     <div class="small-12 large-4 columns">
       <div class="nav-buffer show-desktop"></div>
       </br>
-      <%= image_tag bio.image.url(:medium) %>
+      <%= image_tag bio.image.url(:medium), class: "show-desktop" %>
+      <%= image_tag bio.image.url(:thumb), class: "show-mobile" %>
       <% end %>
     </div>
   </div>
