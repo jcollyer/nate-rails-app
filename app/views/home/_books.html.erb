@@ -22,7 +22,10 @@
 <% @books.each do |book| %>
   <div class="row">
     <span id="books-link" style="position:absolute;top:-45px"></span>
-    <div class="small-12 large-8 columns">
+    <div class="small-12 large-2 columns show-desktop">
+      <div class="nav-buffer">&nbsp;</div>
+    </div>
+    <div class="small-12 large-6 columns">
         <h2 class="hh2"><%= book.title %></h2>
 
         <p><%= markdown(book.body) %></p>
