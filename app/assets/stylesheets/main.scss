@@ -400,21 +400,38 @@ table {
   display: none;
 }
 
-.logo{
+.logo {
   background-image: url(image_path("logo-white-letters.png"));
   background-repeat: no-repeat;
   background-size: 100%;
+  cursor: pointer;
+  left: 20px;
+  position: absolute;
+}
+
+.old-logo {
+  height: 100px;
+  width: 100px;
+  top: 20px;
+}
+
+.new-logo {
+  height: 50px;
+  width: 50px;
+  top: 3px;
+}
+
+.logo-mobile {
+  background-image: url(image_path("logo-white-letters.png"));
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 55px;
+  width: 55px;
+  top: 20px;
   left: 0;
   right: 0;
-  margin: 15px auto 0px;
-  height: 120px;
-  width: 120px;
+  margin: 0px auto;
   position: relative;
-  @media all and (max-width: "767px") {
-    height: 55px;
-    width: 55px;
-    top: 20px;
-  }
 }
 
 
