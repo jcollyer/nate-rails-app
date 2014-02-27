@@ -15,4 +15,4 @@
 /log/*.log
 /tmp
 
-/config/s3.yml
+/config/s3
