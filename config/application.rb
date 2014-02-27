@@ -24,8 +24,9 @@ module Nate
     S3_CREDENTIALS = YAML.load(File.read(File.expand_path(Rails.root.join("config","s3_credentials.yml"))))["production"]
     # AWS::S3::Base.establish_connection! S3_CREDENTIALS['connection']
     AWS::S3::Base.establish_connection!(
-    :access_key_id     => S3_CREDENTIALS['access_key_id'],
-    :secret_access_key => S3_CREDENTIALS['secret_access_key'],
-    :persistent        => true, # from http://www.ruby-forum.com/topic/110842
+      :access_key_id     => S3_CREDENTIALS['access_key_id'],
+      :secret_access_key => S3_CREDENTIALS['secret_access_key'],
+      :persistent        => true # from http://www.ruby-forum.com/topic/110842
+    )
   end
 end
