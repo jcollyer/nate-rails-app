@@ -4,6 +4,9 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+config/s3.yml
+
+
 # Ignore bundler config.
 /.bundle
 
@@ -15,4 +18,3 @@
 /log/*.log
 /tmp
 
-config/s3.yml
