@@ -20,5 +20,10 @@ module Nate
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+    AWS::S3::Base.establish_connection!(
+      :access_key_id     => ENV['S3_KEY'],
+      :secret_access_key => ENV['S3_SECRET']
+    )
   end
 end

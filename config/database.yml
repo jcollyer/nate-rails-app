@@ -14,4 +14,3 @@ production:
   adapter: postgresql
   database: nate_database
   username:
-
