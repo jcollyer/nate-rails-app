@@ -3,7 +3,7 @@ class Teaching < ActiveRecord::Base
 
   has_attached_file :mp3,
     :storage => :s3,
-    :s3_credentials => "#{Rails.root}/config/s3_cred.yml",
+    # :s3_credentials => "#{Rails.root}/config/s3_cred.yml",
     :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
     :url => "/system/:attachment/:id/:style/:filename"
 
