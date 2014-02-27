@@ -21,9 +21,11 @@ module Nate
     # config.i18n.default_locale = :de
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
+    S3_CREDENTIALS = YAML.load(File.read(File.expand_path(Rails.root.join("config","s3_credentials.yml"))))["production"]
+    # AWS::S3::Base.establish_connection! S3_CREDENTIALS['connection']
     AWS::S3::Base.establish_connection!(
-      :access_key_id     => ENV['S3_KEY'],
-      :secret_access_key => ENV['S3_SECRET']
-    )
+    :access_key_id     => S3_CREDENTIALS['access_key_id'],
+    :secret_access_key => S3_CREDENTIALS['secret_access_key'],
+    :persistent        => true, # from http://www.ruby-forum.com/topic/110842
   end
 end
