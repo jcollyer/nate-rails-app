@@ -1,5 +1,6 @@
 class BiosController < ApplicationController
   before_action :set_bio, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   # GET /bios
   # GET /bios.json

@@ -1,5 +1,6 @@
 class TeachingsController < ApplicationController
   before_action :set_teaching, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   # GET /teachings
   # GET /teachings.json

@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   # GET /notes
   # GET /notes.json
