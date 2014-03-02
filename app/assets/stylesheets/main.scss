@@ -363,6 +363,9 @@ table {
   position: fixed;
   height: 56px;
   z-index: 8;
+  @media all and (max-width: "767px") {
+    height: auto;
+  }
   ul {
     li {
       margin: 2px 0px;
