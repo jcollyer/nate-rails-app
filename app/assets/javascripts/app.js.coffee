@@ -23,7 +23,7 @@ $ ->
     if pagePosition > 50
       $("#main-nav").removeClass("old-nav").addClass("new-nav")
       $(".logo").removeClass("old-logo").addClass("new-logo")
-      $(".teaching-panels").css("margin-top","57px")
+      $(".teaching-panels").css("margin-top","56px")
     else
       $("#main-nav").removeClass("new-nav").addClass("old-nav")
       $(".logo").removeClass("new-logo").addClass("old-logo")
@@ -49,7 +49,7 @@ $ ->
     negPanelsWidth    = "-160px"
     panelsPercentage  = 160 / windowWidth
     widthMinusPanels  = ( 1 - panelsPercentage ) * 100 + "%"
-    $("#page-wrapper").animate(width: widthMinusPanels, 250)
+    $("#page-wrapper, #nav-wrap").animate(width: widthMinusPanels, 250)
 
 
   $(window).resize ->
@@ -68,7 +68,6 @@ $ ->
       panels            = $(".teaching-panels")
       panel             = $(".teaching-panel")
       openPanelID       = $(".teaching-panel:visible").data("id") or null
-      pageWrapper       = $("#page-wrapper")
       theID             = $el.data("biblebook")
       thisPanel         = $(".teaching-panel[data-id='"+theID+"']")
       close             = $(".teaching-panel-close")
@@ -93,7 +92,7 @@ $ ->
   $(".teaching-panel-close").on "click", ->
     negPanelsWidth    = "-160px"
     close             = $(".teaching-panel-close")
-    $("#page-wrapper").animate(width: "100%", 250)
+    $("#page-wrapper, #nav-wrap").animate(width: "100%", 250)
     $(".teaching-panels").animate(left: negPanelsWidth, 250, ->
       $(".teaching-panel").hide()
       close.css("right", "0px")
