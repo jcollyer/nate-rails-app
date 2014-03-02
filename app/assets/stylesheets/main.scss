@@ -318,7 +318,11 @@ table {
   position: absolute;
   width: 100%;
 }
-
+#nav-wrap{
+  position: absolute;
+  right: 0px;
+  width: 100%;
+}
 #main-nav {
   background: #333;
   top: 0px;
@@ -339,7 +343,7 @@ table {
       width: 19%;
       text-shadow: 0 -1px 0 #000;
       text-transform: uppercase;
-      transition: margin 0.5s;
+      // transition: margin 0.5s;
       &:hover {
         background: #444;
       }
@@ -357,6 +361,7 @@ table {
 .new-nav {
   border-bottom: 1px solid #444;
   position: fixed;
+  height: 56px;
   z-index: 8;
   ul {
     li {
@@ -419,6 +424,7 @@ table {
   height: 50px;
   width: 50px;
   top: 3px;
+  z-index: 9;
 }
 
 .logo-mobile {
@@ -461,7 +467,6 @@ table {
   box-shadow: -1px 0px 11px #888 inset;
   border-right: 1px solid #555;
   height: 100%;
-  margin-top: 40px;
   position: fixed;
   top: 0px;
   left: -160px;
@@ -535,7 +540,7 @@ table {
       width: 100%;
       border-bottom: 1px solid rgba(0,0,0,0.4);
       position: relative;
-      transition: all 0.5s;
+      transition: background 0.5s;
       &:hover {
         background: #777;
         color: white;
@@ -682,7 +687,6 @@ table {
   font-size: 25px;
   border-radius: 200px;
   box-shadow: none;
-  -webkit-transition: all 0.3s ease;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   transition: box-shadow 0.3s ease;
