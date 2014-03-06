@@ -28,7 +28,7 @@ class BiblebooksController < ApplicationController
 
     respond_to do |format|
       if @biblebook.save
-        format.html { redirect_to @biblebook, notice: 'Biblebook was successfully created.' }
+        format.html { redirect_to biblebooks_path, notice: 'Biblebook was successfully created.' }
         format.json { render action: 'show', status: :created, location: @biblebook }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class BiblebooksController < ApplicationController
   def update
     respond_to do |format|
       if @biblebook.update(biblebook_params)
-        format.html { redirect_to @biblebook, notice: 'Biblebook was successfully updated.' }
+        format.html { redirect_to biblebooks_path, notice: 'Biblebook was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
