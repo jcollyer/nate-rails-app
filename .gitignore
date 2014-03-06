@@ -16,9 +16,4 @@
 /tmp
 
 
-config/heroku_env.rb
-config/s3_cred.yml
-
-
-config/s3.yml
 config/initializers/s3_constants.rb
