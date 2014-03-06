@@ -1,6 +1,6 @@
 class BiblebooksController < ApplicationController
   before_action :set_biblebook, only: [:show, :edit, :update, :destroy]
-  before_filter :authorize
+  before_filter :authorize, except: [:show]
   # GET /biblebooks
   # GET /biblebooks.json
   def index
