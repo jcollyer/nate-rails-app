@@ -8,6 +8,7 @@ class Teaching < ActiveRecord::Base
       :secret_access_key => ENV['S3_SECRET'],
       :bucket => "nate_database"
     },
+    :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
     :url => "/system/:attachment/:id/:style/:filename",
     :default_url => '/assets/missing_:style.jpg'
 end
