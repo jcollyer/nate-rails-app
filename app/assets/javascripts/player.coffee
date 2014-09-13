@@ -4,12 +4,10 @@ $ ->
     player.jPlayer "pause"
 
   $(document).on "click", ".teaching-item", ->
-    console.log("click .teaching-item");
     $(".teaching-item").removeClass("active-item")
 
     $this              = $(this)
     $button            = $this.find(".play-this-teaching")
-
     mediaPath          = $button.data("mp3")
     bibleBook          = $button.data("biblebook")
     titlePath          = $button.data("name")
@@ -17,7 +15,7 @@ $ ->
     podcasturlPath     = $button.data("podcasturl")
     # imagePath          = $(".book_image").attr("src")
 
-    # console.log("$button: " + $button, "mediaPath: " + mediaPath, "bibleBook: " + bibleBook, "titlePath: " + titlePath, "refurlPath: " + refurlPath, "podcasturlPath: " + podcasturlPath, "imagePath: " + imagePath);
+    console.log("$button: " + $button, "mediaPath: " + mediaPath, "bibleBook: " + bibleBook, "titlePath: " + titlePath, "refurlPath: " + refurlPath, "podcasturlPath: " + podcasturlPath);
     # open player
     $("#loader").fadeIn()
     $("#lesson_mod_menu").fadeIn()
