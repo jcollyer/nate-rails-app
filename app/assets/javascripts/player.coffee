@@ -36,8 +36,8 @@ $ ->
       volume: 0.8
       wmode: "window"
       smoothPlayBar: false
-      errorAlerts: true
-      warningAlerts: true
+      errorAlerts: false
+      warningAlerts: false
       ready: ->
         player.on $.jPlayer.event.canplay, ->
           # console.log "ready"
