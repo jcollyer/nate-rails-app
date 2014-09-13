@@ -17,3 +17,5 @@
 
 
 config/initializers/s3_constants.rb
+
+npm-debug.log
