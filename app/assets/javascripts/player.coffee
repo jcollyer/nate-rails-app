@@ -15,9 +15,9 @@ $ ->
     titlePath          = $button.data("name")
     refurlPath         = $button.data("refurl")
     podcasturlPath     = $button.data("podcasturl")
-    imagePath          = $(".book_image").attr("src")
+    # imagePath          = $(".book_image").attr("src")
 
-    console.log("$button: " + $button, "mediaPath: " + mediaPath, "bibleBook: " + bibleBook, "titlePath: " + titlePath, "refurlPath: " + refurlPath, "podcasturlPath: " + podcasturlPath, "imagePath: " + imagePath);
+    # console.log("$button: " + $button, "mediaPath: " + mediaPath, "bibleBook: " + bibleBook, "titlePath: " + titlePath, "refurlPath: " + refurlPath, "podcasturlPath: " + podcasturlPath, "imagePath: " + imagePath);
     # open player
     $("#loader").fadeIn()
     $("#lesson_mod_menu").fadeIn()
@@ -38,8 +38,8 @@ $ ->
       volume: 0.8
       wmode: "window"
       smoothPlayBar: false
-      errorAlerts: false
-      warningAlerts: false
+      errorAlerts: true
+      warningAlerts: true
       ready: ->
         player.on $.jPlayer.event.canplay, ->
           # console.log "ready"
