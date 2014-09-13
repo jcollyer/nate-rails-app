@@ -31,7 +31,7 @@ $ ->
     $(".player_refurl").attr("href", refurlPath)
     $(".player_podcasturl").attr("href", podcasturlPath)
     # jplayer
-    window.player = $("#jquery_jplayer_1").jPlayer
+    player = $("#jquery_jplayer_1").jPlayer
       swfPath: "http://www.jplayer.org/latest/js/Jplayer.swf"
       supplied: "mp3"
       solution: "html, flash"
