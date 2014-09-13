@@ -4,6 +4,7 @@ $ ->
     player.jPlayer "pause"
 
   $(document).on "click", ".teaching-item", ->
+    console.log("click .teaching-item");
     $(".teaching-item").removeClass("active-item")
 
     $this              = $(this)
@@ -15,6 +16,8 @@ $ ->
     refurlPath         = $button.data("refurl")
     podcasturlPath     = $button.data("podcasturl")
     imagePath          = $(".book_image").attr("src")
+
+    console.log("$button: " + $button, "mediaPath: " + mediaPath, "bibleBook: " + bibleBook, "titlePath: " + titlePath, "refurlPath: " + refurlPath, "podcasturlPath: " + podcasturlPath, "imagePath: " + imagePath);
     # open player
     $("#loader").fadeIn()
     $("#lesson_mod_menu").fadeIn()
@@ -23,7 +26,7 @@ $ ->
     $this.addClass("active-item")
     # add/update teaching details
     $(".lesson_mod_info").empty().prepend("<h1 class='teaching_title'> "+bibleBook+" </h1> <h1 class='teaching_title'><span class='chapter_text'>Chapter </span>"+ titlePath+" </h1> ")
-    $(".mod_img").attr("src", imagePath)
+    # $(".mod_img").attr("src", imagePath)
     $("#player_download_url").attr("href":mediaPath,"download":titlePath)
     $(".player_refurl").attr("href", refurlPath)
     $(".player_podcasturl").attr("href", podcasturlPath)
