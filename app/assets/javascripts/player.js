@@ -26,40 +26,41 @@
       });
       $(".player_refurl").attr("href", refurlPath);
       $(".player_podcasturl").attr("href", podcasturlPath);
-      window.player = $("#jquery_jplayer_1").jPlayer({
-        swfPath: "http://www.jplayer.org/latest/js/Jplayer.swf",
-        supplied: "mp3",
-        solution: "html, flash",
-        volume: 0.8,
-        wmode: "window",
-        smoothPlayBar: false,
-        errorAlerts: false,
-        warningAlerts: false,
-        ready: function() {
-          player.on($.jPlayer.event.canplay, function() {
-            return $("#loader").fadeOut();
-          });
-          player.on($.jPlayer.event.play, function() {
-            return $button.removeClass("paused");
-          });
-          return player.on($.jPlayer.event.pause, function() {
-            return $button.addClass("paused");
-          });
-        }
-      });
-      if ($button.data("state") === "playing") {
-        player.jPlayer("pause");
-        return $button.data("state", "paused");
-      } else {
-        player.jPlayer("setMedia", {
-          mp3: mediaPath,
-          oga: mediaPath
-        });
-        player.jPlayer("play");
-        player.jPlayer("pauseOthers");
-        $button.data("state", "playing");
-        return $button.removeClass("paused");
-      }
+      // window.player = $("#jquery_jplayer_1").jPlayer({
+      //   swfPath: "http://www.jplayer.org/latest/js/Jplayer.swf",
+      //   supplied: "mp3",
+      //   solution: "html, flash",
+      //   volume: 0.8,
+      //   wmode: "window",
+      //   smoothPlayBar: false,
+      //   errorAlerts: false,
+      //   warningAlerts: false,
+      //   ready: function() {
+      //     player.on($.jPlayer.event.canplay, function() {
+      //       return $("#loader").fadeOut();
+      //     });
+      //     player.on($.jPlayer.event.play, function() {
+      //       return $button.removeClass("paused");
+      //     });
+      //     return player.on($.jPlayer.event.pause, function() {
+      //       return $button.addClass("paused");
+      //     });
+      //   }
+      // });
+      // if ($button.data("state") === "playing") {
+      //   player.jPlayer("pause");
+      //   return $button.data("state", "paused");
+      // } else {
+      //   player.jPlayer("setMedia", {
+      //     mp3: mediaPath,
+      //     oga: mediaPath
+      //   });
+      //   player.jPlayer("play");
+      //   player.jPlayer("pauseOthers");
+      //   $button.data("state", "playing");
+      //   return $button.removeClass("paused");
+      // }
+
     });
     $(document).on("click", ".speed", function() {
       $(".speed").removeClass("activeSpeed");
