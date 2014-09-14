@@ -10,6 +10,10 @@ class BiblebooksController < ApplicationController
   # GET /biblebooks/1
   # GET /biblebooks/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json{ render json: @biblebook, root: false}
+    end
   end
 
   # GET /biblebooks/new
