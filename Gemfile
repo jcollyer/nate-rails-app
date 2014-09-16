@@ -10,6 +10,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 1.0.1'
 gem 'jquery-rails'
 gem 'active_model_serializers'
+gem 'pry'
 
 group :doc do
   gem 'sdoc', require: false
