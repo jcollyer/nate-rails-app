@@ -45,6 +45,11 @@
       html5player.addEventListener('onload', playing());
 
     });
+
+    var seekbar = document.getElementById("seek_bar");
+    var progress = document.getElementById("progress_bar");
+    var progressbar = $("#progress_bar");
+
     $(document).on("click", ".button-pause", function() {
       html5player.pause();
       var playButton = $(".jp-play");
@@ -61,8 +66,47 @@
       pauseButton.css("display","block");
     });
 
+    html5player.addEventListener('loadedmetadata', function(){
+      progress.setAttribute('max', Math.floor(html5player.duration));
+      // duration.textContent  = toHHMMSS(html5player.duration);
+    });
+
+    html5player.addEventListener('timeupdate', function(){
+      progressbar.css('width', html5player.currentTime);
+      // currentTime.textContent  = toHHMMSS(html5player.currentTime);
+    });
+
+    seekbar.addEventListener('click', function(e){
+      html5player.currentTime = Math.floor(html5player.duration) * (e.offsetX / e.target.offsetWidth);
+      debugger;
+    }, false);
 
 
+    $(document).on("click", ".speed", function() {
+      $(".speed").removeClass("activeSpeed")
+      $(this).addClass("activeSpeed")
+    });
+    $(document).on("click", ".speed-20" , function() {
+      html5player.playbackRate = 2
+    });
+    $(document).on("click", ".speed-17" , function() {
+      html5player.playbackRate = 1.7
+    });
+    $(document).on("click", ".speed-15" , function() {
+      html5player.playbackRate = 1.5
+    });
+    $(document).on("click", ".speed-13" , function() {
+      html5player.playbackRate = 1.3
+    });
+    $(document).on("click", ".speed-10" , function() {
+      html5player.playbackRate = 1.0
+    });
+
+    $(document).on("click", ".player_rewind", function() {
+      currentTime = html5player.currentTime
+      currentTimeRewind = currentTime - 30
+      html5player.currentTime = currentTimeRewind
+    });
 
   });
 

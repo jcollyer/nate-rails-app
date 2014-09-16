@@ -82,17 +82,18 @@ $font-raleway:    'raleway', sans-serif;
   }
 }
 
-.seek_bar{
+#seek_bar{
   border-radius: 12px;
   cursor: pointer;
 }
 .lesson_progress_bar {
+  position: relative;
   border: 1px solid #eee;
   border-radius: 20px;
   height: 18px;
   margin: 5px 5px 20px;
 }
-.progress_bar {
+#progress_bar {
   background: #fff;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
@@ -746,7 +747,7 @@ $font-raleway:    'raleway', sans-serif;
     background: #555;
     height: 8px;
   }
-  .progress_bar_mobile {
+  #progress_bar_mobile {
     background: #ddd;
     height: 8px;
     position: relative;
