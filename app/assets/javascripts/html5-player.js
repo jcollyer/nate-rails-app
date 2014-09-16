@@ -5,7 +5,6 @@ jQuery(function ($) {
     $.getJSON(mediaPath, function( data ) {
       var items = [];
       var teachings = data.teachings
-
       $.each( teachings, function( key, val ) {
         var teachings = [];
         var id = val.id;

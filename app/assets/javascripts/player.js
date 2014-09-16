@@ -62,6 +62,8 @@
         return time;
     }
 
+
+
     var seekbar = document.getElementById("seek_bar");
     var progress = document.getElementById("progress_bar");
     var progressbar = $("#progress_bar");
@@ -90,7 +92,23 @@
     });
 
     html5player.addEventListener('timeupdate', function(){
-      progressbar.css('width', html5player.currentTime + "%");
+      // convert total seconds to hh:mm:ss
+      var timeStyle = function(totalSec){
+        var minutes = parseInt( totalSec / 60 ) % 60;
+        var seconds = Math.floor(totalSec % 60);
+        return minutes + ":" + (seconds  < 10 ? "0" + seconds : seconds);
+      }
+      var timeDuration = timeStyle( html5player.duration );
+      var duration = Math.floor(html5player.duration);
+      // these are used to show the time
+      timeNow = timeStyle( Math.floor( html5player.currentTime ));
+      // this is used to show the progress bar
+      // var progressWidth = 100 * Math.floor( html5player.currentTime / duration );
+
+
+      var progressWidth = 100 * (html5player.currentTime / duration);
+      console.log(progressWidth);
+      progressbar.css('width', progressWidth + "%");
       // html5player.currentTime.textContent  = toHHMMSS(html5player.currentTime);
     });
 
