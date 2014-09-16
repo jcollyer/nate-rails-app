@@ -113,12 +113,13 @@
     });
 
     $(document).on("click", "#seek_bar", function(e) {
-      // html5player.currentTime = Math.floor(html5player.duration) * (e.offsetX / e.target.offsetWidth);
       var duration = Math.floor(html5player.duration);
       var xoffset = e.offsetX || e.layerX;
-      var seconds  = ((xoffset / (e.target.offsetWidth * 2)) * duration) / 10;
+      var seconds = (xoffset / e.currentTarget.clientWidth) * duration;
+
+      // youtube.getProgress();
       html5player.currentTime = seconds;
-      progressbar.css('width', html5player.currentTime + "%");
+      // youtube.player.playVideo();
     });
 
     $(document).on("click", ".jp-mute", function() {
