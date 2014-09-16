@@ -30,7 +30,8 @@ jQuery(function($){
 
   for(i=0;i<pcastPlayers.length;i++) {
     var player = pcastPlayers[i];
-    var audio = player.querySelector('audio');/*
+    var audio = player.querySelector('audio');
+    /*
     var play = player.querySelector('.play-pause.playing');
     var pause = player.querySelector('.play-pause.pausing');*/
 
@@ -59,15 +60,15 @@ jQuery(function($){
         return time;
     }
 
-    audio.addEventListener('loadedmetadata', function(){
-      progress.setAttribute('max', Math.floor(audio.duration));
-      duration.textContent  = toHHMMSS(audio.duration);
-    });
+    // audio.addEventListener('loadedmetadata', function(){
+    //   progress.setAttribute('max', Math.floor(audio.duration));
+    //   duration.textContent  = toHHMMSS(audio.duration);
+    // });
 
-    audio.addEventListener('timeupdate', function(){
-      progress.setAttribute('value', audio.currentTime);
-      currentTime.textContent  = toHHMMSS(audio.currentTime);
-    });
+    // audio.addEventListener('timeupdate', function(){
+    //   progress.setAttribute('value', audio.currentTime);
+    //   currentTime.textContent  = toHHMMSS(audio.currentTime);
+    // });
 
 /*    play.addEventListener('click', function(){
       this.style.display = 'none';
@@ -91,6 +92,6 @@ jQuery(function($){
 
 
   }
-})(this);
+});
 
 

@@ -4,6 +4,10 @@
       $("#lesson_mod_menu").css("display", "none");
       return player.jPlayer("pause");
     });
+
+
+    html5player = document.getElementById("main-audio");
+
     $(document).on("click", ".teaching-item", function() {
       var $button, $this, bibleBook, mediaPath, podcasturlPath, refurlPath, titlePath;
       $(".teaching-item").removeClass("active-item");
@@ -27,89 +31,42 @@
       $(".player_refurl").attr("href", refurlPath);
       $(".player_podcasturl").attr("href", podcasturlPath);
 
-      // html5player = $("#html5Player");
-      // debugger;
-      // html5player.html('<source src="'+mediaPath+'" type="audio/mpeg">');
+      html5player.setAttribute("src", mediaPath);
 
-      // teaching = new Audio(mediaPath);
+      playing = function() {
+        html5player.play();
+        var playButton = $(".jp-play");
+        var pauseButton = $(".jp-pause");
+        playButton.css("display","none");
+        pauseButton.css("display","block");
+      };
 
 
-      // teaching.play();
-
-
-      // window.player = $("#jquery_jplayer_1").jPlayer({
-      //   swfPath: "http://www.jplayer.org/latest/js/Jplayer.swf",
-      //   supplied: "mp3",
-      //   solution: "html, flash",
-      //   volume: 0.8,
-      //   wmode: "window",
-      //   smoothPlayBar: false,
-      //   errorAlerts: false,
-      //   warningAlerts: false,
-      //   ready: function() {
-      //     player.on($.jPlayer.event.canplay, function() {
-      //       return $("#loader").fadeOut();
-      //     });
-      //     player.on($.jPlayer.event.play, function() {
-      //       return $button.removeClass("paused");
-      //     });
-      //     return player.on($.jPlayer.event.pause, function() {
-      //       return $button.addClass("paused");
-      //     });
-      //   }
-      // });
-      // if ($button.data("state") === "playing") {
-      //   player.jPlayer("pause");
-      //   return $button.data("state", "paused");
-      // } else {
-      //   player.jPlayer("setMedia", {
-      //     mp3: mediaPath,
-      //     oga: mediaPath
-      //   });
-      //   player.jPlayer("play");
-      //   player.jPlayer("pauseOthers");
-      //   $button.data("state", "playing");
-      //   return $button.removeClass("paused");
-      // }
+      html5player.addEventListener('onload', playing());
 
     });
-    $(document).on("click", ".speed", function() {
-      $(".speed").removeClass("activeSpeed");
-      return $(this).addClass("activeSpeed");
+    $(document).on("click", ".button-pause", function() {
+      html5player.pause();
+      var playButton = $(".jp-play");
+      var pauseButton = $(".jp-pause");
+      playButton.css("display","block");
+      pauseButton.css("display","none");
     });
-    $(document).on("click", ".speed-20", function() {
-      var audioDiv, trackSpeed;
-      audioDiv = document.getElementById("jp_audio_0");
-      return trackSpeed = audioDiv.playbackRate = 2;
+
+    $(document).on("click", ".button-play", function() {
+      html5player.play();
+      var playButton = $(".jp-play");
+      var pauseButton = $(".jp-pause");
+      playButton.css("display","none");
+      pauseButton.css("display","block");
     });
-    $(document).on("click", ".speed-17", function() {
-      var audioDiv, trackSpeed;
-      audioDiv = document.getElementById("jp_audio_0");
-      return trackSpeed = audioDiv.playbackRate = 1.7;
-    });
-    $(document).on("click", ".speed-15", function() {
-      var audioDiv, trackSpeed;
-      audioDiv = document.getElementById("jp_audio_0");
-      return trackSpeed = audioDiv.playbackRate = 1.5;
-    });
-    $(document).on("click", ".speed-13", function() {
-      var audioDiv, trackSpeed;
-      audioDiv = document.getElementById("jp_audio_0");
-      return trackSpeed = audioDiv.playbackRate = 1.3;
-    });
-    $(document).on("click", ".speed-10", function() {
-      var audioDiv, trackSpeed;
-      audioDiv = document.getElementById("jp_audio_0");
-      return trackSpeed = audioDiv.playbackRate = 1.0;
-    });
-    return $(document).on("click", ".player_rewind", function() {
-      var audioDiv, currentTime, currentTimeRewind;
-      audioDiv = document.getElementById("jp_audio_0");
-      currentTime = audioDiv.currentTime;
-      currentTimeRewind = currentTime - 30;
-      return audioDiv.currentTime = currentTimeRewind;
-    });
+
+
+
+
   });
+
+
 
 }).call(this);
 
