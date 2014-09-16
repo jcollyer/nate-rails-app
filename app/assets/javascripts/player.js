@@ -46,6 +46,22 @@
 
     });
 
+    var toHHMMSS = function ( totalsecs ) {
+        var sec_num = parseInt(totalsecs, 10); // don't forget the second param
+        var hours   = Math.floor(sec_num / 3600);
+        var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+        var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+        if (hours   < 10) {hours   = "0"+hours; }
+        if (minutes < 10) {minutes = ""+minutes;}
+        if (seconds < 10) {seconds = "0"+seconds;}
+
+        var time = hours+':'+minutes+':'+seconds;
+        if (hours   <= 1) { var time = minutes+':'+seconds; }
+
+        return time;
+    }
+
     var seekbar = document.getElementById("seek_bar");
     var progress = document.getElementById("progress_bar");
     var progressbar = $("#progress_bar");
@@ -68,20 +84,24 @@
 
     html5player.addEventListener('loadedmetadata', function(){
       progress.setAttribute('max', Math.floor(html5player.duration));
-      console.log("hit");
       $("#loader").fadeOut();
-      // duration.textContent  = toHHMMSS(html5player.duration);
+      html5player.duration.textContent  = toHHMMSS(html5player.duration);
     });
 
     html5player.addEventListener('timeupdate', function(){
-      progressbar.css('width', html5player.currentTime);
-      // currentTime.textContent  = toHHMMSS(html5player.currentTime);
+      progressbar.css('width', html5player.currentTime + "%");
+      // html5player.currentTime.textContent  = toHHMMSS(html5player.currentTime);
     });
 
-    seekbar.addEventListener('click', function(e){
-      html5player.currentTime = Math.floor(html5player.duration) * (e.offsetX / e.target.offsetWidth);
-      debugger;
-    }, false);
+    $(document).on("click", "#seek_bar", function(e) {
+      // html5player.currentTime = Math.floor(html5player.duration) * (e.offsetX / e.target.offsetWidth);
+      var duration = Math.floor(html5player.duration);
+      var xoffset = e.offsetX || e.layerX;
+      var seconds  = ((xoffset / (e.target.offsetWidth * 2)) * duration) / 10;
+      html5player.currentTime = seconds;
+      progressbar.css('width', html5player.currentTime + "%");
+    });
+
 
 
     $(document).on("click", ".speed", function() {
