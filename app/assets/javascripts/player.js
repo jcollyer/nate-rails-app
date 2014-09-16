@@ -65,6 +65,7 @@
     var seekbar = document.getElementById("seek_bar");
     var progress = document.getElementById("progress_bar");
     var progressbar = $("#progress_bar");
+    var volumebar = $(".volume-bar");
 
     $(document).on("click", ".button-pause", function() {
       html5player.pause();
@@ -102,7 +103,20 @@
       progressbar.css('width', html5player.currentTime + "%");
     });
 
+    $(document).on("click", ".jp-mute", function() {
+      html5player.volume = 0;
+      volumebar.css("width","0%");
+    });
 
+    $(document).on("click", ".jp-volume-max", function() {
+      html5player.volume = 1;
+      volumebar.css("width","100%");
+    });
+
+    // $(document).on("click", ".volume-bar", function() {
+    //   html5player.volume = 1;
+    //   volumebar.css("width","100%");
+    // });
 
     $(document).on("click", ".speed", function() {
       $(".speed").removeClass("activeSpeed")
