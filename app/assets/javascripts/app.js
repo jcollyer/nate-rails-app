@@ -154,7 +154,7 @@
       $(".teaching-panels").animate({
         left: negPanelsWidth
       }, 250, function() {
-        $(".teaching-panel").hide();
+        // $(".teaching-panel").hide();
         return close.css("right", "0px");
       });
       return $(".teaching-panels").removeClass("opened");
