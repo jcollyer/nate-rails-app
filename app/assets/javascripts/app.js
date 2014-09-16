@@ -108,7 +108,6 @@
                 '<p>'+name+'</p>' +
               '</div>'
              );
-            console.log(items);
           });
 
 

@@ -107,7 +107,6 @@
 
 
       var progressWidth = 100 * (html5player.currentTime / duration);
-      console.log(progressWidth);
       progressbar.css('width', progressWidth + "%");
       // html5player.currentTime.textContent  = toHHMMSS(html5player.currentTime);
     });

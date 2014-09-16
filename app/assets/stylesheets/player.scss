@@ -723,6 +723,7 @@ $font-raleway:    'raleway', sans-serif;
   float: left;
   height: 55px;
   width:40px;
+  display: none;
 }
 .lesson_podcast_mobile {
   float: right;
@@ -747,7 +748,7 @@ $font-raleway:    'raleway', sans-serif;
     background: #555;
     height: 8px;
   }
-  #progress_bar_mobile {
+  .progress_bar_mobile {
     background: #ddd;
     height: 8px;
     position: relative;
