@@ -19,7 +19,7 @@
       refurlPath = $button.data("refurl");
       podcasturlPath = $button.data("podcasturl");
       console.log("$button: " + $button, "mediaPath: " + mediaPath, "bibleBook: " + bibleBook, "titlePath: " + titlePath, "refurlPath: " + refurlPath, "podcasturlPath: " + podcasturlPath);
-      // $("#loader").fadeIn();
+      $("#loader").fadeIn();
       $("#lesson_mod_menu").fadeIn();
       $("#lesson_mod_menu_mobile").fadeIn();
       $this.addClass("active-item");
@@ -33,7 +33,7 @@
 
       html5player.setAttribute("src", mediaPath);
 
-      playing = function() {
+      initiate = function() {
         html5player.play();
         var playButton = $(".jp-play");
         var pauseButton = $(".jp-pause");
@@ -42,7 +42,7 @@
       };
 
 
-      html5player.addEventListener('onload', playing());
+      html5player.addEventListener('onload', initiate());
 
     });
 
@@ -68,6 +68,8 @@
 
     html5player.addEventListener('loadedmetadata', function(){
       progress.setAttribute('max', Math.floor(html5player.duration));
+      console.log("hit");
+      $("#loader").fadeOut();
       // duration.textContent  = toHHMMSS(html5player.duration);
     });
 
