@@ -472,7 +472,7 @@ table {
   height: 100%;
   position: fixed;
   top: 0px;
-  left: 0px;
+  left: -160px;
   width: 160px;
   z-index: 9;
   .teaching-panel-close {
@@ -500,7 +500,7 @@ table {
     }
   }
   .teaching-chapter {
-    background: #111;
+    background: #777;
     border-top: 1px solid #111;
     border-bottom: 1px solid #222;
     color: #777;
@@ -524,6 +524,8 @@ table {
       top: 0px;
       position: relative;
       width: 100%;
+      height: 159px;
+      background: #333;
       &:after {
         display:block;
         content:'';
@@ -560,7 +562,7 @@ table {
         padding: 0 0 0 4px;
       }
       .play-this-teaching {
-        display: none;
+        // display: none;
         position: absolute;
         right: 5px;
         bottom: 3px;
