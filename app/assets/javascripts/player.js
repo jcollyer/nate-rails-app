@@ -15,7 +15,7 @@
       refurlPath = $button.data("refurl");
       podcasturlPath = $button.data("podcasturl");
       console.log("$button: " + $button, "mediaPath: " + mediaPath, "bibleBook: " + bibleBook, "titlePath: " + titlePath, "refurlPath: " + refurlPath, "podcasturlPath: " + podcasturlPath);
-      $("#loader").fadeIn();
+      // $("#loader").fadeIn();
       $("#lesson_mod_menu").fadeIn();
       $("#lesson_mod_menu_mobile").fadeIn();
       $this.addClass("active-item");
@@ -26,6 +26,17 @@
       });
       $(".player_refurl").attr("href", refurlPath);
       $(".player_podcasturl").attr("href", podcasturlPath);
+
+      // html5player = $("#html5Player");
+      // debugger;
+      // html5player.html('<source src="'+mediaPath+'" type="audio/mpeg">');
+
+      // teaching = new Audio(mediaPath);
+
+
+      // teaching.play();
+
+
       // window.player = $("#jquery_jplayer_1").jPlayer({
       //   swfPath: "http://www.jplayer.org/latest/js/Jplayer.swf",
       //   supplied: "mp3",
