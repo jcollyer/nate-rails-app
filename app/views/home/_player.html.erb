@@ -7,8 +7,62 @@
       <div id="progress_bar"></div>
     </div>
     <div id="controls">
-      <div class="button-goback"></div>
-      <div id="volume-toggle" class="volume-up"></div>
+      <div id="button-goback"></div>
+      <div id="volume-toggle" class="volume-mute"></div>
+
+      <div class="speed-10 speed active-speed">1.0x</div>
+      <div class="speed-13 speed">1.3x</div>
+      <div class="speed-15 speed">1.5x</div>
+      <div class="speed-17 speed">1.7x</div>
+      <div class="speed-20 speed">2.0x</div>
+
+      <div class="control-button"><a href="" id="button-read-along" target="_blank"></a></div>
+      <div class="control-button"><a href="" id="button-download" download="Nate's teaching"></a></div>
+
+      <div class="control-button"><a href="" id="button-podcast" target="_blank">&nbsp;</a></div>
+      <div class="control-button social_facebook">
+        <a href="#"
+           class="social-button"
+           onclick="
+            window.open(
+              'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+              'facebook-share-dialog',
+              'width=626,height=436');
+            return false;">
+        </a>
+      </div>
+      <div class="control-button social_twitter">
+        <a class="twitter popup social-button" href="http://twitter.com/share?text=Tweet%20about%20Nate's%20teachings."></a>
+        <script>
+          $('.popup').click(function(event) {
+            var width  = 575,
+                height = 400,
+                left   = 0,
+                top    = 0,
+                url    = this.href,
+                opts   = 'status=1' +
+                         ',width='  + width  +
+                         ',height=' + height +
+                         ',top='    + top    +
+                         ',left='   + left;
+
+            window.open(url, 'twitter', opts);
+
+            return false;
+          });
+        </script>
+      </div>
+      <div class="control-button social_google">
+        <a href="https://plus.google.com/share?url={nateholdridge.com}" class="social-button" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+          &nbsp;
+        </a>
+      </div>
+
+      <div id="lesson-mod-info" itemprop="name"></div>
+      <div id="close-button">x</div>
+
+
+
   </div>
 </div>
 
@@ -63,79 +117,23 @@
               </div>
             </div>
           </div>
-          <div class="lesson_podcast">
-            <a href="" class="player_podcasturl button-podcast" target="_blank">&nbsp;</a>
-          </div>
 
-          <div class="play_speeds">
-            <div class="speed-10 speed activeSpeed">1.0x</div>
-            <div class="speed-13 speed">1.3x</div>
-            <div class="speed-15 speed">1.5x</div>
-            <div class="speed-17 speed">1.7x</div>
-            <div class="speed-20 speed">2.0x</div>
-          </div>
+
+
         </div>
 
 
         <div class="more-options">
-          <a href="" class="player_refurl button-read-along" target="_blank">
-            <!-- read along -->
-          </a>
-          <a href="" id="player_download_url" class="button-download" download="Nate's teaching">
-            <!-- download  -->
-          </a>
+
         </div>
       </div>
     </div>
 
     <div class="lesson_mod_info_container small-8 large-4 columns">
 
-      <div class="player_close_button">x</div>
 
-      <div class="lesson_mod_info" itemprop="name">
-        <div class="mod_share"></div>
-      </div>
 
-      <div class="social_buttons">
-        <div class="social_icon social_facebook">
-          <a href="#"
-            onclick="
-              window.open(
-                'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-                'facebook-share-dialog',
-                'width=626,height=436');
-              return false;">
-          </a>
-        </div>
-        <div class="social_icon social_twitter">
-          <a class="twitter popup" href="http://twitter.com/share?text=Tweet%20about%20Nate's%20teachings."></a>
 
-          <script>
-            $('.popup').click(function(event) {
-              var width  = 575,
-                  height = 400,
-                  left   = 0,
-                  top    = 0,
-                  url    = this.href,
-                  opts   = 'status=1' +
-                           ',width='  + width  +
-                           ',height=' + height +
-                           ',top='    + top    +
-                           ',left='   + left;
-
-              window.open(url, 'twitter', opts);
-
-              return false;
-            });
-          </script>
-        </div>
-        <div class="social_icon social_google">
-          <a href="https://plus.google.com/share?url={nateholdridge.com}" onclick="javascript:window.open(this.href,
-            '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-            &nbsp;
-          </a>
-        </div>
-      </div>
 
     </div>
 

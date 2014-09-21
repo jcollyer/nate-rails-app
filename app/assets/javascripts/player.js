@@ -18,13 +18,14 @@
       $("#lesson_mod_menu").fadeIn();
       $("#lesson_mod_menu_mobile").fadeIn();
       $this.addClass("active-item");
-      $(".lesson_mod_info").empty().prepend("<h1 class='teaching_title'> " + bibleBook + " </h1> <h1 class='teaching_title'><span class='chapter_text'>Chapter </span>" + titlePath + " </h1> ");
-      $("#player_download_url").attr({
+      debugger;
+      $("#lesson-mod-info").empty().prepend("<h1>" + bibleBook + " " + titlePath + "</h1>");
+      $("#button-download").attr({
         "href": mediaPath,
         "download": titlePath
       });
-      $(".player_refurl").attr("href", refurlPath);
-      $(".player_podcasturl").attr("href", podcasturlPath);
+      $("#button-read-along").attr("href", refurlPath);
+      $("#button-podcast").attr("href", podcasturlPath);
 
       html5player.setAttribute("src", mediaPath);
 
@@ -38,8 +39,8 @@
 
     });
 
-    $(document).on("click", ".player_close_button", function() {
-      $("#lesson_mod_menu").css("display", "none");
+    $(document).on("click", "#close-button", function() {
+      $("#player").css("display", "none");
       pausePlayer();
     });
 
@@ -117,19 +118,21 @@
     });
 
     $(document).on("click", "#volume-toggle", function() {
-      if ($("#volume-toggle").hasClass("volume-up")) {
+      // debugger;
+      volumeToggle = $("#volume-toggle");
+      if (volumeToggle.hasClass("volume-up")) {
         html5player.volume = 0;
-        $("#volume-toggle").removeClass("volume-up").addClass("volume-mute");
+        volumeToggle.removeClass("volume-up").addClass("volume-mute");
       } else {
         html5player.volume = 1;
-        $("#volume-toggle").removeClass("volume-mute").addClass("volume-up");
+        volumeToggle.removeClass("volume-mute").addClass("volume-up");
       }
     });
 
 
     $(document).on("click", ".speed", function() {
-      $(".speed").removeClass("activeSpeed")
-      $(this).addClass("activeSpeed")
+      $(".speed").removeClass("active-speed")
+      $(this).addClass("active-speed")
     });
     $(document).on("click", ".speed-20" , function() {
       html5player.playbackRate = 2

@@ -268,41 +268,7 @@ $font-raleway:    'raleway', sans-serif;
 }
 
 
-.social_buttons{
-  float:right;
-  padding:3px 0 0 0;
-  width:153px;
-  @media all and (max-width: 767px){
-    display:none;
-  }
-  .social_icon{
-    float:left;
-    height:24px;
-    margin-left:15px;
-    width:24px;
-    opacity:0.9;
-    &:hover{opacity:1;}
-    a{
-      display:block;
-      height: 24px;
-    }
-  }
-  .social_facebook {
-    background-size:100%;
-    background-repeat:no-repeat;
-  }
-  .social_twitter {
-    background-size:100%;
-    background-repeat:no-repeat;
-  }
-  .social_google {
-    background-size:100%;
-    background-repeat:no-repeat;
-    img{
-      height:0px;
-    }
-  }
-}
+
 
 .more-options{
   float: left;
@@ -311,30 +277,7 @@ $font-raleway:    'raleway', sans-serif;
   width: 0%;
 }
 
-.player_close_button{
-  border:1px solid #fff;
-  color:#fff;
-  cursor:pointer;
-  float:right;
-  font-size: 80%;
-  height:20px;
-  margin:5px 7px 0 0;
-  padding:2px 5px;
-  width:20px;
-  @media all and (max-width: 767px){
-    top: 61px;
-    height:25px;
-    margin:5px;
-    right:0px;
-    padding:6px 8px;
-    position:absolute;
-    width:24px;
-  }
-  &:hover{
-    background:#fff;
-    color:#222;
-  }
-}
+
 
 .color-fff{
   color: #fff;
@@ -486,88 +429,10 @@ $font-raleway:    'raleway', sans-serif;
   background-repeat: no-repeat;
 }
 
-.button-download {
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl84IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjIwMHB4IiBoZWlnaHQ9IjIwMHB4IiB2aWV3Qm94PSIwIDAgMjAwIDIwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjAwIDIwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjE2NSwxNTIgMTY1LDE3NyAzMSwxNzcgMzEsMTUyIDE4LDE1MiAxOCwxNzcgMTgsMTg4IDMxLDE4OCAxNjUsMTg4IDE3NywxODggMTc3LDE3NyAxNzcsMTUyIAkiLz4NCgk8cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjE2NS4yMTYsMTA4IDMwLjk3LDEwOCA5OC4wOTQsMTUwLjcxNCAJIi8+DQoJPHJlY3QgZmlsbD0iI0ZGRkZGRiIgeD0iNjkiIHk9IjUxIiB3aWR0aD0iNjAiIGhlaWdodD0iMTIiLz4NCgk8cmVjdCBmaWxsPSIjRkZGRkZGIiB4PSI2OSIgeT0iMjkiIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMyIvPg0KCTxyZWN0IGZpbGw9IiNGRkZGRkYiIHg9IjY5IiB5PSI3NSIgd2lkdGg9IjYwIiBoZWlnaHQ9IjIxIi8+DQo8L2c+DQo8L3N2Zz4NCg==);
-  background-size:100%;
-  background-repeat:no-repeat;
-  left: 14px;
-  height:30px;
-  top:55px;
-  position:absolute;
-  width:30px;
-  &:after{
-    bottom: -12px;
-    content: "download";
-    color:white;
-    font-size: 12px;
-    left: -12px;
-    height:10px;
-    position:absolute;
-    width:60px;
-  }
-  @media all and (max-width: 767px){
-    top: 10px;
-    left: 22px;
-    height: 40px;
-    width: 40px;
-    &:after {
-      content: ""
-    }
-  }
-}
 
-.button-read-along {
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl85IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjIwMHB4IiBoZWlnaHQ9IjIwMHB4IiB2aWV3Qm94PSIwIDAgMjAwIDIwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjAwIDIwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBkPSJNMTcxLjA2MywxNzcuMzU4Yy0wLjAzMi0wLjcwMy0wLjA2My0xLjM1NC0wLjA2My0xLjg5OFY0Ni42NjVMMTQwLjExMywxNmgtOTEuOThDMzkuMjg0LDE2LDM0LDE5LjA1OCwzNCwyNC4xNzlWMTc1LjQ2DQoJCWMwLDUuNzA3LDguNTg1LDE0LjU0LDE0LjEzMywxNC41NGgxMTYuNTI4YzEuNjM4LDAsMy4xNTQtMC42NDMsNC4yNy0xLjgxQzE3MS40MzgsMTg1LjU2NSwxNzEuMjM5LDE4MS4yMDUsMTcxLjA2MywxNzcuMzU4eg0KCQkgTTE2My4wOTYsMTgySDQ4LjI3NmMtMS43NjgtMC40OTktNS44ODItNC44NDctNi4yNzYtNi42NDJWMjQuOTgzQzQyLjk5LDI0LjUyMSw0NS4zMzEsMjQsNDguMTMzLDI0aDg4LjY4M0wxNjMsNDkuOTk2VjE3NS40Ng0KCQljMCwwLjY0OSwwLjAzMywxLjQyNiwwLjA3MiwyLjI2NEMxNjMuMTIxLDE3OC43OTUsMTYzLjIwOSwxODAuNzMxLDE2My4wOTYsMTgyeiIgZmlsbD0iI0ZGRkZGRiIvPg0KCTxwb2x5Z29uIHBvaW50cz0iMTM0LDM1IDEyNiwzNSAxMjYsNjQgMTI3LDY0IDEzNCw2NCAxNTYsNjQgMTU2LDU2IDEzNCw1NiIgZmlsbD0iI0ZGRkZGRiIvPg0KCTxyZWN0IHg9IjUyIiB5PSIxMTUiIHdpZHRoPSI5NSIgaGVpZ2h0PSI4IiBmaWxsPSIjRkZGRkZGIi8+DQoJPHJlY3QgeD0iNTIiIHk9IjE0MyIgd2lkdGg9IjkxIiBoZWlnaHQ9IjgiIGZpbGw9IiNGRkZGRkYiLz4NCgk8cmVjdCB4PSI1MiIgeT0iODciIHdpZHRoPSI0MyIgaGVpZ2h0PSI4IiBmaWxsPSIjRkZGRkZGIiAvPg0KPC9nPg0KPC9zdmc+DQo=);
-  background-size:100%;
-  background-repeat:no-repeat;
-  left: 14px;
-  height:30px;
-  top: 8px;
-  width:30px;
-  position:absolute;
-  &:after {
-    bottom: -12px;
-    content: "read along";
-    color:white;
-    font-size: 12px;
-    left: -13px;
-    height:10px;
-    position:absolute;
-    width:60px;
-  }
-}
 
-.button-podcast {
-  background-image: url(image_path("itunes.png"));
-  background-size: 100%;
-  background-repeat:no-repeat;
-  height: 40px;
-  width: 40px;
-  top: 1px;
-  left: 18px;
-  position: relative;
-  display: block;
-  &:after{
-    bottom: -10px;
-    content: "podcast";
-    color:white;
-    font-size: 12px;
-    left: -12px;
-    height:10px;
-    position:absolute;
-    width:60px;
-  }
-  @media all and (max-width: 767px){
-    position: absolute;
-    top: 3px;
-    left: 7px;
-    height: 55px;
-    width: 55px;
-    &:after {
-      content: ""
-    }
-  }
-}
+
+
 
 .ns_twitter,
 .social_twitter{
