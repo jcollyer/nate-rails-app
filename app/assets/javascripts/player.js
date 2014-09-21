@@ -15,10 +15,9 @@
       podcasturlPath = $button.data("podcasturl");
       // console.log("$button: " + $button, "mediaPath: " + mediaPath, "bibleBook: " + bibleBook, "titlePath: " + titlePath, "refurlPath: " + refurlPath, "podcasturlPath: " + podcasturlPath);
       $("#loader").fadeIn();
-      $("#lesson_mod_menu").fadeIn();
-      $("#lesson_mod_menu_mobile").fadeIn();
+      $("#player").fadeIn();
       $this.addClass("active-item");
-      debugger;
+
       $("#lesson-mod-info").empty().prepend("<h1>" + bibleBook + " " + titlePath + "</h1>");
       $("#button-download").attr({
         "href": mediaPath,
@@ -121,10 +120,10 @@
       // debugger;
       volumeToggle = $("#volume-toggle");
       if (volumeToggle.hasClass("volume-up")) {
-        html5player.volume = 0;
+        html5player.volume = 1;
         volumeToggle.removeClass("volume-up").addClass("volume-mute");
       } else {
-        html5player.volume = 1;
+        html5player.volume = 0;
         volumeToggle.removeClass("volume-mute").addClass("volume-up");
       }
     });
@@ -150,7 +149,7 @@
       html5player.playbackRate = 1.0
     });
 
-    $(document).on("click", ".button-goback", function() {
+    $(document).on("click", "#button-goback", function() {
       currentTime = html5player.currentTime
       currentTimeRewind = currentTime - 30
       html5player.currentTime = currentTimeRewind
