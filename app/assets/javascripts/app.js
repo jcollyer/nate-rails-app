@@ -5,10 +5,20 @@
       var el, scroll, temp;
       el = $(this).text();
       temp = "#" + el + "-link";
-      scroll = $(temp).offset().top - 90;
-      return $("html, body").animate({
-        scrollTop: scroll
-      }, 400);
+      scroll = $(temp).position().top;
+      var body = $("html, body");
+      // debugger;
+      $('html, body').animate({
+            scrollTop: 200
+        }, 800);
+      // body.animate({scrollTop:299}, '500', 'swing', function() {
+      //    alert("Finished animating");
+      // });
+      // $("html, body").animate({
+      //   scrollTop: scroll
+      // }, 400);
+
+      // debugger;
     });
     $(".about-link").click(function(event) {
       var scroll;
@@ -25,19 +35,19 @@
     }
     pagePlace = function() {
       var pagePosition;
-      pagePosition = $(window).scrollTop();
+      pagePosition = $("#page-wrapper").offset().top;
       if (pagePosition > 50) {
-        $("#main-nav").removeClass("old-nav").addClass("new-nav");
-        $(".logo").removeClass("old-logo").addClass("new-logo");
-        return $(".teaching-panels").css("margin-top", "56px");
-      } else {
         $("#main-nav").removeClass("new-nav").addClass("old-nav");
         $(".logo").removeClass("new-logo").addClass("old-logo");
         return $(".teaching-panels").css("margin-top", "134px");
+      } else {
+        $("#main-nav").removeClass("old-nav").addClass("new-nav");
+        $(".logo").removeClass("old-logo").addClass("new-logo");
+        return $(".teaching-panels").css("margin-top", "56px");
       }
     };
     if ($(window).width() > 767) {
-      $(window).scroll(function() {
+      $("body").scroll(function() {
         return pagePlace();
       });
     }

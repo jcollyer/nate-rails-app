@@ -22,13 +22,15 @@ body {
   position: relative;
   width: 100%;
   margin-left: auto;
+  margin-top: 100px;
 }
 
-a {
-  // border: 1px solid rgba(0,0,0,0.5);
-  // border-radius: 2px;
-  // color: #333;
-  // padding: 0px 7px;
+.about-link, .contact-link {
+  border: 1px solid rgba(0,0,0,0.5);
+  border-radius: 2px;
+  color: #333;
+  padding: 0px 7px;
+  text-decoration: none;
 }
 // a.jp-play, a.jp-pause, a.icon-volume, a.button-read-along,  a.button-download, a.button-download-mobile, a.book-link, a.player_podcasturl {border:none;}
 
@@ -327,6 +329,7 @@ table {
   background: #333;
   top: 0px;
   width: 100%;
+  z-index: 9;
   ul{
     margin: 0 auto;
     max-width: 800px;
@@ -767,6 +770,7 @@ a.social {
 
 .text-area {
   min-height: 400px;
+  width: 100%;
 }
 
 #loader{

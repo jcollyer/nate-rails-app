@@ -1,35 +1,15 @@
 <span id="bio-link" style="position:absolute;top:-85px;"></span>
 <div class="one gradi-1">
-  <div class="fb-wraper">
-    <div class="small-4 columns color-4 fancy-border-top">
-      <p>&nbsp;</p>
-    </div>
-    <div class="small-4 columns padding bottom-margin-height">
-      <div class="back-3 negitive-top">
-        <h1 class="behind-dark">Welcome</h1>
-      </div>
-      <div class="bottom-left">&nbsp;</div>
-      <div class="bottom-right">&nbsp;</div>
-    </div>
-    <div class="small-4 columns gradi-1 color-4 fancy-border-top">
-      <p>&nbsp;</p>
-    </div>
-  </div>
+
 
   <div class="row">
-    <div class="small-12 columns" style="margin">
-      <div class="nav-buffer show-mobile"></div>
-      <div class="logo-mobile show-mobile">&nbsp;</div>
-    </div>
-    <div class="small-12 large-1 columns show-desktop">
-      <div class="nav-buffer">&nbsp;</div>
-    </div>
     <div class="small-12 large-7 columns">
       <% @bios.each do |bio| %>
         <%= markdown(bio.text) %>
         <a href="#" class="about-link">more</a>
         <hr />
         <%= markdown(bio.subtext) %>
+        <a href="mailto:info@calvary.com" class="contact-link">contact@nateholdridge.com</a>
     </div>
 
     <div class="small-12 large-4 columns">

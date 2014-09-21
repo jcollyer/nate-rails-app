@@ -1,30 +1,12 @@
-<div class="fancy-stratum">
-  <div class="show-desktop">
-    <div class="small-4 columns color-3 fancy-border">
-      <p>&nbsp;</p>
-    </div>
-    <div class="small-4 columns padding top-margin">
-      <div class="back-3">
-        <div class="top-left">&nbsp;</div>
-        <div class="top-right">&nbsp;</div>
-        <h1>Teachings</h1>
-      </div>
-    </div>
-    <div class="small-4 columns gradi-1 color-3 fancy-border">
-      <p>&nbsp;</p>
-    </div>
+<div class="row">
+  <div class="small-12 columns">
+    <br>
+    <h1 class="show-mobile white-text">Teachings</h1>
+    <h2 class="hh2" style="color:#ddd;">a through the bible studio series</h2>
   </div>
+  <span id="teachings-link"></span>
 
-  <div class="row">
-    <div class="small-12 columns">
-      <br>
-      <h1 class="show-mobile white-text">Teachings</h1>
-      <h2 class="hh2" style="color:#ddd;">a through the bible studio series</h2>
-    </div>
-    <span id="teachings-link"></span>
-  </div>
-
-  <div class="clearfix" style="max-width:1100px;">
+  <div class="clearfix" >
     <% @biblebooks.each do |biblebook| %>
       <div class="biblebook-cover">
         <%= image_tag biblebook.image.url(:large), :data => { :biblebook => biblebook.id },  class: "br-small" %>
@@ -37,6 +19,6 @@
       </div>
     <% end %>
   </div>
-
 </div>
-<div class="page-buffer-2 show-desktop">&nbsp;</div>
+
+
