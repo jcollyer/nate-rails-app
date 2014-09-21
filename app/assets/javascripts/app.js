@@ -9,8 +9,8 @@
       var body = $("html, body");
       // debugger;
       $('html, body').animate({
-            scrollTop: 200
-        }, 800);
+        scrollTop: scroll
+      }, 800);
       // body.animate({scrollTop:299}, '500', 'swing', function() {
       //    alert("Finished animating");
       // });
@@ -35,8 +35,8 @@
     }
     pagePlace = function() {
       var pagePosition;
-      pagePosition = $("#page-wrapper").offset().top;
-      if (pagePosition > 50) {
+      pagePosition = $("body").scrollTop();
+      if (pagePosition < 50) {
         $("#main-nav").removeClass("new-nav").addClass("old-nav");
         $(".logo").removeClass("new-logo").addClass("old-logo");
         return $(".teaching-panels").css("margin-top", "134px");
@@ -47,7 +47,7 @@
       }
     };
     if ($(window).width() > 767) {
-      $("body").scroll(function() {
+      $(window).scroll(function() {
         return pagePlace();
       });
     }
