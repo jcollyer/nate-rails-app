@@ -1,10 +1,5 @@
 (function() {
   $(function() {
-    $(document).on("click", ".player_close_button", function() {
-      $("#lesson_mod_menu").css("display", "none");
-      return player.jPlayer("pause");
-    });
-
 
     html5player = document.getElementById("main-audio");
 
@@ -18,7 +13,7 @@
       titlePath = $button.data("name");
       refurlPath = $button.data("refurl");
       podcasturlPath = $button.data("podcasturl");
-      console.log("$button: " + $button, "mediaPath: " + mediaPath, "bibleBook: " + bibleBook, "titlePath: " + titlePath, "refurlPath: " + refurlPath, "podcasturlPath: " + podcasturlPath);
+      // console.log("$button: " + $button, "mediaPath: " + mediaPath, "bibleBook: " + bibleBook, "titlePath: " + titlePath, "refurlPath: " + refurlPath, "podcasturlPath: " + podcasturlPath);
       $("#loader").fadeIn();
       $("#lesson_mod_menu").fadeIn();
       $("#lesson_mod_menu_mobile").fadeIn();
@@ -35,15 +30,17 @@
 
       initiate = function() {
         html5player.play();
-        var playButton = $(".jp-play");
-        var pauseButton = $(".jp-pause");
-        playButton.css("display","none");
-        pauseButton.css("display","block");
+        $("#play-pause").removeClass("button-play").addClass("button-pause");
       };
 
 
       html5player.addEventListener('onload', initiate());
 
+    });
+
+    $(document).on("click", ".player_close_button", function() {
+      $("#lesson_mod_menu").css("display", "none");
+      pausePlayer();
     });
 
     var toHHMMSS = function ( totalsecs ) {
@@ -62,27 +59,25 @@
         return time;
     }
 
-
+    var togglePlayer = function() {
+      // debugger;
+      var playPause = $("#play-pause");
+      if (playPause.hasClass("button-play") ) {
+        html5player.play();
+        $("#play-pause").removeClass("button-play").addClass("button-pause");
+      } else {
+        html5player.pause();
+        $("#play-pause").removeClass("button-pause").addClass("button-play");
+      }
+    };
 
     var seekbar = document.getElementById("seek_bar");
     var progress = document.getElementById("progress_bar");
     var progressbar = $("#progress_bar");
     var volumebar = $(".volume-bar");
 
-    $(document).on("click", ".button-pause", function() {
-      html5player.pause();
-      var playButton = $(".jp-play");
-      var pauseButton = $(".jp-pause");
-      playButton.css("display","block");
-      pauseButton.css("display","none");
-    });
-
-    $(document).on("click", ".button-play", function() {
-      html5player.play();
-      var playButton = $(".jp-play");
-      var pauseButton = $(".jp-pause");
-      playButton.css("display","none");
-      pauseButton.css("display","block");
+    $(document).on("click", "#play-pause", function() {
+      togglePlayer();
     });
 
     html5player.addEventListener('loadedmetadata', function(){
@@ -121,20 +116,16 @@
       // youtube.player.playVideo();
     });
 
-    $(document).on("click", ".jp-mute", function() {
-      html5player.volume = 0;
-      volumebar.css("width","0%");
+    $(document).on("click", "#volume-toggle", function() {
+      if ($("#volume-toggle").hasClass("volume-up")) {
+        html5player.volume = 0;
+        $("#volume-toggle").removeClass("volume-up").addClass("volume-mute");
+      } else {
+        html5player.volume = 1;
+        $("#volume-toggle").removeClass("volume-mute").addClass("volume-up");
+      }
     });
 
-    $(document).on("click", ".jp-volume-max", function() {
-      html5player.volume = 1;
-      volumebar.css("width","100%");
-    });
-
-    // $(document).on("click", ".volume-bar", function() {
-    //   html5player.volume = 1;
-    //   volumebar.css("width","100%");
-    // });
 
     $(document).on("click", ".speed", function() {
       $(".speed").removeClass("activeSpeed")
@@ -156,7 +147,7 @@
       html5player.playbackRate = 1.0
     });
 
-    $(document).on("click", ".player_rewind", function() {
+    $(document).on("click", ".button-goback", function() {
       currentTime = html5player.currentTime
       currentTimeRewind = currentTime - 30
       html5player.currentTime = currentTimeRewind

@@ -1,3 +1,19 @@
+<div id="player">
+  <div id="play">
+    <div id="play-pause" class="button-play"></div>
+  </div>
+  <div id="player-controls">
+    <div id="seek_bar">
+      <div id="progress_bar"></div>
+    </div>
+    <div id="controls">
+      <div class="button-goback"></div>
+      <div id="volume-toggle" class="volume-up"></div>
+  </div>
+</div>
+
+
+
 <audio id="main-audio" preload="none" src=""></audio>
 <div id="lesson_mod">
   <div id="lesson_mod_menu" class="row">
@@ -26,11 +42,7 @@
           </a>
         </div>
         <div class="lesson_mod_controls">
-          <div class="lesson_goback">
 
-            <div class="button-goback player_rewind"></div>
-
-          </div>
           <div class="lesson_progress">
             <div class="lesson_mod_time">
               <div class="jp-duration lesson_duration hide">
@@ -54,28 +66,7 @@
           <div class="lesson_podcast">
             <a href="" class="player_podcasturl button-podcast" target="_blank">&nbsp;</a>
           </div>
-          <div class="lesson_mod_volume">
-            <div class="lesson_mod_volume_controls">
-              <a href="javascript:;" class="icon-volume jp-mute" tabindex="1" title="mute">
 
-                <div class="button-mute"></div>
-
-              </a>
-              <a href="javascript:;" class="icon-volume jp-unmute" tabindex="1" title="unmute" style="display:none;">
-                <i class="icon-volume-off color-ccc icon-medium-size">&nbsp;</i>
-              </a>
-            </div>
-            <div class="volume-meter jp-volume-bar">
-              <span class="volume-bar jp-volume-bar-value"></span>
-            </div>
-            <div class="lesson_mod_volume_max">
-              <a href="javascript:;" class="icon-volume jp-volume-max" tabindex="1" title="max volume">
-
-                <div class="button-volume-max"></div>
-
-              </a>
-            </div>
-          </div>
           <div class="play_speeds">
             <div class="speed-10 speed activeSpeed">1.0x</div>
             <div class="speed-13 speed">1.3x</div>
