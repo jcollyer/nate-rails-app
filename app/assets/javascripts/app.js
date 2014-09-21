@@ -5,20 +5,10 @@
       var el, scroll, temp;
       el = $(this).text();
       temp = "#" + el + "-link";
-      scroll = $(temp).position().top;
-      var body = $("html, body");
-      // debugger;
+      scroll = $(temp).offset().top - 25;
       $('html, body').animate({
         scrollTop: scroll
-      }, 800);
-      // body.animate({scrollTop:299}, '500', 'swing', function() {
-      //    alert("Finished animating");
-      // });
-      // $("html, body").animate({
-      //   scrollTop: scroll
-      // }, 400);
-
-      // debugger;
+      }, 800, 'swing');
     });
     $(".about-link").click(function(event) {
       var scroll;
