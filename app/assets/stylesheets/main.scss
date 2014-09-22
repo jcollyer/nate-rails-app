@@ -60,6 +60,8 @@ input[type="file"] {
   margin: 20px 0px;
   line-height: 2em;
   border-bottom: 1px solid #ddd;
+  width: 80%;
+  margin-left: 10%;
 }
 table {
   width: 100%;
@@ -103,6 +105,22 @@ table {
 }
 .book-link {
   display: block;
+}
+
+.nice-header-1 {
+  width: 100%;
+  margin: 0px;
+  background: rgba(255,255,255,0.3);
+  color:#ddd;
+  border-bottom: 1px solid #aaa;
+}
+
+.nice-header-2 {
+  width: 100%;
+  margin: 0px;
+  background: rgba(0,0,0,0.3);
+  color:#333;
+  border-bottom: 1px solid #888;
 }
 
 #nav-wrap{

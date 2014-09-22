@@ -1,8 +1,6 @@
-<span id="bio-link" style="position:absolute;top:-85px;"></span>
 <div class="one gradi-1">
-
-
   <div class="row">
+    <span id="bio-link" style="position:absolute;top:-85px;"></span>
     <div class="small-12 large-7 columns">
       <% @bios.each do |bio| %>
         <%= markdown(bio.text) %>
@@ -19,7 +17,8 @@
       <%= image_tag bio.image.url(:thumb), class: "show-mobile" %>
       <% end %>
     </div>
-
   </div>
+    <br>
+    <br>
 </div>
 
