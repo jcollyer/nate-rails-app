@@ -29,7 +29,7 @@
       if (pagePosition < 50) {
         $("#main-nav").removeClass("new-nav").addClass("old-nav");
         $(".logo").removeClass("new-logo").addClass("old-logo");
-        return $(".teaching-panels").css("margin-top", "134px");
+        return $(".teaching-panels").css("margin-top", "100px");
       } else {
         $("#main-nav").removeClass("old-nav").addClass("new-nav");
         $(".logo").removeClass("old-logo").addClass("new-logo");
@@ -103,10 +103,10 @@
             var podcasturl = val.podcasturl;
 
             items.push(
-              '<div class="teaching-item">' +
+              '<a class="teaching-item" >' +
                 '<div class="play-this-teaching button-play-list" data-name="'+name+'" data-mp3="'+mp3+'" data-refurl="'+refurl+'" data-podcasturl="'+podcasturl+'" data-biblebook="'+biblebookName+'"></div>' +
                 '<p>'+name+'</p>' +
-              '</div>'
+              '</a>'
              );
           });
 

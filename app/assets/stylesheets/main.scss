@@ -358,7 +358,7 @@ table {
   top: 0px;
   width: 100%;
   position: fixed;
-  height: 55px;
+  height: 56px;
   @media all and (max-width: "767px") {
     height: auto;
   }
@@ -495,20 +495,7 @@ table {
       background: #222;
     }
   }
-  .teaching-chapter {
-    background: #777;
-    border-top: 1px solid #111;
-    border-bottom: 1px solid #222;
-    color: #777;
-    left: 0px;
-    height: 28px;
-    top: 159px;
-    line-height: 1.3em;
-    padding: 0 0 0 1px;
-    position: static;
-    width: 100%;
-    z-index: 9;
-  }
+
   .teaching-panel {
     // display: none;
     position: relative;
@@ -542,6 +529,7 @@ table {
       border-bottom: 1px solid rgba(0,0,0,0.4);
       position: relative;
       transition: background 0.5s;
+      display: block;
       &:hover {
         background: #777;
         color: white;
@@ -551,6 +539,10 @@ table {
       }
       &:hover > p {
         color: #fff;
+      }
+      &:visited {
+        background: green;
+
       }
       p {
         margin:0px;
@@ -571,6 +563,10 @@ table {
       }
     }
   }
+}
+
+a:visited{
+  background:red;
 }
 
 .bigger {
@@ -605,7 +601,7 @@ table {
 
 .fancy-stratum {
   position: relative;
-  padding: 10px 0px;
+  margin: 10px 0px;
   width: 100%;
 }
 
