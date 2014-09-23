@@ -67,7 +67,7 @@
     });
     $(".biblebook-hover").on("click", function() {
       var $el, $this, close, negPanelsWidth, openPanelID, panel, panels,
-          theID, thisID, thisLink, thisPanel, teachingChapter;
+          theID, thisID, thisLink, thisPanel, teachingChapter, closeButton;
       teachingChapter = $(".teaching-chapter");
       if ($(window).width() < 767) {
         thisID = $(this).data("id");
@@ -80,6 +80,8 @@
         panel = $(".teaching-panel");
         openPanelID = $(".teaching-panel:visible").data("id") || null;
         theID = $el.data("biblebook");
+        closeButton = $("#close-button");
+        closeButton.css("right","160px");
 
         teachingChapter.html("");
 
@@ -117,31 +119,25 @@
           // debugger;
         });
 
-
-
-
-        // thisPanel = $(".teaching-panel[data-id='" + theID + "']");
         close = $(".teaching-panel-close");
         $(".teaching-panels").addClass("opened");
         negPanelsWidth = "-160px";
         if (theID !== openPanelID) {
           if (panels.css("left") === negPanelsWidth) {
-            // panel.hide();
-            // thisPanel.css("left", "0px").show();
             panels.animate({
               left: "0px"
             }, 250);
             close.css("right", "-46px");
             return windowWrapperSize();
-          } else {
-            // panel.css("left",negPanelsWidth);
           }
         }
       }
     });
     $(".teaching-panel-close").on("click", function() {
-      var close, negPanelsWidth;
+      var close, negPanelsWidth, closeButton;
       negPanelsWidth = "-160px";
+      closeButton = $("#close-button");
+      closeButton.css("right","0px");
       close = $(".teaching-panel-close");
       $("#page-wrapper, #nav-wrap").animate({
         width: "100%"

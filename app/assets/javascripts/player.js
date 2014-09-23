@@ -4,21 +4,23 @@
     html5player = document.getElementById("main-audio");
 
     $(document).on("click", ".teaching-item", function() {
-      var $button, $this, bibleBook, mediaPath, podcasturlPath, refurlPath, titlePath;
+      var $button, $this, bibleBook, mediaPath, podcasturlPath, refurlPath, titlePath, closeButton;
       $(".teaching-item").removeClass("active-item");
       $this = $(this);
       $button = $this.find(".play-this-teaching");
+      closeButton = $("close-button");
       mediaPath = $button.data("mp3");
       bibleBook = $button.data("biblebook");
       titlePath = $button.data("name");
       refurlPath = $button.data("refurl");
       podcasturlPath = $button.data("podcasturl");
       // console.log("$button: " + $button, "mediaPath: " + mediaPath, "bibleBook: " + bibleBook, "titlePath: " + titlePath, "refurlPath: " + refurlPath, "podcasturlPath: " + podcasturlPath);
+      closeButton.css("right","160px");
       $("#loader").fadeIn();
       $("#player").fadeIn();
       $this.addClass("active-item");
 
-      $("#lesson-mod-info").empty().prepend("<h1>" + bibleBook + " " + titlePath + "</h1>");
+      $("#lesson-mod-info").empty().prepend("<h1>" + bibleBook + "</h1><h1>" + titlePath + "</h1>");
       $("#button-download").attr({
         "href": mediaPath,
         "download": titlePath
