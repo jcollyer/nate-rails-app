@@ -3,12 +3,13 @@
   <h1 class="nice-header-2">About Nate</h1>
 
   <div class="row">
-  </br>
-    <div class="small-12 large-6 columns">
+    </br>
+    <div class="small-12 large-8 columns">
       <% @abouts.each do |about| %>
         <%= markdown(about.body) %>
     </div>
     <div class="small-12 large-4 columns">
+      <div class="nav-buffer show-desktop">&nbsp;</div>
       <%= image_tag about.image.url(:large), class: "show-desktop" %>
       <%= image_tag about.image.url(:medium), class: "show-mobile" %>
       <% end %>
