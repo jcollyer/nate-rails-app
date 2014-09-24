@@ -11,12 +11,11 @@
   </nav>
   <div class="mobile-nav-buffer">&nbsp;</div>
   <div class="mobile-show-header">
-    <h1><%= @biblebook.name %></h1>
-    <hr style="margin:0px auto 5px; width:50%; border-color:#aaa;">
+    <%= image_tag @biblebook.image.url(:medium) %>
     <h2>Chapter</h2>
     </br>
   </div>
-  <div class="playlist-mobile clearfix">
+  <div class="playlist-mobile">
     <% @biblebook.teachings.each do |teaching| %>
       <div class="teaching-item">
         <div class="play-this-teaching button-play-list-mobile" data-name="<%= teaching.name %>" data-mp3="<%= teaching.mp3 %>" data-refurl="<%= teaching.refurl %>" data-podcasturl="<%= teaching.podcasturl %>" data-biblebook="<%= teaching.biblebook.name %>">
@@ -24,60 +23,74 @@
         <div class="js-split"><%= teaching.name %></div>
       </div>
     <% end %>
-    <%= image_tag @biblebook.image.url(:medium) %>
   </div>
 
 
-
+  <div id="player">
     <audio id="main-audio" preload="none" src=""></audio>
-    <div id="lesson_mod_menu_mobile">
-      <div id="jquery_jplayer_1" class="jp-jplayer">
-        <!--  AUDIO ELEMENT  -->
+    <div id="seek_bar">
+      <div id="progress_bar"></div>
+    </div>
+    <div id="controls">
+
+      <div id="controls-part">
+        <div id="play">
+          <div id="play-pause" class="button-play"></div>
+        </div>
+        <div id="button-goback" class="block-button"><div id="icon-goback"></div></div>
+        <div id="button-volume" class="block-button"><div id="volume-toggle" class="volume-mute"></div></div>
+        <div class="block-button interactive-button" style="width:70px;"><a href="" id="button-read-along" target="_blank"></a></div>
+        <div class="block-button interactive-button" style="width:68px;"><a href="" id="button-download" download="Nate's teaching"></a></div>
+        <div class="block-button interactive-button" style="width:64px;"><a href="" id="button-podcast" target="_blank">&nbsp;</a></div>
       </div>
-      <div id="jp_container_1" class="jp-audio">
-        <div class="progress-container">
-          <!--  progress bar -->
-          <div class="lesson_progress_mobile">
-            <div class="lesson_mod_time_mobile">
-              <div class="jp-duration lesson_duration hide">&nbsp;</div>
-            </div>
-            <div class="jp-progress lesson_progress_bar_mobile">
-              <div class="jp-seek-bar" id="seek_bar">
-                <div class="jp-play-bar progress_bar_mobile" id="progress_bar"><div class="jp-current-time lesson_current_time" style="right:-15px;"></div></div>
-              </div>
-            </div>
-          </div>
+      <div id="controls-part">
+        <div class="speed-10 speed block-button active-speed">1.0x</div>
+        <div class="speed-13 speed block-button">1.3x</div>
+        <div class="speed-15 speed block-button">1.5x</div>
+        <div class="speed-17 speed block-button">1.7x</div>
+        <div class="speed-20 speed block-button">2.0x</div>
+      </div>
+      <div id="controls-part">
+        <div id="lesson-mod-info" itemprop="name"></div>
+
+        <div class="social-button social_facebook">
+          <a href="#"
+             onclick="
+              window.open(
+                'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+                'facebook-share-dialog',
+                'width=626,height=436');
+              return false;">
+          </a>
         </div>
-        <div class="jp-controls">
-          <div class="control-container">
-            <!--  play/pause buttons -->
-            <div class="play-pause">
-              <a href="javascript:;" class="jp-play" tabindex="1">
-                <div class="player_play">
-                  <div class="button-play"></div>
-                </div>
-              </a>
-              <a href="javascript:;" class="jp-pause" tabindex="1" style="display:none;">
-                <div class="player_pause">
-                  <div class="button-pause"></div>
-                </div>
-              </a>
-            </div>
-            <!--  rewind button -->
-            <div class="lesson_goback_mobile">
-              <div class="player_rewind button-goback">&nbsp;</div>
-            </div>
-            <!--  podcast button -->
-            <div class="lesson_podcast_mobile">
-              <a href="" class="button-podcast">&nbsp;</a>
-            </div>
-            <!--  download button -->
-            <div class="lesson_download_mobile">
-              <a href="" id="button-download" download="Nate's teaching">&nbsp;</a>
-            </div>
-          </div>
+        <div class="social-button social_twitter">
+          <a class="twitter popup" href="http://twitter.com/share?text=Tweet%20about%20Nate's%20teachings."></a>
+          <script>
+            $('.popup').click(function(event) {
+              var width  = 575,
+                  height = 400,
+                  left   = 0,
+                  top    = 0,
+                  url    = this.href,
+                  opts   = 'status=1' +
+                           ',width='  + width  +
+                           ',height=' + height +
+                           ',top='    + top    +
+                           ',left='   + left;
+
+              window.open(url, 'twitter', opts);
+
+              return false;
+            });
+          </script>
         </div>
+        <div class="social-button social_google">
+          <a href="https://plus.google.com/share?url={nateholdridge.com}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            &nbsp;
+          </a>
+        </div>
+
       </div>
     </div>
+  </div>
 
-  <div class="page-buffer">&nbsp;</div>

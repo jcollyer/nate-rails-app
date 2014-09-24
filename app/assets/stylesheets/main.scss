@@ -650,6 +650,9 @@ a.social {
   height: 70px;
   z-index: 999;
   bottom: 0px;
+  @media all and (max-width: 767px){
+    height: 213px;
+  }
   #seek_bar{
     cursor: pointer;
     background: rgba(255,255,255,0.5);
@@ -661,6 +664,15 @@ a.social {
       width: 0%;
       height: 8px;
       position: relative;
+    }
+  }
+  #controls-part {
+    width: 33.3%;
+    @media all and (max-width: 767px){
+      width: 100%;
+      border-bottom: 1px solid #444;
+      border-top: 1px solid #222;
+      height: 71px;
     }
   }
   #controls {
@@ -826,6 +838,9 @@ a.social {
       padding: 0px 0px 0px 20px;
       border-left: 1px solid #222;
       width: 25%;
+      @media all and (max-width: 767px){
+        width: 55%;
+      }
       h1 {
         color: white;
         font-size: 30px;
@@ -956,6 +971,33 @@ a.social {
     }
   }
 }
+
+
+.mobile-show-header {
+  h2 {
+    color: #ccc;
+    margin-top: 20px;
+  }
+  img {
+    width: 100%;
+    margin-top: 18px;
+  }
+}
+
+.playlist-mobile {
+  margin-bottom: 213px;
+  border-bottom: 1px solid #333;
+  .teaching-item {
+    color: white;
+    line-height: 3em;
+    border-top: 1px solid #333;
+  }
+  .active-item {
+    background: #999;
+  }
+}
+
+
 
 .coming-soon {
   position: absolute;
