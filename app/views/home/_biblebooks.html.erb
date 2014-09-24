@@ -3,7 +3,7 @@
   <h1 class="nice-header-1">Teachings</h1>
   <h2 class="hh2" style="color:#ddd;">a through the bible studio series</h2>
 
-  <div class="clearfix" >
+  <div class="clearfix" style="max-width: 1200px;">
     <% @biblebooks.each do |biblebook| %>
       <div class="biblebook-cover">
         <%= image_tag biblebook.image.url(:large), :data => { :biblebook => biblebook.id },  class: "br-small" %>

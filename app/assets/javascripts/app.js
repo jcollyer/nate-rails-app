@@ -159,7 +159,7 @@
         return $("#mobile-links").fadeOut();
       }
     });
-    $("#mobile-links li").click(function() {
+    $(".mobile-link").click(function() {
       var el, scroll, temp;
       el = $(this).text();
       temp = "#" + el + "-link";

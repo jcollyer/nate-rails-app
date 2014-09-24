@@ -1,78 +1,76 @@
 <span id="calvary-link" style="margin-top:-20px;position:absolute;"></span>
-<div class="calvary relative">
+<div>
 
   <br>
-  <br>
+  <br class="show-desktop">
   <h1 class="dark"><%= image_tag "calvary_logo.png" %></h1>
-  </br>
+  <br class="show-desktop">
+  <br class="show-desktop">
   <br>
-  <br>
+  <div class="row">
+
+  <div class="large-3 columns show-desktop">
+
+    <div class="icon" style="margin-left:40px;">
+      <a href="https://itunes.apple.com/us/app/calvary-monterey/id417437500?mt=8" class="social" target="_blank">
+        <i class="footer-icon m-calvary-app"></i>
+      </a>
+    </div>
+    <a href="https://play.google.com/store/apps/details?id=com.subsplash.thechurchapp.calvarymonterey" class="social" target="_blank">
+      <div class="icon" style="margin-left:40px;"><i class="footer-icon m-google-play"></i></div>
+    </a>
+
+  </div>
+
   <% @notes.each do |note| %>
-    <div class="row">
-      <div class="large-3 columns show-desktop">
-        <div class="large-12 columns">
-          <a href="https://itunes.apple.com/us/app/calvary-monterey/id417437500?mt=8" class="social" target="_blank">
-            <div class="icon"><i class="footer-icon m-calvary-app"></i></div>
-          </a>
-        </div>
-        <div class="large-12 columns">
-          <a href="https://play.google.com/store/apps/details?id=com.subsplash.thechurchapp.calvarymonterey" class="social" target="_blank">
-            <div class="icon"><i class="footer-icon m-google-play"></i></div>
-          </a>
-        </div>
+    <div class="small-12 large-6 columns">
+      <div class="info-box">
+        <%= markdown(note.body) %>
       </div>
-
-      <div class="small-12 large-6 columns">
-        <div class="info-box">
-          <%= markdown(note.body) %>
-        </div>
-        <% note.links.each do |link| %>
-          </br>
-          <h3><%= link_to link.name, link.link, class: "calvary-link" %></h3>
-          </br>
-        <% end %>
-      </div>
-
-      <div class="large-3 columns show-desktop">
-        <div class="large-12 columns">
-          <a href="http://calvary.com/teaching_topics.php" class="social" target="_blank">
-            <div class="icon "><i class="footer-icon m-bible"></i></div>
-          </a>
-        </div>
-        <div class="large-12 columns">
-          <a href="https://itunes.apple.com/us/podcast/calvary-monterey-audio/id216918040?mt=2&ign-mpt=uo%3D4" class="social" target="_blank">
-            <div class="icon "><i class="footer-icon m-podcast"></i></div>
-          </a>
-        </div>
-      </div>
-
-
-
-      <!-- mobile links -->
-      <div class="small-12 columns show-mobile">
-        <div class="m-link-box">
-          <a href="https://itunes.apple.com/us/app/calvary-monterey/id417437500?mt=8" class="social" target="_blank">
-            <div class="icon"><div class="footer-icon m-calvary-app">&nbsp;</div></div>
-          </a>
-        </div>
-        <div class="m-link-box">
-          <a href="https://play.google.com/store/apps/details?id=com.subsplash.thechurchapp.calvarymonterey" class="social" target="_blank">
-            <div class="icon"><div class="footer-icon m-google-play">&nbsp;</div></div>
-          </a>
-        </div>
-        <div class="m-link-box">
-          <a href="http://calvary.com/teaching_topics.php" class="social" target="_blank">
-            <div class="icon"><div class="footer-icon m-bible">&nbsp;</div></div>
-          </a>
-        </div>
-        <div class="m-link-box">
-          <a href="https://itunes.apple.com/us/podcast/calvary-monterey-audio/id216918040?mt=2&ign-mpt=uo%3D4" class="social" target="_blank">
-            <div class="icon "><div class="footer-icon m-podcast">&nbsp;</div></div>
-          </a>
-        </div>
-      </div>
+      <% note.links.each do |link| %>
+        </br>
+        <h3><%= link_to link.name, link.link, class: "calvary-link" %></h3>
+        </br>
+      <% end %>
     </div>
   <% end %>
+
+    <div class="large-3 columns show-desktop">
+      <a href="http://calvary.com/teaching_topics.php" class="social" target="_blank">
+        <div class="icon" style="margin-left:40px;"><i class="footer-icon m-bible"></i></div>
+      </a>
+      <a href="https://itunes.apple.com/us/podcast/calvary-monterey-audio/id216918040?mt=2&ign-mpt=uo%3D4" class="social" target="_blank">
+        <div class="icon" style="margin-left:40px;"><i class="footer-icon m-podcast"></i></div>
+      </a>
+    </div>
+
+
+
+    <!-- mobile links -->
+    <div class="small-12 columns show-mobile">
+      <div class="m-link-box">
+        <a href="https://itunes.apple.com/us/app/calvary-monterey/id417437500?mt=8" class="social" target="_blank">
+          <div class="icon"><div class="footer-icon m-calvary-app">&nbsp;</div></div>
+        </a>
+      </div>
+      <div class="m-link-box">
+        <a href="https://play.google.com/store/apps/details?id=com.subsplash.thechurchapp.calvarymonterey" class="social" target="_blank">
+          <div class="icon"><div class="footer-icon m-google-play">&nbsp;</div></div>
+        </a>
+      </div>
+      <div class="m-link-box">
+        <a href="http://calvary.com/teaching_topics.php" class="social" target="_blank">
+          <div class="icon"><div class="footer-icon m-bible">&nbsp;</div></div>
+        </a>
+      </div>
+      <div class="m-link-box">
+        <a href="https://itunes.apple.com/us/podcast/calvary-monterey-audio/id216918040?mt=2&ign-mpt=uo%3D4" class="social" target="_blank">
+          <div class="icon "><div class="footer-icon m-podcast">&nbsp;</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
 </br>
 <div class="nav-buffer show-desktop">&nbsp;</div>
 <h1 class="nice-header-1">&nbsp;</h1>
