@@ -805,12 +805,18 @@ a.social {
       background: #404040;
       position: relative;
       line-height: 9px;
+      @media all and (max-width: 767px) {
+        line-height: 25px;
+      }
       &:after {
         content: "speed";
         position: absolute;
         bottom: 17px;
         left: 6px;
         font-size: 13px;
+        @media all and (max-width: 767px) {
+          content: "";
+        }
       }
     }
     .interactive-button{
