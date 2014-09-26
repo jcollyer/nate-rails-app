@@ -20,7 +20,6 @@
             <td><%= biblebook.name %></td>
             <td><%= biblebook.position %></td>
             <td><%= image_tag biblebook.image.url(:thumb)%></td>
-            <td><%= link_to 'Show', biblebook %></td>
             <td><%= link_to 'Edit', edit_biblebook_path(biblebook) %></td>
             <td><%= link_to 'Destroy', biblebook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>

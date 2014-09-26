@@ -734,6 +734,7 @@ a.social {
       border-right: 1px solid #444;
       @media all and (max-width: 767px){
         border-right: none;
+        width: 28.66%;
       }
       &:hover {
         background: #303030;
@@ -993,6 +994,9 @@ a.social {
       color: #333;
       position: absolute;
       top: 0px;
+      @media all and (max-width: 767px){
+        display: none;
+      }
       &:hover{
         background:#fff;
         color:#222;
@@ -1073,15 +1077,18 @@ a.social {
 
 
 .mobile-show-header {
-  h2 {
-    color: #ccc;
-    margin-top: 20px;
-  }
-  img {
-    width: 100%;
-    margin-top: 18px;
+  .mobile-cover-art {
+    height: 100px;
+    position: relative;
+    img {
+      width: 100%;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+    }
   }
 }
+
 
 .playlist-mobile {
   margin-bottom: 193px;
@@ -1091,6 +1098,9 @@ a.social {
     color: white;
     line-height: 3em;
     border-top: 1px solid #333;
+  }
+  .mobile-teaching-name{
+    font-size: 20px;
   }
   .active-item {
     background: #999;

@@ -12,15 +12,13 @@
 <div class="mobile-nav-buffer">&nbsp;</div>
 <div class="mobile-show-header">
   <div class="mobile-cover-art"><%= image_tag @biblebook.image.url(:medium) %></div>
-  <h2>Chapter</h2>
-  </br>
 </div>
 <div class="playlist-mobile">
   <% @biblebook.teachings.each do |teaching| %>
     <div class="teaching-item">
       <div class="play-this-teaching button-play-list-mobile" data-name="<%= teaching.name %>" data-mp3="<%= teaching.mp3 %>" data-refurl="<%= teaching.refurl %>" data-podcasturl="<%= teaching.podcasturl %>" data-biblebook="<%= teaching.biblebook.name %>">
+        <div class="js-split">Chapter  <span class="mobile-teaching-name"><%= teaching.name %></span></div>
       </div>
-      <div class="js-split"><%= teaching.name %></div>
     </div>
   <% end %>
 </div>

@@ -173,17 +173,6 @@
     if ($(".js-black-background").length) {
       $("body").css("background-color", "#111111");
     }
-    return $('.js-split').each(function() {
-      var first, second, split, text;
-      text = $(this).text();
-      split = text.split("-");
-      first = split[0];
-      second = split[1] || "";
-      $(this).html("<span>" + first + "</span>");
-      if (second !== "") {
-        return $(this).append("<span> - " + second + "</span>");
-      }
-    });
   });
 
 }).call(this);
