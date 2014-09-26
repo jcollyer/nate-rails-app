@@ -136,19 +136,29 @@
       $(this).addClass("active-speed")
     });
     $(document).on("click", ".speed-20" , function() {
+      html5player.pause();
       html5player.playbackRate = 2
+      html5player.play();
     });
     $(document).on("click", ".speed-17" , function() {
+      html5player.pause();
       html5player.playbackRate = 1.7
+      html5player.play();
     });
     $(document).on("click", ".speed-15" , function() {
+      html5player.pause();
       html5player.playbackRate = 1.5
+      html5player.play();
     });
     $(document).on("click", ".speed-13" , function() {
+      html5player.pause();
       html5player.playbackRate = 1.3
+      html5player.play();
     });
     $(document).on("click", ".speed-10" , function() {
+      html5player.pause();
       html5player.playbackRate = 1.0
+      html5player.play();
     });
 
     $(document).on("click", "#button-goback", function() {
