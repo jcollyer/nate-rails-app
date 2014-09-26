@@ -934,7 +934,10 @@ a.social {
       float: left;
       padding: 0px 0px 0px 20px;
       border-left: 1px solid #222;
-      width: 55%;
+      width: 45%;
+      @media all and (max-width: 767px){
+        display: none;
+      }
       h1 {
         color: white;
         font-size: 30px;
