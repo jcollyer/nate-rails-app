@@ -20,7 +20,7 @@
       $("#player").fadeIn();
       $this.addClass("active-item");
 
-      $("#lesson-mod-info").empty().prepend("<h1>" + bibleBook + "</h1><h1>" + titlePath + "</h1>");
+      $("#lesson-mod-info").empty().prepend("<h1>" + bibleBook + "</h1><p>" + titlePath + "</p>");
       $("#button-download").attr({
         "href": mediaPath,
         "download": titlePath
