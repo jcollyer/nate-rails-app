@@ -25,7 +25,7 @@
       if (pagePosition < 50) {
         $("#main-nav").removeClass("new-nav").addClass("old-nav");
         $(".logo").removeClass("new-logo").addClass("old-logo");
-        return $(".teaching-panels").css("margin-top", "100px");
+        return $(".teaching-panels").css("margin-top", "80px");
       } else {
         $("#main-nav").removeClass("old-nav").addClass("new-nav");
         $(".logo").removeClass("old-logo").addClass("new-logo");
@@ -163,7 +163,7 @@
       var el, scroll, temp;
       el = $(this).text();
       temp = "#" + el + "-link";
-      scroll = $(temp).offset().top - 20;
+      scroll = $(temp).offset().top - 10;
       $("html, body").animate({
         scrollTop: scroll
       }, 400);

@@ -665,7 +665,7 @@ a.social {
     border-top: 1px solid #ccc;
     @media all and (max-width: 767px){
       cursor: pointer;
-      background: #999;
+      background: #1c638d;
       margin-top: -21px;
       height: 20px;
       border-top: none;
@@ -804,6 +804,8 @@ a.social {
       @media all and (max-width: 767px){
         padding: 2px 4px;
         height: 30px;
+        border-right: 1px solid #222;
+        border-left: 1px solid #444;
       }
     }
     .active-speed {
