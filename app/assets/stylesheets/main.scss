@@ -22,7 +22,7 @@ body {
   position: relative;
   width: 100%;
   margin-left: auto;
-  margin-top: 100px;
+  margin-top: 80px;
   @media all and (max-width: "767px") {
     margin-top: 40px;
   }
@@ -130,6 +130,7 @@ table {
   position: absolute;
   right: 0px;
   width: 100%;
+  height: 100%;
 }
 #main-nav {
   background: #333;
@@ -139,8 +140,8 @@ table {
     margin: 0 auto;
     max-width: 800px;
     width: 100%;
+    height: 100%;
     li{
-      border-radius: 5px;
       color: #fff;
       cursor: pointer;
       font-size: 20px;
@@ -148,23 +149,26 @@ table {
       list-style-type: none;
       text-align: center;
       padding: 10px 0px;
-      width: 15.66%;
+      width: 20%;
       text-shadow: 0 -1px 0 #000;
       text-transform: uppercase;
-      // transition: margin 0.5s;
+      height: 100%;
+      transition: background 0.5s;
+      margin: 0px;
       &:hover {
         background: #444;
+        text-shadow: 0 -1px 0 #777;
       }
     }
   }
 }
 .old-nav{
   position: absolute;
-  top: -100px;
-  height: 100px;
+  top: -80px;
+  height: 80px;
   ul {
     li {
-      margin: 25px 0px;
+      line-height: 3em;
     }
   }
 }
@@ -178,7 +182,7 @@ table {
   }
   ul {
     li {
-      margin: 2px 0px;
+      line-height: 1.5em;
     }
   }
 }
@@ -237,7 +241,7 @@ table {
 .old-logo {
   height: 100px;
   width: 100px;
-  top: 20px;
+  top: -10px;
 }
 
 .new-logo {
