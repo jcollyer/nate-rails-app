@@ -19,6 +19,7 @@
       $("#loader").fadeIn();
       $("#player").fadeIn();
       $this.addClass("active-item");
+      $this.addClass("clicked-item");
 
       $("#lesson-mod-info").empty().prepend("<h1>" + bibleBook + "</h1><p>" + titlePath + "</p>");
       $("#button-download").attr({
