@@ -9,10 +9,6 @@ $font-lato: 'Lato', Arial, sans-serif;
   background-image: -o-linear-gradient(top, #fff, #e4e4e4);
 }
 
-html, body {
-  // overflow-x: hidden;
-}
-
 body {
   font-family: $font-lato;
   text-align: center;
@@ -35,7 +31,6 @@ body {
   padding: 0px 7px;
   text-decoration: none;
 }
-// a.jp-play, a.jp-pause, a.icon-volume, a.button-read-along,  a.button-download, a.button-download-mobile, a.book-link, a.player_podcasturl {border:none;}
 
 p {
   color: rgba(0,0,0,0.5);
@@ -1111,8 +1106,6 @@ a.social {
     background: #999;
   }
 }
-
-
 
 .coming-soon {
   position: absolute;
