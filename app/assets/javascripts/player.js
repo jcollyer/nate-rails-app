@@ -8,7 +8,7 @@
       $(".teaching-item").removeClass("active-item");
       $this = $(this);
       $button = $this.find(".play-this-teaching");
-      closeButton = $("close-button");
+      closeButton = $("#close-button");
       mediaPath = $button.data("mp3");
       bibleBook = $button.data("biblebook");
       titlePath = $button.data("name");
@@ -63,7 +63,6 @@
     }
 
     var togglePlayer = function() {
-      // debugger;
       var playPause = $("#play-pause");
       if (playPause.hasClass("button-play") ) {
         html5player.play();
