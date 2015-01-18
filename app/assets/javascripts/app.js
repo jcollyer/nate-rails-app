@@ -21,7 +21,7 @@
 
     pagePlace = function() {
       var pagePosition;
-      pagePosition = $("body").scrollTop();
+      pagePosition = $("body").scrollTop() || pageYOffset;
       if (pagePosition < 50) {
         $("#main-nav").removeClass("new-nav").addClass("old-nav");
         $(".logo").removeClass("new-logo").addClass("old-logo");
