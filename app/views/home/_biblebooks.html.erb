@@ -6,7 +6,7 @@
   <div class="clearfix" style="max-width: 1200px;">
     <% @biblebooks.each do |biblebook| %>
       <div class="biblebook-cover">
-        <%= image_tag biblebook.image.url(:large), :data => { :biblebook => biblebook.id },  class: "br-small" %>
+        <%= image_tag biblebook.image.url(:medium), :data => { :biblebook => biblebook.id },  class: "br-small" %>
         <div class="biblebook-hover" data-id="<%= biblebook.id %>">
           <% if biblebook.teachings.exists? %>
             <div class="home-vol">play</div>

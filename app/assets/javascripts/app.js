@@ -90,7 +90,7 @@
           var items = [];
           var teachings = data.teachings;
           var biblebookName = data.name;
-          var biblebookImage = data.image;
+          var biblebookImage = data.medium_image;
           $(".teaching-image").html("<img src="+biblebookImage+" />");
           $.each( teachings, function( key, val ) {
             var teachings = [];

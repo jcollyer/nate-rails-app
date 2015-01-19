@@ -398,6 +398,9 @@ table {
   position: relative;
   width: 21%;
   z-index: 7;
+  img {
+    width: 100%;
+  }
   @media all and (max-width: "767px") {
     width: 43%;
     margin: 20px 3% 0px;
