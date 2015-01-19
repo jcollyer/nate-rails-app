@@ -1,4 +1,8 @@
-<%= render "nav" %>
+<% if current_user %>
+  <%= render "admin_links" %>
+<% else %>
+  <%= render "nav" %>
+<% end %>
 <div id="page-wrapper">
   <%= render "spinner" %>
   <%= render "playlist" %>
