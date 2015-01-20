@@ -1,0 +1,60 @@
+<div id="controls">
+  <div id="controls-part-1">
+    <div id="play">
+      <div id="play-pause" class="button-play"></div>
+    </div>
+    <div id="button-goback" class="block-button"><div id="icon-goback"></div></div>
+    <div id="button-volume" class="block-button"><div id="volume-toggle" class="volume-mute"></div></div>
+    <div class="block-button interactive-button read-along"><a href="" id="button-read-along" target="_blank"></a></div>
+    <div class="block-button interactive-button download"><a href="" id="button-download" download="Nate's teaching"></a></div>
+    <div class="block-button interactive-button podcast"><a href="" id="button-podcast" target="_blank">&nbsp;</a></div>
+  </div>
+  <div id="controls-part-2">
+    <div class="speed-10 speed block-button active-speed">1.0x</div>
+    <div class="speed-13 speed block-button">1.3x</div>
+    <div class="speed-15 speed block-button">1.5x</div>
+    <div class="speed-17 speed block-button">1.7x</div>
+    <div class="speed-20 speed block-button">2.0x</div>
+  </div>
+  <div id="controls-part-3">
+    <div id="lesson-mod-info" itemprop="name"></div>
+
+    <div class="social-button social_facebook">
+      <a href="#"
+         onclick="
+          window.open(
+            'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+            'facebook-share-dialog',
+            'width=626,height=436');
+          return false;">
+      </a>
+    </div>
+    <div class="social-button social_twitter">
+      <a class="twitter popup" href="http://twitter.com/share?text=Tweet%20about%20Nate's%20teachings."></a>
+      <script>
+        $('.popup').click(function(event) {
+          var width  = 575,
+              height = 400,
+              left   = 0,
+              top    = 0,
+              url    = this.href,
+              opts   = 'status=1' +
+                       ',width='  + width  +
+                       ',height=' + height +
+                       ',top='    + top    +
+                       ',left='   + left;
+
+          window.open(url, 'twitter', opts);
+
+          return false;
+        });
+      </script>
+    </div>
+    <div class="social-button social_google">
+      <a href="https://plus.google.com/share?url={nateholdridge.com}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+        &nbsp;
+      </a>
+    </div>
+  </div>
+  <div id="close-button">x</div>
+</div>

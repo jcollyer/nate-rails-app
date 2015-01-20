@@ -1,3 +1,5 @@
 angular.module('player',[
-                'player_direcive'
+                'player-direcive',
+                'player-controls-directive',
+                'player-progress-directive'
                 ]);

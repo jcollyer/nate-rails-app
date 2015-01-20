@@ -1,4 +1,4 @@
-angular.module('player_direcive',[])
+angular.module('player-direcive',[])
 .directive('jcPlayer', function(){
   return {
     restritc: 'A',
