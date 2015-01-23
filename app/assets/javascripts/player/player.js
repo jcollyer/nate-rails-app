@@ -1,5 +1,7 @@
 angular.module('player',[
-                'player-direcive',
+                'player-service',
+                'player-controller',
+                'player-directive',
                 'player-controls-directive',
                 'player-progress-directive'
                 ]);

@@ -1,7 +1,7 @@
 <div id="controls">
   <div id="controls-part-1">
-    <div id="play">
-      <div id="play-pause" class="button-play"></div>
+    <div id="play" ng-click="togglePlay()">
+      <div id="play-pause" ng-class="(playing) ? 'button-pause' : 'button-play'" ></div>
     </div>
     <div id="button-goback" class="block-button"><div id="icon-goback"></div></div>
     <div id="button-volume" class="block-button"><div id="volume-toggle" class="volume-mute"></div></div>

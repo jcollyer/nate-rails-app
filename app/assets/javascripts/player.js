@@ -33,7 +33,7 @@
 
       initiate = function() {
         html5player.play();
-        $("#play-pause").removeClass("button-play").addClass("button-pause");
+        // $("#play-pause").removeClass("button-play").addClass("button-pause");
       };
 
 
@@ -62,25 +62,25 @@
         return time;
     }
 
-    var togglePlayer = function() {
-      var playPause = $("#play-pause");
-      if (playPause.hasClass("button-play") ) {
-        html5player.play();
-        $("#play-pause").removeClass("button-play").addClass("button-pause");
-      } else {
-        html5player.pause();
-        $("#play-pause").removeClass("button-pause").addClass("button-play");
-      }
-    };
+    // var togglePlayer = function() {
+    //   var playPause = $("#play-pause");
+    //   if (playPause.hasClass("button-play") ) {
+    //     html5player.play();
+    //     $("#play-pause").removeClass("button-play").addClass("button-pause");
+    //   } else {
+    //     html5player.pause();
+    //     $("#play-pause").removeClass("button-pause").addClass("button-play");
+    //   }
+    // };
 
     var seekbar = document.getElementById("seek_bar");
     var progress = document.getElementById("progress_bar");
     var progressbar = $("#progress_bar");
-    var volumebar = $(".volume-bar");
+    // var volumebar = $(".volume-bar");
 
-    $(document).on("click", "#play-pause", function() {
-      togglePlayer();
-    });
+    // $(document).on("click", "#play-pause", function() {
+    //   togglePlayer();
+    // });
 
     html5player.addEventListener('loadedmetadata', function(){
       progress.setAttribute('max', Math.floor(html5player.duration));
