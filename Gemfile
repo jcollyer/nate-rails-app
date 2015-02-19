@@ -11,8 +11,6 @@ gem 'jbuilder', '~> 1.0.1'
 gem 'jquery-rails'
 gem 'active_model_serializers'
 gem 'pry'
-gem 'angularjs-rails'
-gem 'angular-rails-templates'
 
 group :doc do
   gem 'sdoc', require: false
