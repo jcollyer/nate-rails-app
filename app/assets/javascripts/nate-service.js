@@ -1,5 +1,6 @@
-(function() {
-  $(function() {
+angular.module('nate-service',[])
+.service('NateService', function(){
+
     var pagePlace, windowWrapperReSize, windowWrapperSize;
     $("#main-nav li").click(function() {
       var el, scroll, temp;
@@ -173,6 +174,9 @@
     if ($(".js-black-background").length) {
       $("body").css("background-color", "#111111");
     }
-  });
 
-}).call(this);
+
+
+
+
+});

@@ -1,5 +1,5 @@
 angular.module('player-controller',[])
-.controller('PlayerController', function($scope, PlayerService){
+.controller('PlayerController', function($scope, PlayerService, NateService){
   var PlayerController = this;
   $scope.playing = false;
 
