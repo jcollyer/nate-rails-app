@@ -3,6 +3,7 @@ angular.module('player-controller',[])
   var PlayerController = this;
   $scope.playing = false;
 
+
   Object.keys(PlayerService).forEach(function(key) {
     $scope[key] = PlayerService[key];
   });
@@ -11,15 +12,15 @@ angular.module('player-controller',[])
     //   $scope.duration = PlayerService.getElement().duration;
     // },
     playingCallback: function() {
-    debugger;
+
       // $interval.cancel(stop);
       // stop = $interval(function(){
       //   $scope.currentTime = PlayerService.getElement().currentTime;
       //   PlayerService.setScrubTime(PlayerService.getCurrentTime());
       // }, 500);
-      debugger;
-      PlayerService.playing = true;
+
       $scope.playing = true;
+
     }
     // pausedCallback: function() {
     //   PlayerService.playing = false;

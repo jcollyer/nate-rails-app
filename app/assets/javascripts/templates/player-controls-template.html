@@ -3,7 +3,7 @@
     <div id="play" ng-click="togglePlay()">
       <div id="play-pause" ng-class="(playing) ? 'button-pause' : 'button-play'" ></div>
     </div>
-    <div id="button-goback" class="block-button"><div id="icon-goback"></div></div>
+    <div id="button-goback" class="block-button" ng-click="goBack()"><div id="icon-goback"></div></div>
     <div id="button-volume" class="block-button"><div id="volume-toggle" class="volume-mute"></div></div>
     <div class="block-button interactive-button read-along"><a href="" id="button-read-along" target="_blank"></a></div>
     <div class="block-button interactive-button download"><a href="" id="button-download" download="Nate's teaching"></a></div>

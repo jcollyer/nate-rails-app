@@ -2,8 +2,7 @@ angular.module('player-service',[])
 .service('PlayerService', function(){
   var PlayerService = this,
       audioElement,
-      callbacks = {},
-      playing = false;
+      callbacks = {};
 
   PlayerService.getElement = function() {
     return audioElement;
@@ -15,19 +14,25 @@ angular.module('player-service',[])
 
   PlayerService.togglePlay = function() {
     if (audioElement.paused) {
-      audioElement.play();
+      PlayerService.play();
     } else {
-      audioElement.pause();
+      PlayerService.pause();
     };
   };
 
   PlayerService.play = function() {
+    // debugger;
     runCallbacks("playingCallback");
     audioElement.play();
   };
 
   PlayerService.pause = function() {
     audioElement.pause();
+  };
+
+  //used to fill in the progress bar
+  PlayerService.getProgress = function() {
+    return 100 * (audioElement.currentTime / audioElement.duration);
   };
 
 
@@ -47,7 +52,7 @@ angular.module('player-service',[])
     });
   };
   var runCallbacks = function(type){
-    debugger;
+    // debugger;
     Object.keys(callbacks).forEach(function(key) {
       if (callbacks[key] && callbacks[key][type]) callbacks[key][type]();
     });
@@ -56,5 +61,6 @@ angular.module('player-service',[])
   PlayerService.setEventCallback = setEventCallback;
   PlayerService.setEventCallbacks = setEventCallbacks;
 
+  return PlayerService;
 
 });
