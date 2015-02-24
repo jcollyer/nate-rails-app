@@ -1,10 +1,15 @@
 class BiblebooksController < ApplicationController
   before_action :set_biblebook, only: [:show, :edit, :update, :destroy]
-  before_filter :authorize, except: [:show]
+  before_filter :authorize, except: [:show, :index]
   # GET /biblebooks
   # GET /biblebooks.json
   def index
     @biblebooks = Biblebook.all
+
+    respond_to do |format|
+      format.html
+      format.json{ render json: @biblebooks, root: false}
+    end
   end
 
   # GET /biblebooks/1
