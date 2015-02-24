@@ -1,5 +1,5 @@
 angular.module('nate-service',[])
-.service('NateService', function(){
+.service('NateService', function(BiblebookService){
 
     var pagePlace, windowWrapperReSize, windowWrapperSize;
     $("#main-nav li").click(function() {

@@ -1,5 +1,6 @@
 angular.module('nate', [
                'nate-service',
                'player',
-               'templates'
+               'templates',
+               'biblebook-service'
               ]);
