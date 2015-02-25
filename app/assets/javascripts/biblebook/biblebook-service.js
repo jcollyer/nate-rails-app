@@ -27,7 +27,7 @@ angular.module('biblebook-service', [])
     var deferred = $q.defer();
     $http.get('/biblebooks.json').success(function(data){
       name = data.name;
-      debugger;
+      // debugger;
       deferred.resolve(data);
     }).error(function(data, status, headers, config) {
       deferred.reject("Error: request returned status " + status);

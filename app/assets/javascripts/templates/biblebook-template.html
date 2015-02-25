@@ -1,10 +1,6 @@
-
-
-<div>
-<!-- <div ng-repeat="biblebook in biblebooks"> -->
-  {{biblebooks}}
-<!--   <img alt="Genesis 01" class="br-small" data-biblebook="6" src="http://s3.amazonaws.com/nate_database/images/6/medium/Genesis-01.jpg?1387216354">
-  <div class="biblebook-hover" data-id="6">
+<div ng-repeat="biblebook in biblebooks" class="biblebook-cover">
+  <img alt="{{biblebook.name}}" class="br-small" data-biblebook="{{biblebook.id}}" src="{{biblebook.image}}">
+  <div class="biblebook-hover" data-id="{{biblebook.id}}" ng-click="playTrack()">
     <div class="home-vol">play</div>
-  </div> -->
+  </div>
 </div>

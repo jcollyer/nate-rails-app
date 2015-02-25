@@ -2,7 +2,7 @@ angular.module('biblebook-directive',[])
 .directive('jcBiblebook', function(BiblebookService){
   return {
     restritc: 'A',
-    replace: true,
+
     templateUrl: 'biblebook-template.html',
     controller: 'BiblebookController',
     scope: {},

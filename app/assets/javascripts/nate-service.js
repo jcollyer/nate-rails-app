@@ -66,74 +66,8 @@ angular.module('nate-service',[])
         return windowWrapperReSize();
       }
     });
-    $(".biblebook-hover").on("click", function() {
-      var $el, $this, close, negPanelsWidth, openPanelID, panel, panels,
-          theID, thisID, thisLink, thisPanel, teachingChapter, closeButton;
-      teachingChapter = $(".teaching-chapter");
-      if ($(window).width() < 767) {
-        thisID = $(this).data("id");
-        thisLink = "/biblebooks/" + thisID;
-        return window.location = thisLink;
-      } else {
-        $this = $(this);
-        $el = $this.siblings("img");
-        panels = $(".teaching-panels");
-        panel = $(".teaching-panel");
-        openPanelID = $(".teaching-panel:visible").data("id") || null;
-        theID = $el.data("biblebook");
-        closeButton = $("#close-button");
-        closeButton.css("right","160px");
-
-        teachingChapter.html("");
-
-        mediaPath = document.URL + '/biblebooks/'+theID+'.json';
-        $.getJSON(mediaPath, function( data ) {
-          var items = [];
-          var teachings = data.teachings;
-          var biblebookName = data.name;
-          var biblebookImage = data.medium_image;
-          $(".teaching-image").html("<img src="+biblebookImage+" />");
-          $.each( teachings, function( key, val ) {
-            var teachings = [];
-            var id = val.id;
-            var mp3 = val.mp3;
-            var name = val.name;
-            var refurl = val.refurl;
-            var podcasturl = val.podcasturl;
-
-            items.push(
-              '<a class="teaching-item" >' +
-                '<div class="play-this-teaching button-play-list" data-name="'+name+'" data-mp3="'+mp3+'" data-refurl="'+refurl+'" data-podcasturl="'+podcasturl+'" data-biblebook="'+biblebookName+'"></div>' +
-                '<p>'+name+'</p>' +
-              '</a>'
-             );
-          });
 
 
-          // debugger;
-          // $( "<ul/>", {
-          //   "class": "my-new-list",
-          //   html: items.join( "" )
-          // }).appendTo( "body" );
-
-          $( items.join( "" )).appendTo( ".teaching-chapter" );
-          // debugger;
-        });
-
-        close = $(".teaching-panel-close");
-        $(".teaching-panels").addClass("opened");
-        negPanelsWidth = "-160px";
-        if (theID !== openPanelID) {
-          if (panels.css("left") === negPanelsWidth) {
-            panels.animate({
-              left: "0px"
-            }, 250);
-            close.css("right", "-46px");
-            return windowWrapperSize();
-          }
-        }
-      }
-    });
     $(".teaching-panel-close").on("click", function() {
       var close, negPanelsWidth, closeButton;
       negPanelsWidth = "-160px";
