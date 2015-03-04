@@ -18,7 +18,7 @@
         closeButton = $("#close-button");
         closeButton.css("right","160px");
 
-        teachingChapter.html("");
+        // teachingChapter.html("");
 
         // mediaPath = document.URL + '/biblebooks/'+theID+'.json';
         // $.getJSON(mediaPath, function( data ) {
