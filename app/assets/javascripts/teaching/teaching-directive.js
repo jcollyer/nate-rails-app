@@ -9,7 +9,8 @@ angular.module('teaching-directive',[])
 
       scope.$on('showBiblebook', function(event, biblebook) {
         scope.teachings = biblebook.teachings;
-        // debugger;
+        scope.bibelbookImage = biblebook.image;
+
 
       });
     }
