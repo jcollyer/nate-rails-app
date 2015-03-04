@@ -3,10 +3,6 @@ angular.module('biblebook-service', [])
     var BiblebookService = this,
         thisBiblebook;
 
-  // BiblebookService.getBiblebook = function(){
-  //   // debugger;
-  //   return thisBiblebook;
-  // };
 
   BiblebookService.getBiblebook = function(id){
     // There will always be a promise so always declare it.
