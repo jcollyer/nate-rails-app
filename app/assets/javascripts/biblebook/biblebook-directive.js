@@ -1,5 +1,5 @@
 angular.module('biblebook-directive',[])
-.directive('jcBiblebook', function(BiblebookService){
+.directive('jcBiblebook', function(BiblebookService, $rootScope){
   return {
     restritc: 'A',
 
@@ -16,21 +16,16 @@ angular.module('biblebook-directive',[])
 
       thisElement = element;
 
-      var teachingChapter = document.getElementById("teaching-chapter");
-
       scope.playTrack = function(id) {
         if (window.innerWidth < 767) {
         } else {
           var biblebookId = id;
 
-          // debugger;
-          // biblebookService.setBiblebook(biblebookId);
-
-
-          BiblebookService.getBiblebook(biblebookId).then(function(data) {
-            debugger;
-            $scope.data = data;
+          BiblebookService.getBiblebook(biblebookId).then(function(biblebook) {
+            scope.biblebook = biblebook;
+            $rootScope.$broadcast('showBiblebook', biblebook);
           });
+
         };
       };
 
