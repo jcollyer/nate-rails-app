@@ -9,6 +9,7 @@ angular.module('player-controls-directive', [])
     },
     link: function(scope, element, attrs){
       PlayerService.playing = false;
+      scope.currentSpeed = "1.0";
 
       scope.togglePlay = function() {
         PlayerService.togglePlay();
@@ -22,6 +23,11 @@ angular.module('player-controls-directive', [])
 
       scope.toggleMute = function() {
         PlayerService.toggleMute();
+      }
+
+      scope.activeSpeed  = function(speed) {
+        PlayerService.setPlaybackRate(speed);
+        scope.currentSpeed = PlayerService.getPlaybackRate();
       }
 
     }

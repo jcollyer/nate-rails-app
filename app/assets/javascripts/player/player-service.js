@@ -4,6 +4,7 @@ angular.module('player-service',[])
       audioTrack,
       audioElement,
       muted,
+      speed,
       callbacks = {};
 
   PlayerService.getTrack = function() {
@@ -74,6 +75,16 @@ angular.module('player-service',[])
     audioElement.muted = false;
     runCallbacks("mutedCallback");
     // PlayerService.onPlayerStateChange({data: 6});
+  };
+
+  PlayerService.setPlaybackRate = function(speed){
+    trackSpeed = speed;
+    audioElement.playbackRate = trackSpeed;
+
+  };
+
+  PlayerService.getPlaybackRate = function(){
+    return trackSpeed
   };
 
   //used to fill in the progress bar

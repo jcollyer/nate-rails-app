@@ -10,11 +10,11 @@
     <div class="block-button interactive-button podcast"><a href="" class="button-podcast" target="_blank">&nbsp;</a></div>
   </div>
   <div id="controls-part-2">
-    <div class="speed-10 speed block-button active-speed">1.0x</div>
-    <div class="speed-13 speed block-button">1.3x</div>
-    <div class="speed-15 speed block-button">1.5x</div>
-    <div class="speed-17 speed block-button">1.7x</div>
-    <div class="speed-20 speed block-button">2.0x</div>
+    <div ng-click="activeSpeed('1.0')"class="speed-10 speed block-button" ng-class="{'active' : currentSpeed == '1.0'}">1.0x</div>
+    <div ng-click="activeSpeed('1.3')"class="speed-13 speed block-button" ng-class="{'active' : currentSpeed == '1.3'}">1.3x</div>
+    <div ng-click="activeSpeed('1.5')"class="speed-15 speed block-button" ng-class="{'active' : currentSpeed == '1.5'}">1.5x</div>
+    <div ng-click="activeSpeed('1.7')"class="speed-17 speed block-button" ng-class="{'active' : currentSpeed == '1.7'}">1.7x</div>
+    <div ng-click="activeSpeed('2.0')"class="speed-20 speed block-button" ng-class="{'active' : currentSpeed == '2.0'}">2.0x</div>
   </div>
   <div id="controls-part-3">
     <div id="lesson-mod-info" itemprop="name"></div>
