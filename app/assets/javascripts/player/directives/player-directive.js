@@ -6,11 +6,10 @@ angular.module('player-directive',[])
     templateUrl: 'player-template.html',
     controller: 'PlayerController',
     scope: {
-      medium: '='
+      mp3: '='
     },
     link: function(scope, element, attr) {
-      var audioElement = element[0];
-      PlayerService.setElement(audioElement);
+
     }
   };
 })

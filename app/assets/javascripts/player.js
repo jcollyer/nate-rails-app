@@ -15,8 +15,6 @@
         panel = $(".teaching-panel");
         openPanelID = $(".teaching-panel:visible").data("id") || null;
         theID = $el.data("biblebook");
-        closeButton = $("#close-button");
-        closeButton.css("right","160px");
 
         // teachingChapter.html("");
 
@@ -74,43 +72,42 @@
 
 
     html5player = document.getElementById("main-audio");
-      $(document).on("click", ".teaching-item", function() {
-        var $button, $this, bibleBook, mediaPath, podcasturlPath, refurlPath, titlePath, closeButton;
-        $(".teaching-item").removeClass("active-item");
-        $this = $(this);
-        $button = $this.find(".play-this-teaching");
-        closeButton = $("#close-button");
-        mediaPath = $button.data("mp3");
-        bibleBook = $button.data("biblebook");
-        titlePath = $button.data("name");
-        refurlPath = $button.data("refurl");
-        podcasturlPath = $button.data("podcasturl");
-        // console.log("$button: " + $button, "mediaPath: " + mediaPath, "bibleBook: " + bibleBook, "titlePath: " + titlePath, "refurlPath: " + refurlPath, "podcasturlPath: " + podcasturlPath);
-        closeButton.css("right","160px");
-        $("#loader").fadeIn();
-        $("#player").fadeIn();
-        $this.addClass("active-item");
-        $this.addClass("clicked-item");
+      // $(document).on("click", ".teaching-item", function() {
+      //   var $button, $this, bibleBook, mediaPath, podcasturlPath, refurlPath, titlePath, closeButton;
+      //   $(".teaching-item").removeClass("active-item");
+      //   $this = $(this);
+      //   $button = $this.find(".play-this-teaching");
+      //   closeButton = $("#close-button");
+      //   mediaPath = $button.data("mp3");
+      //   bibleBook = $button.data("biblebook");
+      //   titlePath = $button.data("name");
+      //   refurlPath = $button.data("refurl");
+      //   podcasturlPath = $button.data("podcasturl");
+      //   // console.log("$button: " + $button, "mediaPath: " + mediaPath, "bibleBook: " + bibleBook, "titlePath: " + titlePath, "refurlPath: " + refurlPath, "podcasturlPath: " + podcasturlPath);
+      //   closeButton.css("right","160px");
+      //   $("#loader").fadeIn();
+      //   $("#player").fadeIn();
+      //   $this.addClass("active-item");
+      //   $this.addClass("clicked-item");
 
-        $("#lesson-mod-info").empty().prepend("<h1>" + bibleBook + "</h1><p>" + titlePath + "</p>");
-        $("#button-download").attr({
-          "href": mediaPath,
-          "download": titlePath
-        });
-        $("#button-read-along").attr("href", refurlPath);
-        $("#button-podcast").attr("href", podcasturlPath);
+      //   $("#lesson-mod-info").empty().prepend("<h1>" + bibleBook + "</h1><p>" + titlePath + "</p>");
+      //   $("#button-download").attr({
+      //     "href": mediaPath,
+      //     "download": titlePath
+      //   });
+      //   $("#button-read-along").attr("href", refurlPath);
+      //   $("#button-podcast").attr("href", podcasturlPath);
 
-        html5player.setAttribute("src", mediaPath);
+      //   html5player.setAttribute("src", mediaPath);
 
-        initiate = function() {
-          html5player.play();
-          // $("#play-pause").removeClass("button-play").addClass("button-pause");
-        };
+      //   initiate = function() {
+      //     html5player.play();
+      //     // $("#play-pause").removeClass("button-play").addClass("button-pause");
+      //   };
 
 
-        html5player.addEventListener('onload', initiate());
-
-      });
+      //   html5player.addEventListener('onload', initiate());
+      // });
 
       $(document).on("click", "#close-button", function() {
         $("#player").css("display", "none");

@@ -1,10 +1,20 @@
 angular.module('player-service',[])
 .service('PlayerService', function(){
   var PlayerService = this,
+      audioTrack,
       audioElement,
       callbacks = {};
 
+  PlayerService.getTrack = function() {
+    return audioTrack;
+  };
+
+  PlayerService.setTrack = function(track) {
+    audioTrack = track;
+  };
+
   PlayerService.getElement = function() {
+    debugger;
     return audioElement;
   };
 
