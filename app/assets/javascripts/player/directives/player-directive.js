@@ -9,7 +9,8 @@ angular.module('player-directive',[])
       mp3: '='
     },
     link: function(scope, element, attr) {
-
+      var playerElement = element[0]
+      PlayerService.setElement(playerElement);
     }
   };
 })

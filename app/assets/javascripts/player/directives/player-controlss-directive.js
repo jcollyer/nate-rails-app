@@ -15,7 +15,9 @@ angular.module('player-controls-directive', [])
       };
 
       scope.goBack = function() {
-        debugger;
+        var currentTime = PlayerService.getCurrentTime();
+        var newTime = currentTime - 30;
+        PlayerService.setCurrentTime(newTime);
       };
 
     }

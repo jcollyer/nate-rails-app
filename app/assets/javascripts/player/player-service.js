@@ -14,7 +14,6 @@ angular.module('player-service',[])
   };
 
   PlayerService.getElement = function() {
-    debugger;
     return audioElement;
   };
 
@@ -23,6 +22,7 @@ angular.module('player-service',[])
   };
 
   PlayerService.togglePlay = function() {
+    // debugger;
     if (audioElement.paused) {
       PlayerService.play();
     } else {
@@ -31,19 +31,29 @@ angular.module('player-service',[])
   };
 
   PlayerService.play = function() {
-    // debugger;
     runCallbacks("playingCallback");
     audioElement.play();
   };
 
   PlayerService.pause = function() {
+    runCallbacks("pausedCallback");
     audioElement.pause();
+  };
+
+  PlayerService.setCurrentTime = function(newTime) {
+    audioElement.currentTime = newTime;
+  };
+
+  PlayerService.getCurrentTime = function() {
+    return audioElement.currentTime;
   };
 
   //used to fill in the progress bar
   PlayerService.getProgress = function() {
     return 100 * (audioElement.currentTime / audioElement.duration);
   };
+
+
 
 
   //callbacks

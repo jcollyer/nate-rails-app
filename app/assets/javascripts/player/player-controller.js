@@ -1,7 +1,7 @@
 angular.module('player-controller',[])
 .controller('PlayerController', function($scope, PlayerService, NateService){
   var PlayerController = this;
-  $scope.playing = false;
+  $scope.playing = true;
 
 
   Object.keys(PlayerService).forEach(function(key) {
@@ -21,15 +21,14 @@ angular.module('player-controller',[])
 
       $scope.playing = true;
 
+    },
+    pausedCallback: function() {
+      $scope.playing = false;
+      // $interval.cancel(stop);
+      // stop = $interval(function(){
+      //   $scope.currentTime = PlayerService.getScrubTime();
+      // }, 100);
     }
-    // pausedCallback: function() {
-    //   PlayerService.playing = false;
-    //   $scope.playing = false;
-    //   $interval.cancel(stop);
-    //   stop = $interval(function(){
-    //     $scope.currentTime = PlayerService.getScrubTime();
-    //   }, 100);
-    // },
     // speedsCallback: function() {
     //   var speeds = { 1: 2, 2: 4, 4: 8, 8: 0.125, 0.125: 0.25, 0.25: 0.5, 0.5: 1};
 
