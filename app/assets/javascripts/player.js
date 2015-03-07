@@ -186,17 +186,6 @@
         // youtube.player.playVideo();
       });
 
-      $(document).on("click", "#volume-toggle", function() {
-        // debugger;
-        volumeToggle = $("#volume-toggle");
-        if (volumeToggle.hasClass("volume-up")) {
-          html5player.volume = 1;
-          volumeToggle.removeClass("volume-up").addClass("volume-mute");
-        } else {
-          html5player.volume = 0;
-          volumeToggle.removeClass("volume-mute").addClass("volume-up");
-        }
-      });
 
 
       $(document).on("click", ".speed", function() {
@@ -229,11 +218,6 @@
         html5player.play();
       });
 
-      $(document).on("click", "#button-goback", function() {
-        currentTime = html5player.currentTime
-        currentTimeRewind = currentTime - 30
-        html5player.currentTime = currentTimeRewind
-      });
 
 
   });

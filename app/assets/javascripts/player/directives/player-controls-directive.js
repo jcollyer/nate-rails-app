@@ -20,6 +20,10 @@ angular.module('player-controls-directive', [])
         PlayerService.setCurrentTime(newTime);
       };
 
+      scope.toggleMute = function() {
+        PlayerService.toggleMute();
+      }
+
     }
   };
 });

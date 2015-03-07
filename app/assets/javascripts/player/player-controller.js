@@ -2,6 +2,7 @@ angular.module('player-controller',[])
 .controller('PlayerController', function($scope, PlayerService, NateService){
   var PlayerController = this;
   $scope.playing = true;
+  $scope.muted = false;
 
 
   Object.keys(PlayerService).forEach(function(key) {
@@ -28,6 +29,10 @@ angular.module('player-controller',[])
       // stop = $interval(function(){
       //   $scope.currentTime = PlayerService.getScrubTime();
       // }, 100);
+    },
+    mutedCallback: function() {
+      $scope.muted = PlayerService.getMuteSetting();
+
     }
     // speedsCallback: function() {
     //   var speeds = { 1: 2, 2: 4, 4: 8, 8: 0.125, 0.125: 0.25, 0.25: 0.5, 0.5: 1};
@@ -51,9 +56,6 @@ angular.module('player-controller',[])
     //   PlayerService.playing = false;
     //   $scope.playing = false;
     // },
-    // mutedCallback: function() {
-    //   // $scope.muted = PlayerService.getMuteSetting();
-    // }
   });
 
 })

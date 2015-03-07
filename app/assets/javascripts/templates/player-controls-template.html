@@ -3,11 +3,11 @@
     <div id="play" ng-click="togglePlay()">
       <div id="play-pause" ng-class="(playing) ? 'button-pause' : 'button-play'" ></div>
     </div>
-    <div id="button-goback" class="block-button" ng-click="goBack()"><div id="icon-goback"></div></div>
-    <div id="button-volume" class="block-button"><div id="volume-toggle" class="volume-mute"></div></div>
-    <div class="block-button interactive-button read-along"><a href="" id="button-read-along" target="_blank"></a></div>
-    <div class="block-button interactive-button download"><a href="" id="button-download" download="Nate's teaching"></a></div>
-    <div class="block-button interactive-button podcast"><a href="" id="button-podcast" target="_blank">&nbsp;</a></div>
+    <div class="block-button button-goback" ng-click="goBack()"><div id="icon-goback"></div></div>
+    <div class="block-button button-volume" ng-click="toggleMute()"><div id="volume-toggle" ng-class="(muted) ? 'volume-up' : 'volume-mute'"></div></div>
+    <div class="block-button interactive-button read-along"><a href="" class="button-read-along" target="_blank"></a></div>
+    <div class="block-button interactive-button download"><a href="" class="button-download" download="Nate's teaching"></a></div>
+    <div class="block-button interactive-button podcast"><a href="" class="button-podcast" target="_blank">&nbsp;</a></div>
   </div>
   <div id="controls-part-2">
     <div class="speed-10 speed block-button active-speed">1.0x</div>

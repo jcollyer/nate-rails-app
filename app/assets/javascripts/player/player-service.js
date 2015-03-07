@@ -3,6 +3,7 @@ angular.module('player-service',[])
   var PlayerService = this,
       audioTrack,
       audioElement,
+      muted,
       callbacks = {};
 
   PlayerService.getTrack = function() {
@@ -22,7 +23,6 @@ angular.module('player-service',[])
   };
 
   PlayerService.togglePlay = function() {
-    // debugger;
     if (audioElement.paused) {
       PlayerService.play();
     } else {
@@ -48,12 +48,38 @@ angular.module('player-service',[])
     return audioElement.currentTime;
   };
 
+  PlayerService.toggleMute = function() {
+    if (audioElement.muted){
+      PlayerService.setUnMuted();
+    } else{
+      PlayerService.setMuted();
+    };
+  };
+
+  PlayerService.getMuteSetting = function() {
+    return muted;
+  };
+
+  PlayerService.setMuted = function(){
+    // volume is undefined if passed by ref
+    muted = true;
+    audioElement.muted = true;
+    runCallbacks("mutedCallback");
+    // PlayerService.onPlayerStateChange({data: 6});
+  };
+
+  PlayerService.setUnMuted = function(){
+    // volume is undefined if passed by ref
+    muted = false;
+    audioElement.muted = false;
+    runCallbacks("mutedCallback");
+    // PlayerService.onPlayerStateChange({data: 6});
+  };
+
   //used to fill in the progress bar
   PlayerService.getProgress = function() {
     return 100 * (audioElement.currentTime / audioElement.duration);
   };
-
-
 
 
   //callbacks

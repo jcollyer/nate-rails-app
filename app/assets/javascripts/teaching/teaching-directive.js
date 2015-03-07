@@ -18,10 +18,10 @@ angular.module('teaching-directive',['player-service'])
 
       scope.clickTeaching = function(trackLink) {
 
-        var title = angular.element( document.querySelector( '#lesson-mod-info' ) );
-        var download = angular.element( document.querySelector( '#button-download' ) );
-        var readAlong = angular.element( document.querySelector( '#button-read-along' ) );
-        var podcast = angular.element( document.querySelector( '#button-podcast' ) );
+        var title = angular.element( document.querySelector( '.lesson-mod-info' ) );
+        var download = angular.element( document.querySelector( '.button-download' ) );
+        var readAlong = angular.element( document.querySelector( '.button-read-along' ) );
+        var podcast = angular.element( document.querySelector( '.button-podcast' ) );
         var playerWrapper = angular.element( document.querySelector( '#player-wrapper' ) );
         var teaching = this.teaching;
         var id = teaching.id;
