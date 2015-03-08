@@ -14,7 +14,7 @@ angular.module('teaching-directive',['player-service'])
         // debugger;
         scope.biblebookname = biblebook.name;
         scope.teachings = biblebook.teachings;
-        scope.bibelbookImage = biblebook.image;
+        scope.bibelbookImage = biblebook.medium_image;
       });
 
       scope.closePlaylist = function() {
