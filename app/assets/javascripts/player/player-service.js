@@ -24,6 +24,7 @@ angular.module('player-service',[])
   };
 
   PlayerService.togglePlay = function() {
+    console.log(audioElement.paused);
     if (audioElement.paused) {
       PlayerService.play();
     } else {

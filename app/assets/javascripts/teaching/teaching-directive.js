@@ -31,16 +31,21 @@ angular.module('teaching-directive',['player-service'])
         var podcasturl = teaching.podcasturl;
 
         //refactor this to use PlayerService.setTrack(trackLink) or something
+        var playPause = angular.element( document.querySelector( '#play-pause' ) );
+        playPause.addClass("button-pause").removeClass("button-play");
         var mainAudio = document.getElementById("main-audio");
         mainAudio.setAttribute('src',trackLink);
 
 
-        title.html("<h1>"+scope.biblebookname+"</h1><p>"+name+"</p>")
+
+        title.html("<h1>"+scope.biblebookname+"</h1><p>"+name+"</p>");
+        debugger;
         download.attr({"href":mp3,"download":name});
         readAlong.attr("href", refurl);
         podcast.attr("href", podcasturl);
         playerWrapper.css("display","block");
         mainAudio.play();
+
       }
     }
   }
