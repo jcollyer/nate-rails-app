@@ -8,12 +8,12 @@
         thisLink = "/biblebooks/" + thisID;
         return window.location = thisLink;
       } else {
-        $this = $(this);
-        $el = $this.siblings("img");
-        panels = $(".teaching-panels");
-        panel = $(".teaching-panel");
-        openPanelID = $(".teaching-panel:visible").data("id") || null;
-        theID = $el.data("biblebook");
+        // $this = $(this);
+        // $el = $this.siblings("img");
+        // panels = $(".teaching-panels");
+        // panel = $(".teaching-panel");
+        // openPanelID = $(".teaching-panel:visible").data("id") || null;
+        // theID = $el.data("biblebook");
 
 
 
@@ -33,12 +33,12 @@
     });
 
 
-    html5player = document.getElementById("main-audio");
+    // html5player = document.getElementById("main-audio");
 
-      $(document).on("click", "#close-button", function() {
-        $("#player").css("display", "none");
-        pausePlayer();
-      });
+      // $(document).on("click", "#close-button", function() {
+      //   $("#player").css("display", "none");
+      //   pausePlayer();
+      // });
 
       var toHHMMSS = function ( totalsecs ) {
           var sec_num = parseInt(totalsecs, 10); // don't forget the second param
@@ -57,9 +57,9 @@
       }
 
 
-      var seekbar = document.getElementById("seek_bar");
-      var progress = document.getElementById("progress_bar");
-      var progressbar = $("#progress_bar");
+      // var seekbar = document.getElementById("seek_bar");
+      // var progress = document.getElementById("progress_bar");
+      // var progressbar = $("#progress_bar");
 
 
       // html5player.addEventListener('loadedmetadata', function(){
@@ -88,15 +88,15 @@
       //   // html5player.currentTime.textContent  = toHHMMSS(html5player.currentTime);
       // });
 
-      $(document).on("click", "#seek_bar", function(e) {
-        var duration = Math.floor(html5player.duration);
-        var xoffset = e.offsetX || e.layerX;
-        var seconds = (xoffset / e.currentTarget.clientWidth) * duration;
+      // $(document).on("click", "#seek_bar", function(e) {
+      //   var duration = Math.floor(html5player.duration);
+      //   var xoffset = e.offsetX || e.layerX;
+      //   var seconds = (xoffset / e.currentTarget.clientWidth) * duration;
 
-        // youtube.getProgress();
-        html5player.currentTime = seconds;
-        // youtube.player.playVideo();
-      });
+      //   // youtube.getProgress();
+      //   html5player.currentTime = seconds;
+      //   // youtube.player.playVideo();
+      // });
 
 
   });

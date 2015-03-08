@@ -6,6 +6,14 @@ angular.module('player-progress-directive',[])
     scope: {},
     link: function(scope, element, attr){
 
+      scope.seekTo = function(e) {
+        var duration = PlayerService.getDuration();
+        var xoffset = e.offsetX || e.layerX;
+        var seconds = (xoffset / e.currentTarget.clientWidth) * duration;
+
+        PlayerService.setCurrentTime(seconds);
+        scope.progress = PlayerService.getProgress();
+      }
 
       PlayerService.setEventCallbacks('progress', {
         // ladingCallback: function() {

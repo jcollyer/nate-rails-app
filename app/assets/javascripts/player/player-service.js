@@ -50,6 +50,10 @@ angular.module('player-service',[])
     return audioElement.currentTime;
   };
 
+  PlayerService.getDuration = function() {
+    return audioElement.duration;
+  };
+
   PlayerService.toggleMute = function() {
     if (audioElement.muted){
       PlayerService.setUnMuted();
