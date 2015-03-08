@@ -1,8 +1,7 @@
 (function() {
   $(function() {
     $(document).on("click", ".biblebook-hover", function() {
-      var $el, $this, close, negPanelsWidth, openPanelID, panel, panels,
-          theID, thisID, thisLink, thisPanel, teachingChapter, closeButton;
+
       teachingChapter = $("#teaching-chapter");
       if ($(window).width() < 767) {
         thisID = $(this).data("id");
@@ -18,18 +17,18 @@
 
 
 
-        close = $(".teaching-panel-close");
-        $(".teaching-panels").addClass("opened");
-        negPanelsWidth = "-160px";
-        if (theID !== openPanelID) {
-          if (panels.css("left") === negPanelsWidth) {
-            panels.animate({
-              left: "0px"
-            }, 250);
-            close.css("right", "-46px");
-            return windowWrapperSize();
-          }
-        }
+        // close = $(".teaching-panel-close");
+        // $(".teaching-panels").addClass("opened");
+        // negPanelsWidth = "-160px";
+        // if (theID !== openPanelID) {
+        //   if (panels.css("left") === negPanelsWidth) {
+        //     panels.animate({
+        //       left: "0px"
+        //     }, 250);
+        //     close.css("right", "-46px");
+        //     return windowWrapperSize();
+        //   }
+        // }
       }
     });
 
@@ -63,11 +62,11 @@
       var progressbar = $("#progress_bar");
 
 
-      html5player.addEventListener('loadedmetadata', function(){
-        progress.setAttribute('max', Math.floor(html5player.duration));
-        $("#loader").fadeOut();
-        html5player.duration.textContent  = toHHMMSS(html5player.duration);
-      });
+      // html5player.addEventListener('loadedmetadata', function(){
+      //   progress.setAttribute('max', Math.floor(html5player.duration));
+      //   $("#loader").fadeOut();
+      //   html5player.duration.textContent  = toHHMMSS(html5player.duration);
+      // });
 
       // html5player.addEventListener('timeupdate', function(){
       //   // convert total seconds to hh:mm:ss

@@ -6,6 +6,8 @@ angular.module('teaching-directive',['player-service'])
     controller: 'TeachingController',
     link: function(scope, element, attr, PlayerService) {
       var b = PlayerService;
+      var teachingPanels = angular.element( document.querySelector( '.teaching-panels.opened' ) );
+      var pageWrapper = angular.element( document.querySelector( '#page-wrapper' ) );
 
       // display teachings
       scope.$on('showBiblebook', function(event, biblebook) {
@@ -15,6 +17,10 @@ angular.module('teaching-directive',['player-service'])
         scope.bibelbookImage = biblebook.image;
       });
 
+      scope.closePlaylist = function() {
+        closeButton.css("width","0px");
+        pageWrapper.css("width","100%");
+      };
 
       scope.clickTeaching = function(trackLink) {
 
@@ -39,7 +45,7 @@ angular.module('teaching-directive',['player-service'])
 
 
         title.html("<h1>"+scope.biblebookname+"</h1><p>"+name+"</p>");
-        debugger;
+
         download.attr({"href":mp3,"download":name});
         readAlong.attr("href", refurl);
         podcast.attr("href", podcasturl);

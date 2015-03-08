@@ -8,24 +8,36 @@ angular.module('biblebook-directive',[])
     scope: {},
     link: function(scope, element, attr) {
       var biblebookService = BiblebookService;
+      scope.opened = false;
+      scope.mobile = false;
 
       scope.biblebooks = biblebookService.getAllBiblebooks();
-
-       var $this, close, negPanelsWidth, openPanelID, panel, panels,
-          theID, thisID, thisLink, thisPanel, closeButton;
 
       thisElement = element;
 
       scope.playTrack = function(id) {
+        var pageWrapper = angular.element( document.querySelector( '#page-wrapper' ) );
+        var teachingPannels = angular.element( document.querySelector( '.teaching-panels' ) );
+        var closeButton = angular.element( document.querySelector( '.teaching-panel-close' ) );
+
         if (window.innerWidth < 767) {
+          scope.mobile = true;
+
         } else {
+          scope.mobile = false;
           var biblebookId = id;
 
           BiblebookService.getBiblebook(biblebookId).then(function(biblebook) {
             scope.biblebook = biblebook;
             $rootScope.$broadcast('showBiblebook', biblebook);
           });
-
+          if (teachingPannels.hasClass("opened")) {
+            return;
+          } else {
+            teachingPannels.addClass("opened");
+            closeButton.css("display","block");
+            pageWrapper.css("width","calc(100% - 160px)");
+          };
         };
       };
 
