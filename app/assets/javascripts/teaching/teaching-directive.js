@@ -6,7 +6,8 @@ angular.module('teaching-directive',['player-service'])
     controller: 'TeachingController',
     link: function(scope, element, attr, PlayerService) {
       var b = PlayerService;
-      var teachingPanels = angular.element( document.querySelector( '.teaching-panels.opened' ) );
+      var teachingPanels = angular.element( document.querySelector( '.teaching-panels' ) );
+      var closeButton = angular.element( document.querySelector( '.teaching-panel-close' ) );
       var pageWrapper = angular.element( document.querySelector( '#page-wrapper' ) );
 
       // display teachings
@@ -18,7 +19,8 @@ angular.module('teaching-directive',['player-service'])
       });
 
       scope.closePlaylist = function() {
-        closeButton.css("width","0px");
+        closeButton.css("display","none");
+        teachingPanels.removeClass("opened").css("width","0px");
         pageWrapper.css("width","100%");
       };
 

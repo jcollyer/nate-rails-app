@@ -34,7 +34,7 @@ angular.module('biblebook-directive',[])
           if (teachingPannels.hasClass("opened")) {
             return;
           } else {
-            teachingPannels.addClass("opened");
+            teachingPannels.addClass("opened").css("width","160px");
             closeButton.css("display","block");
             pageWrapper.css("width","calc(100% - 160px)");
           };
