@@ -4,15 +4,13 @@ angular.module('teaching-directive',['player-service'])
     restrict: 'A',
     templateUrl: 'teaching-template.html',
     controller: 'TeachingController',
-    link: function(scope, element, attr, PlayerService) {
-      var b = PlayerService;
+    link: function(scope, element, attr) {
       var teachingPanels = angular.element( document.querySelector( '.teaching-panels' ) );
       var closeButton = angular.element( document.querySelector( '.teaching-panel-close' ) );
       var pageWrapper = angular.element( document.querySelector( '#page-wrapper' ) );
 
       // display teachings
       scope.$on('showBiblebook', function(event, biblebook) {
-        // debugger;
         scope.biblebookname = biblebook.name;
         scope.teachings = biblebook.teachings;
         scope.bibelbookImage = biblebook.medium_image;
@@ -24,37 +22,8 @@ angular.module('teaching-directive',['player-service'])
         pageWrapper.css("width","100%");
       };
 
-      scope.clickTeaching = function(trackLink) {
-
-        var title = angular.element( document.querySelector( '.lesson-mod-info' ) );
-        var download = angular.element( document.querySelector( '.button-download' ) );
-        var readAlong = angular.element( document.querySelector( '.button-read-along' ) );
-        var podcast = angular.element( document.querySelector( '.button-podcast' ) );
-        var playerWrapper = angular.element( document.querySelector( '#player-wrapper' ) );
-        var teaching = this.teaching;
-        var id = teaching.id;
-        var mp3 = teaching.mp3;
-        var name = teaching.name;
-        var refurl = teaching.refurl;
-        var podcasturl = teaching.podcasturl;
-
-        //refactor this to use PlayerService.setTrack(trackLink) or something
-        var playPause = angular.element( document.querySelector( '#play-pause' ) );
-        playPause.addClass("button-pause").removeClass("button-play");
-        var mainAudio = document.getElementById("main-audio");
-        mainAudio.setAttribute('src',trackLink);
 
 
-
-        title.html("<h1>"+scope.biblebookname+"</h1><p>"+name+"</p>");
-
-        download.attr({"href":mp3,"download":name});
-        readAlong.attr("href", refurl);
-        podcast.attr("href", podcasturl);
-        playerWrapper.css("display","block");
-        mainAudio.play();
-
-      }
     }
   }
 });

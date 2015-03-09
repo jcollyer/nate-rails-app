@@ -9,9 +9,10 @@ angular.module('player-controller',[])
     $scope[key] = PlayerService[key];
   });
   PlayerService.setEventCallbacks('controls', {
-    // videoReady: function() {
-    //   $scope.duration = PlayerService.getElement().duration;
-    // },
+    audioReadyCallback: function() {
+      $scope.duration = PlayerService.getElement().duration;
+      PlayerService.getElement().play();
+    },
     playingCallback: function() {
 
       // $interval.cancel(stop);

@@ -31,6 +31,7 @@ angular.module('biblebook-directive',[])
             scope.biblebook = biblebook;
             $rootScope.$broadcast('showBiblebook', biblebook);
           });
+
           if (teachingPannels.hasClass("opened")) {
             return;
           } else {

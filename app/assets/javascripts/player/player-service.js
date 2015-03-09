@@ -1,5 +1,5 @@
 angular.module('player-service',[])
-.service('PlayerService', function(){
+.service('PlayerService', function($sce){
   var PlayerService = this,
       audioTrack,
       audioElement,
@@ -8,7 +8,7 @@ angular.module('player-service',[])
       callbacks = {};
 
   PlayerService.getTrack = function() {
-    return audioTrack;
+    return $sce.trustAsResourceUrl(audioTrack) || null;
   };
 
   PlayerService.setTrack = function(track) {
@@ -21,6 +21,10 @@ angular.module('player-service',[])
 
   PlayerService.setElement = function(element) {
     audioElement = element;
+  };
+
+  PlayerService.videoReady = function() {
+    runCallbacks("audioReadyCallback");
   };
 
   PlayerService.togglePlay = function() {
