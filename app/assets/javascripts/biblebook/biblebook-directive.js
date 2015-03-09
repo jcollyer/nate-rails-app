@@ -29,6 +29,9 @@ angular.module('biblebook-directive',[])
 
           BiblebookService.getBiblebook(biblebookId).then(function(biblebook) {
             scope.biblebook = biblebook;
+            scope.biblebookName = biblebook.name;
+            var title = angular.element( document.querySelector( '.lesson-mod-info h1' ) );
+            title.html(scope.biblebookName);
             $rootScope.$broadcast('showBiblebook', biblebook);
           });
 
