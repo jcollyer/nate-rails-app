@@ -4,6 +4,8 @@ angular.module('player-controller',[])
   $scope.playing = true;
   $scope.muted = false;
 
+  var loader = angular.element( document.querySelector( '#loader' ) );
+
 
   Object.keys(PlayerService).forEach(function(key) {
     $scope[key] = PlayerService[key];
@@ -11,9 +13,12 @@ angular.module('player-controller',[])
   PlayerService.setEventCallbacks('controls', {
     audioReadyCallback: function() {
       $scope.duration = PlayerService.getElement().duration;
-      PlayerService.getElement().play();
+      PlayerService.play();
     },
     playingCallback: function() {
+      loader.css("display","none");
+
+      // debugger;
 
       // $interval.cancel(stop);
       // stop = $interval(function(){

@@ -1,5 +1,5 @@
 angular.module('teaching-controller',[])
-.controller('TeachingController', function($scope, $rootScope, PlayerService){
+.controller('TeachingController', function($scope, PlayerService){
 
   $scope.clickTeaching = function(mp3) {
     var teachingName = angular.element( document.querySelector( '.lesson-mod-info p' ) );
@@ -7,6 +7,7 @@ angular.module('teaching-controller',[])
     var readAlong = angular.element( document.querySelector( '.button-read-along' ) );
     var podcast = angular.element( document.querySelector( '.button-podcast' ) );
     var playerWrapper = angular.element( document.querySelector( '#player-wrapper' ) );
+    var loader = angular.element( document.querySelector( '#loader' ) );
 
     var teaching = this.teaching;
     var mp3 = teaching.mp3;
@@ -15,8 +16,9 @@ angular.module('teaching-controller',[])
     var podcasturl = teaching.podcasturl;
     // var biblebookname = teaching.
 
+    loader.css("display","block");
 
-    $rootScope.$broadcast('setTrack', mp3);
+    PlayerService.setTrack(mp3);
 
     var playPause = angular.element( document.querySelector( '#play-pause' ) );
     playPause.addClass("button-pause").removeClass("button-play");
@@ -27,12 +29,10 @@ angular.module('teaching-controller',[])
     readAlong.attr("href", refurl);
     podcast.attr("href", podcasturl);
     playerWrapper.css("display","block");
-
   };
 
   $scope.selected = function(teaching) {
     if (PlayerService && PlayerService.getTrack()){
-      console.log(PlayerService.getTrack().toString());
       return teaching.mp3 === PlayerService.getTrack().toString();
     }
   };

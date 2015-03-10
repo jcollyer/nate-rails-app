@@ -13,12 +13,7 @@ angular.module('player-directive',[])
 
       PlayerService.setElement(audioElement);
 
-
       // update Audio Track
-      scope.$on('setTrack', function(event, mp3) {
-        PlayerService.setTrack(mp3);
-      });
-
       scope.getAudioSrc = function() {
         return PlayerService.getTrack();
       };

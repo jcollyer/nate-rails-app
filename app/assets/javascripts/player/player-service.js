@@ -28,7 +28,6 @@ angular.module('player-service',[])
   };
 
   PlayerService.togglePlay = function() {
-    console.log(audioElement.paused);
     if (audioElement.paused) {
       PlayerService.play();
     } else {
@@ -37,13 +36,13 @@ angular.module('player-service',[])
   };
 
   PlayerService.play = function() {
-    runCallbacks("playingCallback");
     audioElement.play();
+    runCallbacks("playingCallback");
   };
 
   PlayerService.pause = function() {
-    runCallbacks("pausedCallback");
     audioElement.pause();
+    runCallbacks("pausedCallback");
   };
 
   PlayerService.setCurrentTime = function(newTime) {
@@ -71,11 +70,9 @@ angular.module('player-service',[])
   };
 
   PlayerService.setMuted = function(){
-    // volume is undefined if passed by ref
     muted = true;
     audioElement.muted = true;
     runCallbacks("mutedCallback");
-    // PlayerService.onPlayerStateChange({data: 6});
   };
 
   PlayerService.setUnMuted = function(){
@@ -83,7 +80,6 @@ angular.module('player-service',[])
     muted = false;
     audioElement.muted = false;
     runCallbacks("mutedCallback");
-    // PlayerService.onPlayerStateChange({data: 6});
   };
 
   PlayerService.setPlaybackRate = function(speed){
