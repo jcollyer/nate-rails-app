@@ -24,7 +24,7 @@ angular.module('player-directive',[])
       };
 
       audioElement.oncanplay = function () {
-        PlayerService.videoReady();
+        PlayerService.audioReady();
       };
 
 

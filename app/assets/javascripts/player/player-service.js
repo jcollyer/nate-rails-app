@@ -23,7 +23,7 @@ angular.module('player-service',[])
     audioElement = element;
   };
 
-  PlayerService.videoReady = function() {
+  PlayerService.audioReady = function() {
     runCallbacks("audioReadyCallback");
   };
 
