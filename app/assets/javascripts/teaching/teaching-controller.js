@@ -30,11 +30,11 @@ angular.module('teaching-controller',[])
 
   };
 
-  // $scope.selected = function(teaching) {
-  //   if (PlayerService && PlayerService.getTrack()){
-  //     debugger;
-  //     return teaching.mp3 === PlayerService.getTrack().toString();
-  //   }
-  // };
+  $scope.selected = function(teaching) {
+    if (PlayerService && PlayerService.getTrack()){
+      console.log(PlayerService.getTrack().toString());
+      return teaching.mp3 === PlayerService.getTrack().toString();
+    }
+  };
 
 });

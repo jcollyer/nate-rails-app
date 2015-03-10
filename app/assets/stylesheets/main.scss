@@ -318,15 +318,19 @@ table {
         width: 100%;
       }
     }
+    .teaching-item.selected{
+      background: #555;
+      p {color: white;}
+      &:hover {background:#555;}
+    }
     .teaching-item {
       cursor: pointer;
       width: 100%;
       border-bottom: 1px solid rgba(0,0,0,0.4);
       position: relative;
-      transition: background 0.5s;
       display: block;
       &:hover {
-        background: #777;
+        background: #999;
         color: white;
       }
       &:hover > .play-this-teaching {
@@ -342,6 +346,7 @@ table {
         margin:0px;
         text-align: left;
         padding: 0 0 0 4px;
+        transition: color 0.3s;
       }
       .play-this-teaching {
         // display: none;
