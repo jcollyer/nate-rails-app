@@ -649,18 +649,21 @@ a.social {
   position: fixed;
   background: #333;
   width: 100%;
-  height: 70px;
+  height: 71px;
   z-index: 999;
-  bottom: 0px;
+  bottom: 20px;
   @media all and (max-width: 767px){
     height: 173px;
   }
   #seek_bar{
     cursor: pointer;
-    background: rgba(255,255,255,0.5);
+    background: #666;
     margin-top: -10px;
-    height: 10px;
-    border-top: 1px solid #ccc;
+    bottom: -20px;
+    position: absolute;
+    z-index: 9;
+    height: 20px;
+    width: 100%;
     @media all and (max-width: 767px){
       cursor: pointer;
       background: #1c638d;
@@ -675,6 +678,18 @@ a.social {
       position: relative;
       @media all and (max-width: 767px){
         background: white;
+      }
+      #progress_ball {
+        width: 3px;
+        height: 22px;
+        top: -2px;
+        right: -1px;
+        position: absolute;
+        background: #ddd;
+        cursor: pointer;
+        border-radius: 1px;
+        border: 1px solid #eee;
+        z-index: 9;
       }
     }
   }
