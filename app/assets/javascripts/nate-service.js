@@ -26,11 +26,11 @@ angular.module('nate-service',[])
       if (pagePosition < 50) {
         $("#main-nav").removeClass("new-nav").addClass("old-nav");
         $(".logo").removeClass("new-logo").addClass("old-logo");
-        return $(".teaching-panels").css("margin-top", "80px");
+        // return $(".teaching-panels").css("margin-top", "80px");
       } else {
         $("#main-nav").removeClass("old-nav").addClass("new-nav");
         $(".logo").removeClass("old-logo").addClass("new-logo");
-        return $(".teaching-panels").css("margin-top", "56px");
+        // return $(".teaching-panels").css("margin-top", "56px");
       }
     };
     if ($(window).width() > 767) {

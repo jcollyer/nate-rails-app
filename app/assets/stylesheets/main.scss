@@ -157,7 +157,7 @@ table {
     }
   }
 }
-.old-nav{
+#main-nav.old-nav{
   position: absolute;
   top: -80px;
   height: 80px;
@@ -167,9 +167,9 @@ table {
     }
   }
 }
-.new-nav {
+#main-nav.new-nav {
   top: 0px;
-  width: 100%;
+  width: calc(100% - 160px);
   position: fixed;
   height: 56px;
   @media all and (max-width: "767px") {

@@ -1,11 +1,10 @@
 <% if current_user %>
   <%= render "admin_links" %>
-<% else %>
-  <%= render "nav" %>
 <% end %>
 
 <div jc-teachings></div>
 <div id="page-wrapper">
+  <%= render "nav" %>
   <%= render "spinner" %>
   <%= render "bios" %>
   <%= render "biblebooks" %>
