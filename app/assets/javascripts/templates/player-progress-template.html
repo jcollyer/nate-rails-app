@@ -1,4 +1,6 @@
-<div id="seek_bar" ng-click="seekTo($event)">
-  <div id="progress_bar" ng-style="{'width': progress + '%'}"></div>
+<div id="seek_bar" ng-mousedown="beginScrub($event)">
+  <div id="progress_bar" ng-style="{'width': progress + '%'}" ng-mousedown="scrubbing($event)">
+    <div id="progress_ball"></div>
+  </div>
 </div>
 

@@ -6,14 +6,58 @@ angular.module('player-progress-directive',[])
     scope: {},
     link: function(scope, element, attr){
 
-      scope.seekTo = function(e) {
+      var audioElement = PlayerService.getElement();
+      playerWrapper = angular.element( document.querySelector( '#player-wrapper' ) );
+
+      // Drag Playhead
+      var playHead = {
+       mdown:false
+      };
+      var instance = {};
+
+      scope.beginScrub = function(e) {
+        playHead.mdown = true;
+        scope.isScrubbing = true;
+        PlayerService.setIsScrubbing(scope.isScrubbing);
+        scope.goToAudioPosition(e);
+        if (!audioElement.paused) {
+          instance.startAgain = true;
+          PlayerService.pause();
+        } else {
+          instance.startAgain = false;
+        };
+      };
+
+      playerWrapper.on("mouseup", function(e) {
+        scope.isScrubbing = false;
+        PlayerService.setIsScrubbing(scope.isScrubbing);
+        if (playHead.mdown) {
+          playHead.mdown = false;
+          if (instance.startAgain) {
+            instance.startAgain = false;
+            PlayerService.play();
+          };
+        };
+      });
+
+      playerWrapper.on("mousemove", function(e) {
+        if (playHead.mdown) {
+          scope.goToAudioPosition(e);
+        };
+      });
+
+      scope.goToAudioPosition = function(e) {
         var duration = PlayerService.getDuration();
         var xoffset = e.offsetX || e.layerX;
         var seconds = (xoffset / e.currentTarget.clientWidth) * duration;
-
         PlayerService.setCurrentTime(seconds);
+        // scope.progress = PlayerService.getProgress();
+
+        PlayerService.setSeconds(e, xoffset, audioElement)
+        // audioElement.currentTime = PlayerService.getSeconds();
+        // scope.currentTime = PlayerService.getSeconds();
         scope.progress = PlayerService.getProgress();
-      }
+      };
 
       PlayerService.setEventCallbacks('progress', {
         // ladingCallback: function() {

@@ -53,8 +53,31 @@ angular.module('player-service',[])
     return audioElement.currentTime;
   };
 
+  PlayerService.setSeconds = function(event, xoffset, target) {
+    var target = target || event;
+    if (event) {
+      var xoffset = event.offsetX || event.layerX;
+      var width = target.currentTarget ? target.currentTarget.clientWidth : target.clientWidth;
+    }
+    var duration = audioElement.duration;
+    seconds = (xoffset / width) * duration;
+  };
+
+  PlayerService.getSeconds = function() {
+    return seconds;
+  }
+
   PlayerService.getDuration = function() {
     return audioElement.duration;
+  };
+
+  PlayerService.setIsScrubbing = function(scrub) {
+    isScrubbing = scrub
+  };
+
+   PlayerService.getIsScrubbing = function() {
+    // returns true or false
+    return isScrubbing
   };
 
   PlayerService.toggleMute = function() {
