@@ -25,6 +25,7 @@ angular.module('player-service',[])
 
   PlayerService.audioReady = function() {
     runCallbacks("audioReadyCallback");
+    runCallbacks("ladingCallback");
   };
 
   PlayerService.togglePlay = function() {
@@ -69,6 +70,12 @@ angular.module('player-service',[])
 
   PlayerService.getDuration = function() {
     return audioElement.duration;
+  };
+
+  PlayerService.getBuffered = function() {
+    if (audioElement.readyState === 4) {
+      return 100 * (audioElement.buffered.end(0) / audioElement.duration);
+    }
   };
 
   PlayerService.setIsScrubbing = function(scrub) {

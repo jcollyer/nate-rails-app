@@ -7,13 +7,12 @@ angular.module('player-progress-directive',[])
     link: function(scope, element, attr){
 
       var audioElement = PlayerService.getElement();
-      playerWrapper = angular.element( document.querySelector( '#player-wrapper' ) );
-
-      // Drag Playhead
+      var playerWrapper = angular.element( document.querySelector( '#player-wrapper' ) );
+      var instance = {};
       var playHead = {
        mdown:false
       };
-      var instance = {};
+      var load, stop;
 
       scope.beginScrub = function(e) {
         playHead.mdown = true;
@@ -60,17 +59,20 @@ angular.module('player-progress-directive',[])
       };
 
       PlayerService.setEventCallbacks('progress', {
-        // ladingCallback: function() {
-        //   $interval.cancel(load);
-        //   load = $interval(function() {
-        //     scope.loaded = PlayerService.getBuffered();
-        //   }, 500);
-        // },
+        ladingCallback: function() {
+          $interval.cancel(load);
+          load = $interval(function() {
+            scope.loaded = PlayerService.getBuffered();
+          }, 500);
+        },
         playingCallback: function() {
           $interval.cancel(stop);
           stop = $interval(function(){
             scope.progress = PlayerService.getProgress();
           }, 500);
+        },
+        pausedCallback: function() {
+          $interval.cancel(stop);
         }
       });
 
