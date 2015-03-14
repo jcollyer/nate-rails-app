@@ -641,7 +641,14 @@ a.social {
   display: inline-block;
 }
 
-
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 #player-wrapper {
   display: none;
@@ -683,7 +690,7 @@ a.social {
         width: 9px;
         height: 22px;
         top: -2px;
-        right: -1px;
+        right: 0px;
         position: absolute;
         background: #ddd;
         cursor: pointer;

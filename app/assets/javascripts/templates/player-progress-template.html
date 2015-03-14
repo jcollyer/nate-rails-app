@@ -1,4 +1,4 @@
-<div id="seek_bar" ng-mousedown="beginScrub($event)">
+<div id="seek_bar" ng-mousedown="beginScrub($event); $event.stopPropagation();">
   <div id="loaded_bar" ng-style="{ 'width': loaded + '%' }"></div>
   <div id="progress_bar" ng-style="{ 'width': progress + '%' }">
     <div id="progress_ball"></div>

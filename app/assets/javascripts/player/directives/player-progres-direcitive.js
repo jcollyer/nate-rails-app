@@ -18,7 +18,7 @@ angular.module('player-progress-directive',[])
         playHead.mdown = true;
         scope.isScrubbing = true;
         PlayerService.setIsScrubbing(scope.isScrubbing);
-        scope.goToAudioPosition(e);
+        position_to_time(e);
         if (!audioElement.paused) {
           instance.startAgain = true;
           PlayerService.pause();
@@ -41,9 +41,14 @@ angular.module('player-progress-directive',[])
 
       playerWrapper.on("mousemove", function(e) {
         if (playHead.mdown) {
-          scope.goToAudioPosition(e);
+          position_to_time(e);
         };
       });
+
+      var position_to_time = function(e) {
+        scope.goToAudioPosition(e);
+      };
+
 
       scope.goToAudioPosition = function(e) {
         var duration = PlayerService.getDuration();
