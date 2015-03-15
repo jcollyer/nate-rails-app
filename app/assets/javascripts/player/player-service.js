@@ -129,6 +129,12 @@ angular.module('player-service',[])
     return 100 * (audioElement.currentTime / audioElement.duration);
   };
 
+  PlayerService.goBack = function() {
+    var goBack = audioElement.currentTime - 30;
+    audioElement.currentTime = goBack;
+    PlayerService.play();
+  };
+
 
   //callbacks
   PlayerService.getCallbacks = function() {

@@ -16,19 +16,17 @@ angular.module('player-controls-directive', [])
       };
 
       scope.goBack = function() {
-        var currentTime = PlayerService.getCurrentTime();
-        var newTime = currentTime - 30;
-        PlayerService.setCurrentTime(newTime);
+        PlayerService.goBack();
       };
 
       scope.toggleMute = function() {
         PlayerService.toggleMute();
-      }
+      };
 
       scope.activeSpeed  = function(speed) {
         PlayerService.setPlaybackRate(speed);
         scope.currentSpeed = PlayerService.getPlaybackRate();
-      }
+      };
 
     }
   };
