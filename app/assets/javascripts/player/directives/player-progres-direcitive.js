@@ -4,7 +4,6 @@ angular.module('player-progress-directive',[])
     restrict: 'A',
     templateUrl: 'player-progress-template.html',
     scope: {},
-    replace: true,
     link: function(scope, element, attr){
 
       var audioElement = PlayerService.getElement();

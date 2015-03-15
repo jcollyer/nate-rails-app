@@ -6,7 +6,6 @@ angular.module('teaching-controller',[])
     var download = angular.element( document.querySelector( '.button-download' ) );
     var readAlong = angular.element( document.querySelector( '.button-read-along' ) );
     var podcast = angular.element( document.querySelector( '.button-podcast' ) );
-    var playerWrapper = angular.element( document.querySelector( '#player-wrapper' ) );
     var loader = angular.element( document.querySelector( '#loader' ) );
 
     var teaching = this.teaching;
@@ -28,7 +27,6 @@ angular.module('teaching-controller',[])
     download.attr({"href":mp3,"download":name});
     readAlong.attr("href", refurl);
     podcast.attr("href", podcasturl);
-    playerWrapper.css("display","block");
   };
 
   $scope.selected = function(teaching) {

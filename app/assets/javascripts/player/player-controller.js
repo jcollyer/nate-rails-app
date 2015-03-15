@@ -6,6 +6,7 @@ angular.module('player-controller',[])
   $scope.currentTime = 0;
 
   var loader = angular.element( document.querySelector( '#loader' ) );
+  var playerWrapper = angular.element( document.querySelector( '#player-wrapper' ) );
 
 
   Object.keys(PlayerService).forEach(function(key) {
@@ -18,6 +19,7 @@ angular.module('player-controller',[])
     },
     playingCallback: function() {
       loader.css("display","none");
+      playerWrapper.css("height","81");
 
       // PlayerService.playing = true;
       $scope.playing = true;
