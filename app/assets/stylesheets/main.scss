@@ -14,11 +14,15 @@ body {
   text-align: center;
 }
 
+#page-wrapper.opened {
+  width: calc(100% - 160px);
+}
 #page-wrapper {
   position: relative;
   width: 100%;
   margin-left: auto;
   margin-top: 80px;
+  transition: width 0.3s;
   @media all and (max-width: "767px") {
     margin-top: 40px;
   }
@@ -169,7 +173,6 @@ table {
 }
 #main-nav.new-nav {
   top: 0px;
-  width: calc(100% - 160px);
   position: fixed;
   height: 56px;
   @media all and (max-width: "767px") {
@@ -276,6 +279,7 @@ table {
   top: 0px;
   width: 0px;
   z-index: 9;
+  transition: width 0.3s;
   .teaching-panel-close {
     display: none;
     background: rgba(0,0,0,0.6);

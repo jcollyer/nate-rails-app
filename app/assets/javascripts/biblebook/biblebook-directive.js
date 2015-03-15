@@ -19,6 +19,7 @@ angular.module('biblebook-directive',[])
         var pageWrapper = angular.element( document.querySelector( '#page-wrapper' ) );
         var teachingPannels = angular.element( document.querySelector( '.teaching-panels' ) );
         var closeButton = angular.element( document.querySelector( '.teaching-panel-close' ) );
+        var mainNav = angular.element( document.querySelector( '#main-nav' ) );
 
         if (window.innerWidth < 767) {
           scope.mobile = true;
@@ -38,9 +39,10 @@ angular.module('biblebook-directive',[])
           if (teachingPannels.hasClass("opened")) {
             return;
           } else {
-            teachingPannels.addClass("opened").css("width","160px");
+            teachingPannels.addClass("opened");
             closeButton.css("display","block");
-            pageWrapper.css("width","calc(100% - 160px)");
+            pageWrapper.addClass("opened");
+            mainNav.css("width","calc(100% - 160px)");
           };
         };
       };

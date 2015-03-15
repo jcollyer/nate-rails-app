@@ -8,6 +8,7 @@ angular.module('teaching-directive',['player-service'])
       var teachingPanels = angular.element( document.querySelector( '.teaching-panels' ) );
       var closeButton = angular.element( document.querySelector( '.teaching-panel-close' ) );
       var pageWrapper = angular.element( document.querySelector( '#page-wrapper' ) );
+      var mainNav = angular.element( document.querySelector( '#main-nav' ) );
 
       // display teachings
       scope.$on('showBiblebook', function(event, biblebook) {
@@ -18,8 +19,9 @@ angular.module('teaching-directive',['player-service'])
 
       scope.closePlaylist = function() {
         closeButton.css("display","none");
-        teachingPanels.removeClass("opened").css("width","0px");
-        pageWrapper.css("width","100%");
+        teachingPanels.removeClass("opened");
+        pageWrapper.removeClass("opened");
+        mainNav.css("width","100%");
       };
 
 
