@@ -1,8 +1,9 @@
 angular.module('player-controller',[])
-.controller('PlayerController', function($scope, PlayerService, NateService){
+.controller('PlayerController', function($scope, $interval, PlayerService, NateService){
   var PlayerController = this;
   $scope.playing = true;
   $scope.muted = false;
+  $scope.currentTime = 0;
 
   var loader = angular.element( document.querySelector( '#loader' ) );
 
@@ -18,15 +19,15 @@ angular.module('player-controller',[])
     playingCallback: function() {
       loader.css("display","none");
 
-      // debugger;
-
-      // $interval.cancel(stop);
-      // stop = $interval(function(){
-      //   $scope.currentTime = PlayerService.getElement().currentTime;
-      //   PlayerService.setScrubTime(PlayerService.getCurrentTime());
-      // }, 500);
-
+      // PlayerService.playing = true;
       $scope.playing = true;
+
+      $interval.cancel(stop);
+      stop = $interval(function(){
+        $scope.getSeconds = function() {
+          return PlayerService.getElement().currentTime;
+        }
+      }, 100);
 
     },
     pausedCallback: function() {
