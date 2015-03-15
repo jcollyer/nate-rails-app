@@ -4,10 +4,12 @@ angular.module('player-progress-directive',[])
     restrict: 'A',
     templateUrl: 'player-progress-template.html',
     scope: {},
+    replace: true,
     link: function(scope, element, attr){
 
       var audioElement = PlayerService.getElement();
       var playerWrapper = angular.element( document.querySelector( '#player-wrapper' ) );
+      var progressBar = angular.element( document.querySelector( '#progress_bar' ) );
       var instance = {};
       var playHead = {
        mdown:false
@@ -49,24 +51,11 @@ angular.module('player-progress-directive',[])
         scope.goToAudioPosition(e);
       };
 
-
       scope.goToAudioPosition = function(e) {
-        var duration = PlayerService.getDuration();
-        var xoffset = e.offsetX || e.layerX;
-        var seconds = (xoffset / e.currentTarget.clientWidth) * duration;
-        // debugger;
-        PlayerService.setSeconds(e, xoffset, playerWrapper);
+        var mouseClientX = e.clientX - ( Math.floor(playerWrapper[0].getBoundingClientRect().left) - 7);
+        PlayerService.setSeconds(e, mouseClientX);
         audioElement.currentTime = PlayerService.getSeconds();
         scope.progress = PlayerService.getProgress();
-      };
-
-
-      scope.goToVideoPosition = function(e) {
-        var mouseClientX = e.clientX - ( Math.floor(progressContainer[0].getBoundingClientRect().left) - 7);
-        VideoService.setSeconds(e, mouseClientX, videoElement)
-        videoElement.currentTime = VideoService.getSeconds();
-        scope.currentTime = VideoService.getSeconds();
-        scope.progress = VideoService.getProgress();
       };
 
       PlayerService.setEventCallbacks('progress', {

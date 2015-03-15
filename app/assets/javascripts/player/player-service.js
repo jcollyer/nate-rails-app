@@ -57,15 +57,13 @@ angular.module('player-service',[])
     scrubTime = object;
   };
 
-  PlayerService.setSeconds = function(event, xoffset, target) {
-    // var target = target || event;
+  PlayerService.setSeconds = function(event, xoffset) {
     if (event) {
-      var xoffset = event.offsetX || event.layerX;
+      var xoffset = event.clientX - 160; // -160 to offset the playlist panel
       var width = event.currentTarget ? event.currentTarget.clientWidth : event.clientWidth;
     }
     var duration = audioElement.duration;
     seconds = (xoffset / width) * duration;
-    console.log("seconds: ",seconds,"duration: ",duration,"width: ",width,"xoffset: ",xoffset,"target: ",target);
   };
 
   PlayerService.getSeconds = function() {
