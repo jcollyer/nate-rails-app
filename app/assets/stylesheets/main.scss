@@ -658,7 +658,7 @@ a.social {
   width: 100%;
   height: 71px;
   z-index: 999;
-  bottom: 20px;
+  bottom: 10px;
   @media all and (max-width: 767px){
     height: 173px;
   }
@@ -666,16 +666,16 @@ a.social {
     cursor: pointer;
     background: #666;
     margin-top: -10px;
-    bottom: -20px;
+    bottom: -10px;
     position: absolute;
     z-index: 9;
-    height: 20px;
+    height: 10px;
     width: 100%;
     @media all and (max-width: 767px){
       cursor: pointer;
       background: #1c638d;
-      margin-top: -21px;
-      height: 20px;
+      margin-top: -11px;
+      height: 10px;
       border-top: none;
     }
     #progress_bar {
@@ -688,7 +688,7 @@ a.social {
       }
       #progress_ball {
         width: 9px;
-        height: 22px;
+        height: 13px;
         top: -2px;
         right: 0px;
         position: absolute;
@@ -713,7 +713,7 @@ a.social {
   #loaded_bar{
     position: absolute;
     bottom: 0px;
-    height: 20px;
+    height: 10px;
     background: #aaa;
   }
   #controls-part-2 {

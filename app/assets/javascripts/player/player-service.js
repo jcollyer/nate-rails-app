@@ -5,6 +5,8 @@ angular.module('player-service',[])
       audioElement,
       muted,
       speed,
+      seconds = 0,
+      playing = false,
       callbacks = {};
 
   PlayerService.getTrack = function() {
@@ -46,22 +48,24 @@ angular.module('player-service',[])
     runCallbacks("pausedCallback");
   };
 
-  PlayerService.setCurrentTime = function(newTime) {
-    audioElement.currentTime = newTime;
+  // scrubber
+  PlayerService.getScrubTime = function() {
+    return scrubTime;
   };
 
-  PlayerService.getCurrentTime = function() {
-    return audioElement.currentTime;
+  PlayerService.setScrubTime = function(object) {
+    scrubTime = object;
   };
 
   PlayerService.setSeconds = function(event, xoffset, target) {
-    var target = target || event;
+    // var target = target || event;
     if (event) {
       var xoffset = event.offsetX || event.layerX;
-      var width = target.currentTarget ? target.currentTarget.clientWidth : target.clientWidth;
+      var width = event.currentTarget ? event.currentTarget.clientWidth : event.clientWidth;
     }
     var duration = audioElement.duration;
     seconds = (xoffset / width) * duration;
+    console.log("seconds: ",seconds,"duration: ",duration,"width: ",width,"xoffset: ",xoffset,"target: ",target);
   };
 
   PlayerService.getSeconds = function() {

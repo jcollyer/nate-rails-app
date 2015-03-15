@@ -54,13 +54,19 @@ angular.module('player-progress-directive',[])
         var duration = PlayerService.getDuration();
         var xoffset = e.offsetX || e.layerX;
         var seconds = (xoffset / e.currentTarget.clientWidth) * duration;
-        PlayerService.setCurrentTime(seconds);
-        // scope.progress = PlayerService.getProgress();
-
-        PlayerService.setSeconds(e, xoffset, audioElement)
-        // audioElement.currentTime = PlayerService.getSeconds();
-        // scope.currentTime = PlayerService.getSeconds();
+        // debugger;
+        PlayerService.setSeconds(e, xoffset, playerWrapper);
+        audioElement.currentTime = PlayerService.getSeconds();
         scope.progress = PlayerService.getProgress();
+      };
+
+
+      scope.goToVideoPosition = function(e) {
+        var mouseClientX = e.clientX - ( Math.floor(progressContainer[0].getBoundingClientRect().left) - 7);
+        VideoService.setSeconds(e, mouseClientX, videoElement)
+        videoElement.currentTime = VideoService.getSeconds();
+        scope.currentTime = VideoService.getSeconds();
+        scope.progress = VideoService.getProgress();
       };
 
       PlayerService.setEventCallbacks('progress', {
