@@ -1,60 +1,73 @@
 <div id="controls">
-  <div id="controls-part-1">
-    <div id="play" ng-click="togglePlay()">
-      <div id="play-pause" ng-class="(playing) ? 'button-pause' : 'button-play'" ></div>
-    </div>
-    <div class="block-button button-goback" ng-click="goBack()"><div id="icon-goback"></div></div>
-    <div class="block-button button-volume" ng-click="toggleMute()"><div id="volume-toggle" ng-class="(muted) ? 'volume-up' : 'volume-mute'"></div></div>
-    <div class="block-button interactive-button read-along"><a href="" class="button-read-along" target="_blank"></a></div>
-    <div class="block-button interactive-button download"><a href="" class="button-download" download="Nate's teaching"></a></div>
-    <div class="block-button interactive-button podcast"><a href="" class="button-podcast" target="_blank">&nbsp;</a></div>
-  </div>
-  <div id="controls-part-2">
-    <div ng-click="activeSpeed('1.0')"class="speed-10 speed block-button" ng-class="{'active' : currentSpeed == '1.0'}">1.0x</div>
-    <div ng-click="activeSpeed('1.3')"class="speed-13 speed block-button" ng-class="{'active' : currentSpeed == '1.3'}">1.3x</div>
-    <div ng-click="activeSpeed('1.5')"class="speed-15 speed block-button" ng-class="{'active' : currentSpeed == '1.5'}">1.5x</div>
-    <div ng-click="activeSpeed('1.7')"class="speed-17 speed block-button" ng-class="{'active' : currentSpeed == '1.7'}">1.7x</div>
-    <div ng-click="activeSpeed('2.0')"class="speed-20 speed block-button" ng-class="{'active' : currentSpeed == '2.0'}">2.0x</div>
-  </div>
-  <div id="controls-part-3">
+  <div id="top">
     <div class="lesson-mod-info"><h1></h1><p></p></div>
+    <div id="social">
+      <div class="social-button social_facebook">
+        <a href="#"
+           onclick="
+            window.open(
+              'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+              'facebook-share-dialog',
+              'width=626,height=436');
+            return false;">
+        </a>
+      </div>
+      <div class="social-button social_twitter">
+        <a class="twitter popup" href="http://twitter.com/share?text=Tweet%20about%20Nate's%20teachings."></a>
+        <script>
+          $('.popup').click(function(event) {
+            var width  = 575,
+                height = 400,
+                left   = 0,
+                top    = 0,
+                url    = this.href,
+                opts   = 'status=1' +
+                         ',width='  + width  +
+                         ',height=' + height +
+                         ',top='    + top    +
+                         ',left='   + left;
 
-    <div class="social-button social_facebook">
-      <a href="#"
-         onclick="
-          window.open(
-            'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-            'facebook-share-dialog',
-            'width=626,height=436');
-          return false;">
-      </a>
-    </div>
-    <div class="social-button social_twitter">
-      <a class="twitter popup" href="http://twitter.com/share?text=Tweet%20about%20Nate's%20teachings."></a>
-      <script>
-        $('.popup').click(function(event) {
-          var width  = 575,
-              height = 400,
-              left   = 0,
-              top    = 0,
-              url    = this.href,
-              opts   = 'status=1' +
-                       ',width='  + width  +
-                       ',height=' + height +
-                       ',top='    + top    +
-                       ',left='   + left;
+            window.open(url, 'twitter', opts);
 
-          window.open(url, 'twitter', opts);
+            return false;
+          });
+        </script>
+      </div>
+      <div class="social-button social_google">
+        <a href="https://plus.google.com/share?url={nateholdridge.com}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+          &nbsp;
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="bottom">
 
-          return false;
-        });
-      </script>
+    <div id="controls-part-1">
+      <div id="play" ng-click="togglePlay()">
+        <div id="play-pause" ng-class="(playing) ? 'button-pause' : 'button-play'" ></div>
+      </div>
     </div>
-    <div class="social-button social_google">
-      <a href="https://plus.google.com/share?url={nateholdridge.com}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-        &nbsp;
-      </a>
+
+    <div id="controls-part-2">
+      <div jc-player-progress></div>
     </div>
+
+    <div id="controls-part-3">
+      <div class="block-button button-goback" ng-click="goBack()"><div id="icon-goback"></div></div>
+      <div class="block-button button-volume" ng-click="toggleMute()"><div id="volume-toggle" ng-class="(muted) ? 'volume-up' : 'volume-mute'"></div></div>
+      <div class="block-button interactive-button read-along"><a href="" class="button-read-along" target="_blank"></a></div>
+      <div class="block-button interactive-button download"><a href="" class="button-download" download="Nate's teaching"></a></div>
+      <div class="block-button interactive-button podcast"><a href="" class="button-podcast" target="_blank">&nbsp;</a></div>
+    </div>
+
+    <div id="controls-part-4">
+      <div ng-click="activeSpeed('1.0')"class="speed-10 speed block-button" ng-class="{'active' : currentSpeed == '1.0'}">1.0x</div>
+      <div ng-click="activeSpeed('1.3')"class="speed-13 speed block-button" ng-class="{'active' : currentSpeed == '1.3'}">1.3x</div>
+      <div ng-click="activeSpeed('1.5')"class="speed-15 speed block-button" ng-class="{'active' : currentSpeed == '1.5'}">1.5x</div>
+      <div ng-click="activeSpeed('1.7')"class="speed-17 speed block-button" ng-class="{'active' : currentSpeed == '1.7'}">1.7x</div>
+      <div ng-click="activeSpeed('2.0')"class="speed-20 speed block-button" ng-class="{'active' : currentSpeed == '2.0'}">2.0x</div>
+    </div>
+
   </div>
   <div id="close-button">x</div>
 </div>

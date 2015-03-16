@@ -653,11 +653,15 @@ a.social {
   user-select: none;
 }
 
+#player-wrapper.opened {
+  height: 100px;
+}
 #player-wrapper {
-  border-top: 1px solid #111;
+  border: 1px solid #333;
   position: fixed;
   background: #333;
-  width: 100%;
+  width: 80%;
+  left: 15%;
   height: 0px;
   z-index: 999;
   bottom: 0px;
@@ -665,8 +669,8 @@ a.social {
   #seek_bar{
     cursor: pointer;
     background: #666;
-    height: 10px;
-    margin-top: -10px;
+    height: 25px;
+    margin-top: 20px;
     width: 100%;
     @media all and (max-width: 767px){
       cursor: pointer;
@@ -684,8 +688,8 @@ a.social {
         background: white;
       }
       #progress_ball {
-        width: 9px;
-        height: 13px;
+        width: 7px;
+        height: 24px;
         top: -2px;
         right: 0px;
         position: absolute;
@@ -697,8 +701,17 @@ a.social {
       }
     }
   }
+  #top {
+    width: 100%;
+    height: 28px;
+    background: #444;
+  }
+  #social {
+    float: right;
+    margin-right: 100px;
+  }
   #controls-part-1 {
-    width: 36%;
+    width: 10%;
     float: left;
     @media all and (max-width: 767px){
       width: 100%;
@@ -714,7 +727,7 @@ a.social {
     background: #aaa;
   }
   #controls-part-2 {
-    width: 19%;
+    width: 30%;
     float: left;
     @media all and (max-width: 767px){
       width: 100%;
@@ -723,7 +736,7 @@ a.social {
     }
   }
   #controls-part-3 {
-    width: 45%;
+    width: 40%;
     float: left;
     @media all and (max-width: 767px){
       width: 100%;
@@ -731,13 +744,15 @@ a.social {
       border-top: 1px solid #444;
     }
   }
+  #controls-part-4 {
+    width: 20%;
+    float: left;
+  }
   #controls {
     width: 100%;
     height: 80px;
     .block-button {
       cursor: pointer;
-      border-left: 1px solid #222;
-      border-right: 1px solid #444;
       float: left;
       position: relative;
       @media all and (max-width: 767px){
@@ -753,9 +768,7 @@ a.social {
       padding: 3px 7px 5px 8px;
       cursor: pointer;
       position: relative;
-      height: 68px;
-      width: 25.33%;
-      border-right: 1px solid #444;
+      width: 100%;
       @media all and (max-width: 767px){
         border-right: none;
         width: 28.66%;
@@ -968,36 +981,37 @@ a.social {
     }
     .lesson-mod-info{
       float: left;
-      padding: 0px 0px 0px 20px;
-      border-left: 1px solid #222;
-      width: 45%;
+      padding: 0px 30px 0px 20px;
       @media all and (max-width: 767px){
         display: none;
       }
       h1 {
         color: white;
-        font-size: 30px;
+        font-size: 20px;
         line-height: 1em;
         text-align: center;
+        font-weight: 100;
+        float: left;
       }
       p{
         margin: 0px;
         color: white;
-        font-size: 20px;
+        font-size: 19px;
+        padding-left: 5px;
+        float: left;
       }
     }
 
     .social-button{
-      width: 40px;
-      height: 68px;
+      width: 24px;
+      height: 19px;
       display: block;
       background-size: 100%;
       background-repeat: no-repeat;
       float: left;
       position: relative;
-      margin: 12px 0px 0px 15px;
+      margin: 8px 0px 0px 15px;
       opacity: 0.8;
-      cursor: pointer;
       a {
         display: block;
         width: 100%;
@@ -1024,7 +1038,7 @@ a.social {
       cursor: pointer;
       right: 0px;
       font-size: 33px;
-      height: 25px;
+      height: 27px;
       padding: 0px 5px;
       width: 25px;
       background: #ccc;

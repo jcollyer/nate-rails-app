@@ -19,7 +19,7 @@ angular.module('player-controller',[])
     },
     playingCallback: function() {
       loader.css("display","none");
-      playerWrapper.css("height","81");
+      playerWrapper.addClass("opened");
       // PlayerService.playing = true;
       $scope.playing = true;
 
