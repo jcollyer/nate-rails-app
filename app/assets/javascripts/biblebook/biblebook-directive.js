@@ -21,30 +21,27 @@ angular.module('biblebook-directive',[])
         var closeButton = angular.element( document.querySelector( '.teaching-panel-close' ) );
         var mainNav = angular.element( document.querySelector( '#main-nav' ) );
 
-        if (window.innerWidth < 767) {
-          scope.mobile = true;
 
+        scope.mobile = false;
+        var biblebookId = id;
+
+        BiblebookService.getBiblebook(biblebookId).then(function(biblebook) {
+          scope.biblebook = biblebook;
+          scope.biblebookName = biblebook.name;
+          var title = angular.element( document.querySelector( '.lesson-mod-info h1' ) );
+          title.html(scope.biblebookName);
+          $rootScope.$broadcast('showBiblebook', biblebook);
+        });
+
+        if (teachingPannels.hasClass("opened")) {
+          return;
         } else {
-          scope.mobile = false;
-          var biblebookId = id;
-
-          BiblebookService.getBiblebook(biblebookId).then(function(biblebook) {
-            scope.biblebook = biblebook;
-            scope.biblebookName = biblebook.name;
-            var title = angular.element( document.querySelector( '.lesson-mod-info h1' ) );
-            title.html(scope.biblebookName);
-            $rootScope.$broadcast('showBiblebook', biblebook);
-          });
-
-          if (teachingPannels.hasClass("opened")) {
-            return;
-          } else {
-            teachingPannels.addClass("opened");
-            closeButton.css("display","block");
-            pageWrapper.addClass("opened");
-            mainNav.css("width","calc(100% - 160px)");
-          };
+          teachingPannels.addClass("opened");
+          closeButton.css("display","block");
+          pageWrapper.addClass("opened");
+          mainNav.css("width","calc(100% - 160px)");
         };
+
       };
 
 

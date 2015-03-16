@@ -43,48 +43,7 @@ angular.module('nate-service',[])
         scrollTop: 0
       }, 450);
     });
-    // windowWrapperReSize = function() {
-    //   var negPanelsWidth, panelsPercentage, widthMinusPanels, windowWidth;
-    //   windowWidth = $(window).width();
-    //   negPanelsWidth = "-160px";
-    //   panelsPercentage = 160 / windowWidth;
-    //   widthMinusPanels = (1 - panelsPercentage) * 100 + "%";
-    //   return $("#page-wrapper").css("width", widthMinusPanels);
-    // };
-    // windowWrapperSize = function() {
-    //   var negPanelsWidth, panelsPercentage, widthMinusPanels, windowWidth;
-    //   windowWidth = $(window).width();
-    //   negPanelsWidth = "-160px";
-    //   panelsPercentage = 160 / windowWidth;
-    //   widthMinusPanels = (1 - panelsPercentage) * 100 + "%";
-    //   return $("#page-wrapper, #nav-wrap").animate({
-    //     width: widthMinusPanels
-    //   }, 250);
-    // };
-    // $(window).resize(function() {
-    //   if ($(".teaching-panels").hasClass("opened")) {
-    //     return windowWrapperReSize();
-    //   }
-    // });
 
-
-    // $(".teaching-panel-close").on("click", function() {
-    //   var close, negPanelsWidth, closeButton;
-    //   negPanelsWidth = "-160px";
-    //   closeButton = $("#close-button");
-    //   closeButton.css("right","0px");
-    //   close = $(".teaching-panel-close");
-    //   $("#page-wrapper, #nav-wrap").animate({
-    //     width: "100%"
-    //   }, 250);
-    //   $(".teaching-panels").animate({
-    //     left: negPanelsWidth
-    //   }, 250, function() {
-    //     // $(".teaching-panel").hide();
-    //     return close.css("right", "0px");
-    //   });
-    //   return $(".teaching-panels").removeClass("opened");
-    // });
     $("#hamburger").on("click", function() {
       if ($(this).css("color") === "rgb(255, 255, 255)") {
         $(this).css("color", "#2e97d7");
@@ -107,10 +66,6 @@ angular.module('nate-service',[])
     });
     if ($(".js-black-background").length) {
       $("body").css("background-color", "#111111");
-    }
-
-
-
-
+    };
 
 });
