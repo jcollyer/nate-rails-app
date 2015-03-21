@@ -9,7 +9,6 @@ angular.module('biblebook-directive',[])
     link: function(scope, element, attr) {
       var biblebookService = BiblebookService;
       scope.opened = false;
-      scope.mobile = false;
 
       scope.biblebooks = biblebookService.getAllBiblebooks();
 
@@ -28,8 +27,6 @@ angular.module('biblebook-directive',[])
           var closeButton = angular.element( document.querySelector( '.teaching-panel-close' ) );
           var mainNav = angular.element( document.querySelector( '#main-nav' ) );
 
-
-          scope.mobile = false;
           var biblebookId = id;
 
           BiblebookService.getBiblebook(biblebookId).then(function(biblebook) {
