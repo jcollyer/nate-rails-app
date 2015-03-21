@@ -13,7 +13,6 @@ angular.module('teaching-controller',[])
     var name = teaching.name;
     var refurl = teaching.refurl;
     var podcasturl = teaching.podcasturl;
-    // var biblebookname = teaching.
 
     loader.css("display","block");
 
