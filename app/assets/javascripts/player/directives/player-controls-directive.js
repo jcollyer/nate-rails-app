@@ -8,6 +8,8 @@ angular.module('player-controls-directive', [])
       hide: '='
     },
     link: function(scope, element, attrs){
+      var playerWrapper = angular.element( document.querySelector( '#player-wrapper' ) );
+
       PlayerService.playing = false;
       scope.currentSpeed = "1.0";
 
@@ -27,6 +29,11 @@ angular.module('player-controls-directive', [])
         PlayerService.setPlaybackRate(speed);
         scope.currentSpeed = PlayerService.getPlaybackRate();
       };
+
+      scope.closePlayer = function() {
+        PlayerService.pause();
+        playerWrapper.removeClass("opened");
+      }
 
     }
   };
