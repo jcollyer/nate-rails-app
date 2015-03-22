@@ -57,10 +57,12 @@ angular.module('player-service',[])
     scrubTime = object;
   };
 
-  PlayerService.setSeconds = function(event, xoffset) {
+  PlayerService.setSeconds = function(event, xoffset, target) {
     if (event) {
-      var xoffset = event.clientX - 160; // -160 to offset the playlist panel
-      var width = event.currentTarget ? event.currentTarget.clientWidth : event.clientWidth;
+      var target = target;
+      var xoffset = xoffset;
+      var width = target.innerWidth();
+      console.log("xoffset: ",xoffset);
     }
     var duration = audioElement.duration;
     seconds = (xoffset / width) * duration;

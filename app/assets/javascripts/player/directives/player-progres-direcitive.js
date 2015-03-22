@@ -8,7 +8,7 @@ angular.module('player-progress-directive',[])
 
       var audioElement = PlayerService.getElement();
       var playerWrapper = angular.element( document.querySelector( '#player-wrapper' ) );
-      var progressBar = angular.element( document.querySelector( '#progress_bar' ) );
+      var progressWrapper = angular.element( document.querySelector( '#audio-progress-container' ) );
       var instance = {};
       var playHead = {
        mdown:false
@@ -51,8 +51,9 @@ angular.module('player-progress-directive',[])
       };
 
       scope.goToAudioPosition = function(e) {
-        var mouseClientX = e.clientX - ( Math.floor(playerWrapper[0].getBoundingClientRect().left) - 7);
-        PlayerService.setSeconds(e, mouseClientX);
+        var mouseClientX = e.clientX - ( Math.floor(progressWrapper[0].getBoundingClientRect().left) - 7);
+        // console.log("e.clientX: ",e.clientX,"progressWrapper: ",Math.floor(progressWrapper[0].getBoundingClientRect().left) - 7,"e: ",e)
+        PlayerService.setSeconds(e, mouseClientX, progressWrapper);
         audioElement.currentTime = PlayerService.getSeconds();
         scope.progress = PlayerService.getProgress();
       };
