@@ -13,7 +13,7 @@ angular.module('player-progress-directive',[])
       var playHead = {
        mdown:false
       };
-      var load, stop;
+      var load, stop, time;
 
       scope.beginScrub = function(e) {
         playHead.mdown = true;
@@ -58,6 +58,9 @@ angular.module('player-progress-directive',[])
       };
 
       PlayerService.setEventCallbacks('progress', {
+        audioReadyCallback: function() {
+          scope.duration = PlayerService.getElement().duration;
+        },
         ladingCallback: function() {
           $interval.cancel(load);
           load = $interval(function() {
@@ -65,8 +68,10 @@ angular.module('player-progress-directive',[])
           }, 500);
         },
         playingCallback: function() {
+
           $interval.cancel(stop);
           stop = $interval(function(){
+            scope.currentTime = PlayerService.getElement().currentTime;
             scope.progress = PlayerService.getProgress();
           }, 500);
         },
@@ -74,8 +79,6 @@ angular.module('player-progress-directive',[])
           $interval.cancel(stop);
         }
       });
-
-
 
     }
   }

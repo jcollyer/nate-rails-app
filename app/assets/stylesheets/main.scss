@@ -712,6 +712,16 @@ a.social {
       }
     }
   }
+  #time {
+    font-weight: 300;
+    color: white;
+    #current_time{
+      float: left;
+    }
+    #duration{
+      float: right;
+    }
+  }
   #top {
     width: 100%;
     height: 28px;
