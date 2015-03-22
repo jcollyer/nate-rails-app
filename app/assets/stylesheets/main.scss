@@ -674,12 +674,20 @@ a.social {
     box-shadow: inset -1px -1px 1px #333;
     margin-top: 10px;
     border-radius: 3px;
+    position: relative;
     @media all and (max-width: 767px){
       cursor: pointer;
       background: #1c638d;
       margin-top: -11px;
       height: 10px;
       border-top: none;
+    }
+    #loaded_bar{
+      position: absolute;
+      bottom: 2px;
+      height: 39px;
+      background: #aaa;
+      // border-radius: 3px;
     }
     #progress_bar {
       background: #222;
@@ -721,12 +729,6 @@ a.social {
       border-top: 1px solid #444;
       height: 70px;
     }
-  }
-  #loaded_bar{
-    position: absolute;
-    bottom: -10px;
-    height: 10px;
-    background: #aaa;
   }
   #controls-part-2 {
     width: 40%;
