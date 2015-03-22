@@ -3,5 +3,6 @@ angular.module('nate', [
                'player',
                'biblebook',
                'teaching',
-               'templates'
+               'templates',
+               'toHHMMSS'
               ]);
