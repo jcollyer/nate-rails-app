@@ -1,5 +1,5 @@
 angular.module('nate-service',[])
-.service('NateService', function(){
+.service('NateService', function(PlayerService){
 
     var pagePlace, windowWrapperReSize, windowWrapperSize;
     $("#main-nav li").click(function() {
@@ -67,5 +67,47 @@ angular.module('nate-service',[])
     if ($(".js-black-background").length) {
       $("body").css("background-color", "#111111");
     };
+
+    $(".button-play-list-mobile").click(function(){
+
+        // var teachingName = $(this).attr('data-name');
+        // var download = angular.element( document.querySelector( '.button-download' ) );
+        var player = $("#main-audio");
+        var readAlong = $('.button-read-along');
+        var podcast = $('.button-podcast');
+        var loader = $('#loader');
+
+        // var teaching = this.teaching;
+        var mp3 = $(this).attr('data-mp3');
+        var name = $(this).attr('data-name');
+        var refurl = $(this).attr('data-refurl');
+        var podcasturl = $(this).attr('data-podcast');
+
+        loader.css("display","block");
+
+        // PlayerService.setTrack(mp3);
+        player.attr("src",mp3);
+        // debugger;
+        // player.css("height","200px");
+
+        // debugger;
+
+        var playPause = $('#play-pause');
+        playPause.addClass("button-pause").removeClass("button-play");
+
+
+        // teachingName.html(name);
+        // download.attr({"href":mp3,"download":name});
+        readAlong.attr("href", refurl);
+        podcast.attr("href", podcasturl);
+      });
+
+      // scope.selected = function(mp3) {
+      //   if (PlayerService && PlayerService.getTrack()){
+      //     return mp3 === PlayerService.getTrack().toString();
+      //   }
+      // };
+
+
 
 });

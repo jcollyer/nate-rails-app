@@ -1,8 +1,8 @@
-angular.module('teaching-directive',['player-service'])
-.directive('jcTeachings', function(){
+angular.module('teachings-directive',['player-service'])
+.directive('jcTeachings', function(BiblebookService){
   return {
     restrict: 'A',
-    templateUrl: 'teaching-template.html',
+    templateUrl: 'teachings-template.html',
     controller: 'TeachingController',
     link: function(scope, element, attr) {
       var teachingPanels = angular.element( document.querySelector( '.teaching-panels' ) );
@@ -10,12 +10,16 @@ angular.module('teaching-directive',['player-service'])
       var pageWrapper = angular.element( document.querySelector( '#page-wrapper' ) );
       var mainNav = angular.element( document.querySelector( '#main-nav' ) );
 
-      // display teachings
+      // display teachings desktop
       scope.$on('showBiblebook', function(event, biblebook) {
+        getBiblebook(event, biblebook);
+      });
+
+      var getBiblebook = function(event, biblebook) {
         scope.biblebookname = biblebook.name;
         scope.teachings = biblebook.teachings;
         scope.bibelbookImage = biblebook.medium_image;
-      });
+      }
 
       scope.closePlaylist = function() {
         closeButton.css("display","none");

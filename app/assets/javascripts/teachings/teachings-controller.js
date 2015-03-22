@@ -1,4 +1,4 @@
-angular.module('teaching-controller',[])
+angular.module('teachings-controller',[])
 .controller('TeachingController', function($scope, PlayerService){
 
   $scope.clickTeaching = function(mp3) {
@@ -33,5 +33,7 @@ angular.module('teaching-controller',[])
       return teaching.mp3 === PlayerService.getTrack().toString();
     }
   };
+
+
 
 });
