@@ -734,7 +734,8 @@ a.social {
     background: #333;
   }
   #social {
-    left: right;
+    float: right;
+    margin-right: 70px;
   }
   #controls-part-1 {
     width: 10%;
@@ -828,7 +829,8 @@ a.social {
         display: block;
       }
       padding: 10px 5px 7px 9px;
-      width: 18%;
+      width: 20%;
+      max-width: 110px;
       #volume-toggle {
         background-size:100%;
         background-repeat:no-repeat;
@@ -850,24 +852,17 @@ a.social {
     }
     #speeds-container {
       position: relative;
-      margin-left: 30px;
+      margin: 11px 0 0 7px;
       width: 25%;
       max-width: 100px;
       float: left;
-      .speeds-title {
-        position: absolute;
-        top: -27px;
-        left: 23px;
-        font-size: 14px;
-        color: white;
-      }
       .speed {
         width: 33%;
         max-width: 40px;
         padding: 0px 0px 4px;
         color: white;
         font-size: 14px;
-        margin: 6px 0px -2px;
+        margin: 1px 0px -2px;
         float: left;
         border-radius: 3px;
         @media all and (max-width: 767px){
@@ -895,8 +890,9 @@ a.social {
       cursor: pointer;
     }
     .read-along {
-      width: 18%;
-      padding-top: 15px;
+      width: 20%;
+      max-width: 110px;
+      padding-top: 7px;
       @media all and (max-width: 767px) {
         display: none;
       }
@@ -916,7 +912,7 @@ a.social {
         width: 30px;
       }
       &:after {
-        top: -42px;
+        top: 32px;
         content: "read along";
         color: white;
         font-size: 14px;
@@ -929,8 +925,9 @@ a.social {
       }
     }
     .podcast {
-      width: 18%;
-      padding-top: 13px;
+      width: 20%;
+      max-width: 110px;
+      padding-top: 4px;
     }
     .button-podcast {
       background-image: url(image_path("itunes.png"));
@@ -943,7 +940,7 @@ a.social {
       margin: 0px auto;
       position: absolute;
       &:after{
-        top: -39px;
+        top: 37px;
         content: "podcast";
         color: white;
         font-size: 14px;
@@ -962,8 +959,9 @@ a.social {
       }
     }
     .download {
-      width: 18%;
-      padding-top: 15px;
+      width: 20%;
+      max-width: 110px;
+      padding-top: 9px;
       display: block;
       @media all and (max-width: 767px) {
         display: none;
@@ -980,7 +978,7 @@ a.social {
       right: 0px;
       margin: auto;
       &:after{
-        top: -41px;
+        top: 32px;
         content: "download";
         color: white;
         font-size: 14px;
