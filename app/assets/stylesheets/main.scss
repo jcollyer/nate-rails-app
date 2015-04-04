@@ -686,6 +686,7 @@ a.social {
     position: relative;
     @media all and (max-width: 767px){
       border-radius: 0px;
+      margin-top: 2px;
     }
     #loaded_bar{
       position: absolute;
@@ -708,21 +709,21 @@ a.social {
       }
       #cover_up {
         position: absolute;
-        left:-5px;
-        width: 5px;
+        left: -15px;
+        width: 15px;
         height: 26px;
         z-index: 999;
         background: #444;
       }
       #progress_ball {
-        width: 3px;
+        width: 9px;
         height: 25px;
         top: 1px;
         right: 0px;
         position: absolute;
         background: #ddd;
-        cursor: pointer;
         z-index: 9;
+        cursor: ew-resize;
       }
     }
   }
@@ -760,9 +761,6 @@ a.social {
     width: 40%;
     float: left;
     @media all and (max-width: 767px){
-      width: 100%;
-      position: absolute;
-      bottom: -36px;
     }
   }
   #controls-part-3 {

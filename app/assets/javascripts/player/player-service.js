@@ -62,7 +62,6 @@ angular.module('player-service',[])
       var target = target;
       var xoffset = xoffset;
       var width = target.innerWidth();
-      console.log("xoffset: ",xoffset);
     }
     var duration = audioElement.duration;
     seconds = (xoffset / width) * duration;

@@ -6,7 +6,7 @@ angular.module('player-controls-directive', [])
     controller: 'PlayerController',
     scope: {
       hide: '=',
-      progress: '&'
+      showProgress: '='
     },
     link: function(scope, element, attrs){
       var playerWrapper = angular.element( document.querySelector( '#player-wrapper' ) );
@@ -15,7 +15,7 @@ angular.module('player-controls-directive', [])
       scope.currentSpeed = "1.0";
 
       scope.progress = function(){
-        return scope.progress;
+        return scope.showProgress;
       };
 
       scope.togglePlay = function() {
