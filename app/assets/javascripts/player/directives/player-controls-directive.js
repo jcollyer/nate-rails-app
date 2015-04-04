@@ -5,13 +5,18 @@ angular.module('player-controls-directive', [])
     templateUrl: 'player-controls-template.html',
     controller: 'PlayerController',
     scope: {
-      hide: '='
+      hide: '=',
+      progress: '&'
     },
     link: function(scope, element, attrs){
       var playerWrapper = angular.element( document.querySelector( '#player-wrapper' ) );
 
       PlayerService.playing = false;
       scope.currentSpeed = "1.0";
+
+      scope.progress = function(){
+        return scope.progress;
+      };
 
       scope.togglePlay = function() {
         PlayerService.togglePlay();
