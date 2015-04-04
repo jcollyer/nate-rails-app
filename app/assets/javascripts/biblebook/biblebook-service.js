@@ -1,5 +1,6 @@
 angular.module('biblebook-service', [])
-  .service('BiblebookService', function($http, $q) {
+  .service('BiblebookService', ['$http','$q', function($http, $q) {
+
     var BiblebookService = this,
         thisBiblebook;
 
@@ -35,4 +36,4 @@ angular.module('biblebook-service', [])
     });
     return deferred.promise;
   };
-});
+}]);

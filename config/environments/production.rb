@@ -88,6 +88,4 @@ Nate::Application.configure do
     }
   }
 
-  config.assets.js_compressor = Uglifier.new(mangle: false)
-
 end
