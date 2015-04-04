@@ -748,7 +748,7 @@ a.social {
     width: 10%;
     float: left;
     @media all and (max-width: 767px){
-      width: 11%;
+      width: 15%;
       height: 70px;
     }
   }
@@ -782,9 +782,6 @@ a.social {
       cursor: pointer;
       position: relative;
       width: 100%;
-      @media all and (max-width: 767px){
-        width: 28.66%;
-      }
       #play-pause {
         background-size: 100%;
         width: 60px;

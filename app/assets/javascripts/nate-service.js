@@ -73,7 +73,7 @@ angular.module('nate-service',[])
         $(this).addClass('active');
         // var teachingName = $(this).attr('data-name');
         // var download = angular.element( document.querySelector( '.button-download' ) );
-        var player = $('#main-audio');
+        var player = document.getElementById('main-audio');
         var readAlong = $('.button-read-along');
         var podcast = $('.button-podcast');
         var loader = $('#loader');
@@ -86,12 +86,10 @@ angular.module('nate-service',[])
 
         loader.css("display","block");
 
-        // PlayerService.setTrack(mp3);
-        player.attr("src",mp3);
-        // debugger;
-        // player.css("height","200px");
 
-        // debugger;
+        player.setAttribute("src",mp3);
+
+        player.play();
 
         var playPause = $('#play-pause');
         playPause.addClass("button-pause").removeClass("button-play");
