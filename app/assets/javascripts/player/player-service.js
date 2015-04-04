@@ -153,11 +153,11 @@ angular.module('player-service',[])
     });
   };
   var runCallbacks = function(type){
-    // debugger;
     Object.keys(callbacks).forEach(function(key) {
       if (callbacks[key] && callbacks[key][type]) callbacks[key][type]();
     });
   };
+
   PlayerService.runCallbacks = runCallbacks;
   PlayerService.setEventCallback = setEventCallback;
   PlayerService.setEventCallbacks = setEventCallbacks;

@@ -554,20 +554,15 @@ a.social {
   display: none;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.8);
-  left: 45%;
+  left: 50%;
   position: fixed;
   padding: 20px;
   top: 30%;
   margin-top: -50px;
+  margin-left: -100px;
   z-index: 99;
   width: 200px;
   transition: display 0.5s;
-  @media all and (max-width: 767px){
-    left: 34%;
-  }
-  @media all and (max-width: 525px){
-    left: 23%;
-  }
   .spin {
     border: 2px dashed #222;
     border-radius: 50%;
