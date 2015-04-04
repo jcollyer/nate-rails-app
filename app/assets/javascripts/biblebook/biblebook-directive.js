@@ -1,5 +1,5 @@
 angular.module('biblebook-directive',[])
-.directive('jcBiblebook', function(BiblebookService, $rootScope){
+.directive('jcBiblebook', ['BiblebookService', '$rootScope', function(BiblebookService, $rootScope){
   return {
     restritc: 'A',
 
@@ -49,4 +49,4 @@ angular.module('biblebook-directive',[])
 
     }
   }
-});
+}]);
