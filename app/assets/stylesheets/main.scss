@@ -261,7 +261,10 @@ table {
   position: relative;
 }
 
-
+.button-play-list-mobile.active {
+  background: #ddd;
+  color: #333;
+}
 .nav-buffer {
   position: relative;
   margin: 18px 0px;

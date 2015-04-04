@@ -68,11 +68,12 @@ angular.module('nate-service',[])
       $("body").css("background-color", "#111111");
     };
 
-    $(".button-play-list-mobile").click(function(){
-
+    $('.button-play-list-mobile').click(function(){
+        $('.button-play-list-mobile').removeClass('active');
+        $(this).addClass('active');
         // var teachingName = $(this).attr('data-name');
         // var download = angular.element( document.querySelector( '.button-download' ) );
-        var player = $("#main-audio");
+        var player = $('#main-audio');
         var readAlong = $('.button-read-along');
         var podcast = $('.button-podcast');
         var loader = $('#loader');
