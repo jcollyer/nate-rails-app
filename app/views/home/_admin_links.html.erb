@@ -1,0 +1,28 @@
+<div id="user">
+  <div class="row">
+    <div class="small-12 columns">
+      <h1>Logged in as <%= current_user.email %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 large-4 columns">
+      <h3>&nbsp;</h3>
+    </div>
+    <div class="small-12 large-4 columns">
+      <h3>
+        <%= link_to "Teachings", teachings_path %>
+        <%= link_to "Biblebooks", biblebooks_path %>
+        <%= link_to "Bio", "/bios/1/edit" %>
+        <%= link_to "Books", books_path %>
+        <%= link_to "Calvary", "/notes/1/edit" %>
+        <%= link_to "About", "/abouts/1/edit" %>
+        </br>
+        </br>
+        <%= link_to "Log out", log_out_path %>
+      </h3>
+    </div>
+    <div class="small-12 large-4 columns">
+      <h3>&nbsp;</h3>
+    </div>
+  </div>
+</div>

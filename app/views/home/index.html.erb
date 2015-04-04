@@ -1,12 +1,19 @@
-<%= render "nav" %>
+<% if current_user %>
+  <%= render "admin_links" %>
+<% end %>
+
+<div jc-teachings></div>
 <div id="page-wrapper">
+  <%= render "nav" %>
   <%= render "spinner" %>
-  <%= render "playlist" %>
   <%= render "bios" %>
   <%= render "biblebooks" %>
   <%= render "books" %>
   <%= render "social" %>
   <%= render "about" %>
   <%= render "calvary" %>
-  <%= render "player" %>
+  <div id="player-wrapper" class="no-select">
+    <div jc-player mp3=""></div>
+    <div jc-player-controls show-progress="true"></div>
+  </div>
 </div>

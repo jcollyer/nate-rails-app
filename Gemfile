@@ -12,6 +12,8 @@ gem 'jquery-rails'
 gem 'active_model_serializers'
 gem 'pry'
 
+gem 'angular-rails-templates'
+
 group :doc do
   gem 'sdoc', require: false
 end

@@ -1,0 +1,6 @@
+<div ng-repeat="biblebook in biblebooks" class="biblebook-cover" ng-model="biblebook.id" ng-click="playTrack(biblebook.id)">
+  <img alt="{{biblebook.name}}" class="br-small" data-biblebook="{{biblebook.id}}" src="{{biblebook.medium_image}}">
+  <div class="biblebook-hover" data-id="{{biblebook.id}}">
+    <div class="home-vol">play</div>
+  </div>
+</div>

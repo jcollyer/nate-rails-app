@@ -1,0 +1,21 @@
+{
+  "name": "nate",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jcollyer/nate-rails-app",
+  "authors": [
+    "jcollyer <collyerdesign@gmail.com>"
+  ],
+  "description": "mp3 player",
+  "main": "readme.md",
+  "dependencies": {
+    "angular": "https://github.com/angular/bower-angular.git#v1.3.3",
+     "lodash": "2.4.1"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
