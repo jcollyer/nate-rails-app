@@ -1,5 +1,5 @@
 angular.module('player-controls-directive', [])
-.directive('jcPlayerControls', function(PlayerService){
+.directive('jcPlayerControls', ['PlayerService', function(PlayerService){
   return {
     restrict: 'A',
     templateUrl: 'player-controls-template.html',
@@ -42,4 +42,4 @@ angular.module('player-controls-directive', [])
 
     }
   };
-});
+}]);

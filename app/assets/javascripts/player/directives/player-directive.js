@@ -1,5 +1,5 @@
 angular.module('player-directive',[])
-.directive('jcPlayer', function(PlayerService){
+.directive('jcPlayer', ['PlayerService', function(PlayerService){
   return {
     restritc: 'A',
     replace: true,
@@ -25,4 +25,4 @@ angular.module('player-directive',[])
 
     }
   };
-})
+}])
