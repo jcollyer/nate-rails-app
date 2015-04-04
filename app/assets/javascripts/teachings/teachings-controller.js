@@ -1,5 +1,5 @@
 angular.module('teachings-controller',[])
-.controller('TeachingController', function($scope, PlayerService){
+.controller('TeachingController', [ '$scope', 'PlayerService', function($scope, PlayerService){
 
   $scope.clickTeaching = function(mp3) {
     var teachingName = angular.element( document.querySelector( '.lesson-mod-info p' ) );
@@ -36,4 +36,4 @@ angular.module('teachings-controller',[])
 
 
 
-});
+}]);

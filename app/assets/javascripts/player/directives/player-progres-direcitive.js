@@ -1,5 +1,5 @@
 angular.module('player-progress-directive',[])
-.directive('jcPlayerProgress', function(PlayerService, $interval){
+.directive('jcPlayerProgress', ['PlayerService', '$interval', function(PlayerService, $interval){
   return {
     restrict: 'A',
     templateUrl: 'player-progress-template.html',
@@ -83,4 +83,4 @@ angular.module('player-progress-directive',[])
 
     }
   }
-})
+}])

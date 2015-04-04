@@ -1,5 +1,5 @@
 angular.module('player-service',[])
-.service('PlayerService', function($sce){
+.service('PlayerService', [ '$sce', function($sce){
   var PlayerService = this,
       audioTrack,
       audioElement,
@@ -164,4 +164,4 @@ angular.module('player-service',[])
 
   return PlayerService;
 
-});
+}]);

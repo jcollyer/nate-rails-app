@@ -1,5 +1,5 @@
 angular.module('player-controller',[])
-.controller('PlayerController', function($scope, $interval, PlayerService, NateService){
+.controller('PlayerController', [ '$scope', '$interval', 'PlayerService', 'NateService', function($scope, $interval, PlayerService, NateService){
   var PlayerController = this;
   $scope.playing = true;
   $scope.muted = false;
@@ -37,4 +37,4 @@ angular.module('player-controller',[])
       $scope.muted = PlayerService.getMuteSetting();
     }
   });
-});
+}]);
