@@ -433,7 +433,7 @@ table {
 .icon {
   background-color: #103b54;
   cursor: pointer;
-  margin: 0px 0px 10px 0px;
+  margin: 0px auto 10px;
   width: 120px;
   height: 120px;
   line-height: 100px;
@@ -464,7 +464,6 @@ a.social {
   text-decoration: none;
 }
 .social-icon {
-  margin-left: 90px;
   @media all and (max-width: "767px"){
     margin: 0px auto;
   }
